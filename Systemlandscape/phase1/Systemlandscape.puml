@@ -1,0 +1,38 @@
+@startuml System landscape
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include FONTAWESOME/desktop.puml
+!include FONTAWESOME/server.puml
+
+LAYOUT_TOP_DOWN()
+LAYOUT_WITH_LEGEND()
+
+Person_Ext(ebix, "eBix", "Actor that uses the eBix format for communication", $sprite="desktop")
+Person_Ext(cim, "CIM", "Actor that uses the eBix format for communication", $sprite="desktop")
+Person_Ext(extUser, "External user", "Person that works with the DataHub 3 system")
+
+Enterprise_Boundary(dh3, "DataHub 3") {
+    Person(dhuser, "Energinet user", "Person that works with the DataHub 3 system")
+
+    System(mh, "Message Hub", "Communications with external systems with either HTTP/RPC or SOAP")
+    System(lz, "Landing Zone", "All data exports from DataHub2 are received here")
+    System(migration, "Migration", "Processes and prepares data for ingestion in other 'systems'")
+    System(ws, "Wholesale", "Calculates and performs aggregations")
+    System(mp, "Market Participants", "Actors, users, roles and access rights")
+    System(bff, "Backend for frontend", "Endpoint for the frontend")
+}
+
+System_Ext(dh2, "DataHub 2", , $sprite="server")
+
+Rel(ebix, mh, "Integrates with SOAP protocol. Using client certificates for identification")
+Rel(cim, mh, "Integrates with HTTP/RPC. Endpoints are protected with OAUTH2.")
+Rel(dh2, lz, "Transferes data for migration")
+Rel_R(lz, migration, "Loads data from landing zone")
+Rel(migration, ws, "Receives data from migration")
+BiRel(mh, ws, "Data exchange with external actors")
+Rel_U(mp, ws, "Provides users and access rights")
+BiRel_R(bff, ws, "Supports frontend with data")
+BiRel_U(dhuser, bff, "Interacts with the GUI")
+BiRel(extUser, bff, "Interacts with the GUI")
+
+@enduml
