@@ -10,14 +10,14 @@ workspace {
         
 
             dh3User = person "Energinet user" "Person that works within Energinet (for example a FAS-user)" 
-            dh3 = softwareSystem "DH3" "DataHub 3" {
+            dh3 = softwareSystem "DH3" "DataHub 3.0" {
                 
                 edi = container "EDI" "Message handling (EDI-parser)"
                 lz = container "Landing Zone" "All data exports from DataHub2 are received here"
                 migration = container "Migration" "Transform and prepares data for ingestion in other 'systems' (timeseries)" "" "Microsoft Azure - Azure Databricks"
                 ws = container "Wholesale" "Calculates and performs aggregations" "" "Microsoft Azure - Azure Databricks"
                 mp = container "Market Participants" "Actors, users, roles and access rights"
-                bff = container "App (bff)" "Backend for frontend"
+                bff = container "App (BFF)" "Backend for frontend"
                 front = container "Frontend" "GUI for users" "Angular" "Frontend"
             }
         
@@ -35,7 +35,7 @@ workspace {
         bff -> ws "Supports frontend"
         front -> bff "Start processes, see results, see basis data, see RSM messages" "using HTTP"
         dh3User -> front "Start processes, see results, see basis data, see RSM messages" "using HTTP"
-        extUser -> front "Start processes, see results, see basis data, see RSM messages" "using HTTP"
+        extUser -> front "See results, see basis data, see RSM messages" "using HTTP"
         
     }
 
