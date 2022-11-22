@@ -44,7 +44,7 @@ workspace {
             include *
             autoLayout
         }
-        container dh3 {
+        container dh3 "ContainerDiagram" {
             include *
             autolayout
         }
