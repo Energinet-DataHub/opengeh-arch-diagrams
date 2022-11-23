@@ -1,17 +1,13 @@
 workspace {
 
     model {
-        actor = softwareSystem "Actor" "For example a grid company or electricity supplier (da: Aktør)" "Actor"
+        actor = softwareSystem "Actor" "For example a grid company or electricity supplier" "Actor"
         extUser = person "External user" "Person that works with the DataHub 3 system"
         dh2 = softwareSystem "DH2" "DataHub 2 (developed and maintained by CGI)" 
         
         dh = enterprise "Datahub (part of Energinet)" {
             dh3User = person "Energinet user" "Person that works within Energinet (for example a FAS-user)" 
-            
-        
-
             dh3 = softwareSystem "DH3" "DataHub 3.0" {
-                
                 edi = container "EDI" "Message handling (EDI-parser)"
                 lz = container "Landing Zone" "All data exports from DataHub2 are received here" "Azure Blob storage" "Microsoft Azure - Storage Container"
                 migration = container "Migration" "Transform and prepares data for ingestion in other 'systems' (timeseries)" "" "Microsoft Azure - Azure Databricks"
@@ -19,8 +15,7 @@ workspace {
                 mp = container "Market Participants" "Contains organisation and actor information"
                 bff = container "App (BFF)" "Backend for frontend - combines data for presentation on Frontend"
                 front = container "Frontend" "GUI for users" "Angular" "Frontend"
-            }
-        
+            }  
         }
          
         
@@ -43,6 +38,12 @@ workspace {
     views {
         systemContext dh3 "SystemContext" {
             include *
+            animation {
+                dh3
+                dh2
+                dh3User
+                extUser
+            }
             autoLayout
         }
         container dh3 "ContainerDiagram" {
@@ -50,7 +51,7 @@ workspace {
             autoLayout
         }
         themes https://static.structurizr.com/themes/microsoft-azure-2021.01.26/theme.json
-        //default
+        
         styles {
             element "Person" {
                 shape person
