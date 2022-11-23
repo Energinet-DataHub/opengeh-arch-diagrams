@@ -17,7 +17,7 @@ workspace {
                 migration = container "Migration" "Transform and prepares data for ingestion in other 'systems' (timeseries)" "" "Microsoft Azure - Azure Databricks"
                 ws = container "Wholesale" "Calculates and performs aggregations" "" "Microsoft Azure - Azure Databricks"
                 mp = container "Market Participants" "Contains organisation and actor information"
-                bff = container "App (BFF)" "Backend for frontend"
+                bff = container "App (BFF)" "Backend for frontend - combines data for presentation on Frontend"
                 front = container "Frontend" "GUI for users" "Angular" "Frontend"
             }
         
@@ -25,8 +25,7 @@ workspace {
          
         
         
-        actor -> edi "Get calculated report about non-profiled consumption (RSM014)" "using HTTP (CIM)"
-        //actorCIM -> mh "Integrates with HTTP/RPC. Endpoints are protected with OAUTH2."
+        actor -> edi "Get calculated report about non-profiled consumption (RSM014)" "using HTTP (CIM) or SOAP (eBix)"
         dh2 -> lz "Transferes data for calculations" "using AzCopy to Azure Blob storage"
         migration -> lz "Loads data from landing zone" "using ??"
         ws -> migration "Loads migrated data" "using Delta tables"
@@ -34,6 +33,7 @@ workspace {
         mp -> ws "Provides organisation and actor data"
         bff -> ws "Supports frontend"
         bff -> edi "Supports frontend with lookup for EDI messages"
+        bff -> mp "Manage market participants"
         front -> bff "Start processes, see results, see basis data, see RSM messages" "using HTTP"
         dh3User -> front "Start processes, see results, see basis data, see RSM messages" "using HTTP"
         extUser -> front "See results, see basis data, see RSM messages" "using HTTP"
