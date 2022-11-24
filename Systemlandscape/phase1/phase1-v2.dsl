@@ -6,7 +6,7 @@ workspace {
         dh2 = softwareSystem "DH2" "DataHub 2 (developed and maintained by CGI)" 
         
         dh = enterprise "Datahub (part of Energinet)" {
-            dh3User = person "Energinet user" "Person that works within Energinet (for example a FAS-user)" 
+            dh3User = person "Energinet user" "Person that works within Energinet (for example a FAS)" 
             dh3 = softwareSystem "DH3" "DataHub 3.0" {
                 edi = container "EDI" "Message handling (EDI-parser)"
                 lz = container "Landing Zone" "All data exports from DataHub2 are received here" "Azure Blob storage" "Microsoft Azure - Storage Container"
