@@ -1,7 +1,7 @@
 workspace {
 
     model {
-        actor = softwareSystem "Actor" "For example a grid company or electricity supplier" "phase1,phase2,phase3"
+        actor = softwareSystem "Actor" "For example a grid company or electricity supplier" "phase1,phase2,phase3,Actor"
         extUser = person "External user" "Person that works with the DataHub 3 system" "phase1,phase2,phase3"
         dh2 = softwareSystem "DH2" "DataHub 2 (developed and maintained by CGI)" "phase1,phase2"
         
@@ -39,6 +39,7 @@ workspace {
         bff -> ws "Supports frontend"
         bff -> edi "Supports frontend with lookup for EDI messages"
         bff -> mp "Manage market participants"
+        bff -> migration "Get data - e.g. grid areas"
         front -> bff "Start processes, see results, see basis data, see RSM messages" "using HTTP"
 
         dh3User -> front "Start processes, see results, see basis data, see RSM messages" "using HTTP"
@@ -104,6 +105,11 @@ workspace {
             }
             element "Frontend" {
                 shape WebBrowser
+                background #08427b
+                color #ffffff
+            }
+            element "Actor" {
+                shape RoundedBox
                 background #08427b
                 color #ffffff
             }
