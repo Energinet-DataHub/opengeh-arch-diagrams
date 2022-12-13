@@ -39,14 +39,5 @@ workspace extends architectualRunway.dsl {
             ws -> edi "Result"
             autoLayout lr      
         }
-
-        styles {
-            element "temp" {
-                background #08737B
-                color #ffffff
-            }
-            
-        }
-
     }
 }
