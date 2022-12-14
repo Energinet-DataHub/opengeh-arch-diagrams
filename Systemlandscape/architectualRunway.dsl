@@ -1,9 +1,9 @@
-workspace {
+workspace "DH3 Architectual Runway"{
 
     model {
         actor = softwareSystem "Actor" "For example a grid company or electricity supplier" "phase1,phase2,phase3,Actor"
         extUser = person "External user" "Person that works with the DataHub 3 system" "phase1,phase2,phase3"
-        dh2 = softwareSystem "DH2" "DataHub 2 (developed and maintained by CGI)" "phase1,phase2"
+        dh2 = softwareSystem "DH2" "DataHub 2 (developed and maintained by CGI)" "phase1,phase2,temp"
         
         dh = enterprise "Datahub (part of Energinet)" {
             dh3User = person "Energinet user" "Person that works within Energinet (for example a FAS-user)" "phase1,phase2,phase3"
@@ -15,8 +15,8 @@ workspace {
                 front = container "Frontend" "GUI for users" "Angular" "phase1,phase2,phase3" 
 
                 #Migration
-                lz = container "Landing Zone" "All data exports from DataHub2 are received here" "Azure Blob storage" "Microsoft Azure - Storage Container,phase1,phase2"
-                migration = container "Migration" "Transform and prepares data for ingestion in other 'systems' (timeseries)" "" "Microsoft Azure - Azure Databricks,phase1,phase2"
+                lz = container "Landing Zone" "All data exports from DataHub2 are received here" "Azure Blob storage" "Microsoft Azure - Storage Container,phase1,phase2,temp"
+                migration = container "Migration" "Transform and prepares data for ingestion in other 'systems' (timeseries)" "" "Microsoft Azure - Azure Databricks,phase1,phase2,temp"
 
                 #Phase 2
                 ts = container "Timeseries" "Transform and prepares timeseries data for ingestion in other 'systems'" "" "Microsoft Azure - Azure Databricks,phase2,phase3" 
@@ -111,6 +111,10 @@ workspace {
             element "Actor" {
                 shape RoundedBox
                 background #08427b
+                color #ffffff
+            }
+            element "temp" {
+                background #08737B
                 color #ffffff
             }
         }
