@@ -1,9 +1,10 @@
 
-workspace extends architectualRunway.dsl {
+workspace extends ../architectualRunway.dsl {
     model {
         !ref dh3 {
             balanceresponsible = container "Balanceresponsible" "(Owned by Mandalorian) " "" ""
             dataRefining = container "Data refining" "Prepare data for wholesale (Former Migration) (Owned by Volt) " "" "Microsoft Azure - Azure Databricks,permanent"
+            eloverblik = container "Eloverblik"
         }
     }
     views {
