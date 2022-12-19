@@ -1,0 +1,45 @@
+workspace extends ../architectualRunway.dsl {
+    model {
+        
+    }
+    views {
+        dynamic dh3 "EPIC_1_START_BATCH" {
+            title "EPIC 1 - START BATCH"
+            description "Start batch"
+            dh2 -> lz "Data fra PRE-07"
+            lz -> migration "Send data" 
+            migration -> ws "Send data" 
+            
+            dh3User -> front "Start batch"
+            front -> bff "Start batch"
+            bff -> mp "Tjek rettigheder"
+            bff -> ws "Start batch"
+            autoLayout lr      
+        }
+        dynamic dh3 "EPIC_1_GET" {
+            title "EPIC 1 - HENT TIDSSERIER (FRONT)"
+            description "Get timeseries"
+            dh3User -> front "Hent aggregerede tidsserier (på givent målepunkt)"
+            front -> bff "Hent aggregerede tidsserier"
+            bff -> mp "Tjek rettigheder"
+            bff -> ws "Hent aggregerede tidsserier"
+            autoLayout lr      
+        }
+        dynamic dh3 "EPIC_1_GET_GRID" {
+            title "EPIC 1 - HENT NETOMRÅDER (FRONT)"
+            description "Get gridAreas"
+            dh3User -> front "Hent netområder for given dato" 
+            front -> bff "Hent netområder"
+            bff -> mp "Hent netområder" 
+            autoLayout lr      
+        }
+        dynamic dh3 "EPIC_1_DATA_B2B" {
+            title "EPIC 1 - HENT BASISDATA (B2B)"
+            description "Get basisdata"
+            actor -> edi "Get data"
+            edi -> mp "Tjek rettigheder"
+            edi -> ws "Hent basisdata"
+            autoLayout lr      
+        }
+    }
+}
