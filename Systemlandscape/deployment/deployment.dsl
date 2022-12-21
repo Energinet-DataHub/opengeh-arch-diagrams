@@ -48,7 +48,34 @@ workspace "DataHub 3.0" {
         deploymentEnvironment "Production" {
             deploymentNode "User's computer" "" "Microsoft Windows or Apple macOS" {
                 deploymentNode "Web Browser" "" "Chrome, Firefox, Safari, or Edge" {
+                    tags "Microsoft Azure - Browser"
+
                     frontendInstance = containerInstance frontend
+                }
+            }
+
+            deploymentNode "Azure" "" "Azure Subscription" {
+                tags "Microsoft Azure - Subscriptions"
+
+                deploymentNode "Shared App Service Plan" "" "App Service Plan" {
+                    tags "Microsoft Azure - App Service Plans"
+
+                    deploymentNode "BFF API" "" "App Service" {
+                        tags "Microsoft Azure - App Services"
+
+                        bffInstance = containerInstance bff
+                    }
+
+                    deploymentNode "Wholesale API" "" "App Service" {
+                        tags "Microsoft Azure - App Services"
+
+                        wholesaleApiInstance = containerInstance wholesaleApi
+                    }
+                    deploymentNode "Wholesale Process Manager" "" "App Service" {
+                        tags "Microsoft Azure - Function Apps"
+
+                        wholesaleProcessManagerInstance = containerInstance wholesaleProcessManager
+                    }
                 }
             }
         }
