@@ -40,13 +40,18 @@ workspace "DataHub 3.0" {
             }
         }
 
-        # Relationships between people and software systems
-
         # Relationships to/from containers
         dh3User -> frontend "View and start jobs using"
         bff -> wholesaleApi "Uses" "JSON/HTTPS"
 
-        # Relationships to/from components
+        # Deployment model
+        deploymentEnvironment "Production" {
+            deploymentNode "User's computer" "" "Microsoft Windows or Apple macOS" {
+                deploymentNode "Web Browser" "" "Chrome, Firefox, Safari, or Edge" {
+                    frontendInstance = containerInstance frontend
+                }
+            }
+        }
     }
 
     views {
@@ -73,6 +78,11 @@ workspace "DataHub 3.0" {
         container dh3 "Wholesale" {
             include wholesale
             autolayout
+        }
+
+        deployment dh3 "Production" "LiveDeployment" {
+            include *
+            autoLayout
         }
 
         themes default https://static.structurizr.com/themes/microsoft-azure-2021.01.26/theme.json
