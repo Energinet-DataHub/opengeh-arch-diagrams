@@ -13,7 +13,6 @@ workspace "DataHub 3.0" {
 
         dhOrganization = enterprise "DataHub Organization" {
             dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." {
-                # Web App
                 dh3WebApp = group "Web App" {
                     frontend = container "UI" "Provides DH3 functionality to users via their web browser." "Angular"
                     bff = container "Backend for frontend" "Combines data for presentation on DataHub 3 UI" "Asp.Net Core Web API"
@@ -21,7 +20,6 @@ workspace "DataHub 3.0" {
                     frontend -> bff "Uses" "JSON/HTTPS"
                 }
 
-                # Wholesale
                 wholesale = group "Wholesale" {
                     wholesaleApi = container "Wholesale API" "" "Asp.Net Core Web API"
                     wholesaleDb = container "Database" "Stores batch processing state" "SQL Database Schema" "Data Storage"
