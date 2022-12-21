@@ -1,4 +1,4 @@
-workspace extends ../architectualRunway.dsl {
+workspace extends ../datahub3-model/model.dsl {
     model {
         !ref migration {
             bronzeNotebook = component "Bronze Layer Notebook" "Extract migrated JSON files and load into bronze table" "Databricks Notebook" "Microsoft Azure - Azure Databricks"
