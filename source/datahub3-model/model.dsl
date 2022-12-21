@@ -1,4 +1,4 @@
-workspace "DH3 Architectual Runway"{
+workspace "DataHub3 - Model"{
 
     model {
         actor = softwareSystem "Actor" "For example a grid company or electricity supplier" "phase1,phase2,phase3,Actor,epic1"
