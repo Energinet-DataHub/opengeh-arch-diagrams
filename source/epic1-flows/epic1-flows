@@ -1,4 +1,4 @@
-workspace extends ../architectualRunway.dsl {
+workspace extends ../datahub3-model/model.dsl {
     model {
         
     }

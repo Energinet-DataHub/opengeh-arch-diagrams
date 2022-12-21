@@ -1,5 +1,5 @@
 
-workspace extends ../architectualRunway.dsl {
+workspace extends ../datahub3-model/model.dsl {
     model {
         !ref dh3 {
             balanceresponsible = container "Balanceresponsible" "(Owned by Mandalorian) " "" ""
