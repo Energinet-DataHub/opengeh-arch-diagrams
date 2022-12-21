@@ -13,6 +13,7 @@ workspace "DataHub 3.0" {
 
         dhOrganization = enterprise "DataHub Organization" {
             dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." {
+                # Web App
                 dh3WebApp = group "Web App" {
                     frontend = container "UI" "Provides DH3 functionality to users via their web browser." "Angular"
                     bff = container "Backend for frontend" "Combines data for presentation on DataHub 3 UI" "Asp.Net Core Web API"
@@ -20,7 +21,7 @@ workspace "DataHub 3.0" {
                     frontend -> bff "Uses" "JSON/HTTPS"
                 }
 
-                ## wholesale = container "Wholesale" "Calculates and performs aggregations."
+                # Wholesale
                 wholesale = group "Wholesale" {
                     wholesaleApi = container "Wholesale API" "" "Asp.Net Core Web API"
                     wholesaleDb = container "Database" "Stores batch processing state" "SQL Database Schema" "Data Storage"
@@ -46,37 +47,62 @@ workspace "DataHub 3.0" {
 
         # Deployment model
         deploymentEnvironment "Production" {
+            # Computer
             deploymentNode "User's computer" "" "Microsoft Windows or Apple macOS" {
                 deploymentNode "Web Browser" "" "Chrome, Firefox, Safari, or Edge" {
                     tags "Microsoft Azure - Browser"
-
                     frontendInstance = containerInstance frontend
                 }
             }
 
-            deploymentNode "Azure" "" "Azure Subscription" {
+            # Azure Cloud
+            deploymentNode "Azure Cloud" "" "Azure Subscription" {
                 tags "Microsoft Azure - Subscriptions"
+
+                apim = infrastructureNode "APIM" "" "API Management Service" {
+                    tags "Microsoft Azure - API Management Services"
+                }
 
                 deploymentNode "Shared App Service Plan" "" "App Service Plan" {
                     tags "Microsoft Azure - App Service Plans"
-
                     deploymentNode "BFF API" "" "App Service" {
                         tags "Microsoft Azure - App Services"
-
                         bffInstance = containerInstance bff
                     }
-
                     deploymentNode "Wholesale API" "" "App Service" {
                         tags "Microsoft Azure - App Services"
-
                         wholesaleApiInstance = containerInstance wholesaleApi
                     }
                     deploymentNode "Wholesale Process Manager" "" "App Service" {
                         tags "Microsoft Azure - Function Apps"
-
                         wholesaleProcessManagerInstance = containerInstance wholesaleProcessManager
                     }
                 }
+
+                deploymentNode "Shared SQL Server" "" "Azure SQL Server" {
+                    tags "Microsoft Azure - SQL Server"
+                    deploymentNode "Elastic Pool" "" "SQL Elastic Pool"{
+                        tags "Microsoft Azure - SQL Elastic Pools"
+                        deploymentNode "Wholesale DB" "" "SQL Database"{
+                            tags "Microsoft Azure - SQL Database"
+                            wholesaleDbInstance = containerInstance wholesaleDb
+                        }
+                    }
+                }
+
+                deploymentNode "Data Lake" "" "Azure Storage Account" {
+                    tags "Microsoft Azure - Storage Accounts"
+                    wholesaleStorageInstance = containerInstance wholesaleStorage
+                }
+
+                deploymentNode "Databricks" "" "Azure Databricks Service" {
+                    tags "Microsoft Azure - Azure Databricks"
+                    wholesaleCalculatorInstance = containerInstance wholesaleCalculator
+                }
+
+                # Infrastructure relations
+                frontendInstance -> apim "Uses" "JSON/HTTPS"
+                apim -> bffInstance "Forwards requests to" "JSON/HTTPS"
             }
         }
     }
