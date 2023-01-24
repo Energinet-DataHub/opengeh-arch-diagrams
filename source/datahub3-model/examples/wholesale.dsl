@@ -1,4 +1,4 @@
-workspace extends ../model.dsl {
+workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-arch-diagrams/main/source/datahub3-model/model.dsl {
     model {
         !ref dh3 {
             dh3WebApp = group "Web App" {
@@ -27,6 +27,7 @@ workspace extends ../model.dsl {
         }
         # Relationships to/from containers
         dh3User -> frontend "View and start jobs using"
+        extUser -> frontend "View and start jobs using"
         bff -> wholesaleApi "Uses" "JSON/HTTPS"
         
     }

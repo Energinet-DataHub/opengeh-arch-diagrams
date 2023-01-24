@@ -29,7 +29,7 @@ workspace "DataHub 3.0" {
             include *
             autoLayout
         }
-        themes https://static.structurizr.com/themes/microsoft-azure-2021.01.26/theme.json
+        themes https://raw.githubusercontent.com/Energinet-DataHub/opengeh-arch-diagrams/main/source/datahub3-model/theme.json
 
         styles {
             element "Data Storage" {
