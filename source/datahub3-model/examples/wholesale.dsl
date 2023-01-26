@@ -38,11 +38,15 @@ workspace extends ../model.dsl {
         }
 
         container dh3 "WebApp" {
+            title "DataHub 3.0 - Wholesale - WebApp"
+            description "Level 2"
             include dh3WebApp wholesaleApi
             autolayout
         }
 
         container dh3 "Wholesale" {
+            title "DataHub 3.0 - Wholesale"
+            description "Level 2"
             include wholesale
             autolayout
         }
