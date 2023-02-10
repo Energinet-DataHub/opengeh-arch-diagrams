@@ -6,7 +6,7 @@ workspace "DataHub 3.0" {
         dh2 = softwareSystem "DataHub 2" "Developed and maintained by CGI"
 
         dhOrganization = enterprise "DataHub Organization" {
-            dh3User = person "Energinet user" "Person that works within Energinet (for example a FAS-user)" ""
+            dh3User = person "Energinet user" "Person that works within Energinet" ""
             dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." {
                 # Containers and groups described in separate repos
             }
