@@ -14,7 +14,7 @@ workspace "DataHub 3.0" {
         
         # Relationships to/from 
         dh3User -> dh3 "View and start jobs" "using browser"
-        extUser -> dh3 "View and start jobs" "using browser"
+        extUser -> dh3 "View and start jobs" "using browser(s)"
         actor -> dh3 "See results (RSM messages)" "HTTPS"
         dh2 -> dh3 "Transferes data for calculations" "using AzCopy"
     }
