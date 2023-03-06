@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       structurizr-lite:
-        image: structurizr/lite
+        image: structurizr/lite:3002
         ports:
           - 8080:8080
         volumes:
@@ -36,7 +36,7 @@ jobs:
           mkdir "${diagrams_folder}"
           cd "${diagrams_folder}"
           npm i puppeteer
-          curl https://raw.githubusercontent.com/structurizr/puppeteer/master/export-diagrams.js --output export-diagrams.js          
+          curl https://raw.githubusercontent.com/structurizr/puppeteer/88144791344bd865bc669a151c8f26a664de5541/export-diagrams.js --output export-diagrams.js          
           
       - name: Render diagrams
         run: |
