@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       structurizr-lite:
-        image: structurizr/lite
+        image: structurizr/lite:3000
         ports:
           - 8080:8080
         volumes:
