@@ -1,9 +1,6 @@
 name: Render C4 models with structurizr
 
 on:
-  push:
-    branches:
-      main
   pull_request:
     branches:
       main
