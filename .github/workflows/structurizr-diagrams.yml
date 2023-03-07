@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       structurizr-lite:
-        image: structurizr/lite
+        image: structurizr/lite:3000
         ports:
           - 8080:8080
         volumes:
@@ -43,10 +43,11 @@ jobs:
           diagrams_folder=${{ github.workspace }}/${{ inputs.output_folder }}
           readarray -td, dsl_files <<<"${{ inputs.dsl }},"; unset 'dsl_files[-1]'; declare -p dsl_files;
           cd "${diagrams_folder}" 
+          set -e
           for dsl in "${dsl_files[@]}"
           do
             cp -f "${{ github.workspace }}/${dsl}" "${{ github.workspace }}/workspace.dsl"
-            node export-diagrams.js http://localhost:8080/workspace/diagrams png
+            ! node export-diagrams.js http://localhost:8080/workspace/diagrams png | grep png
             rm *-key.png
             foldername=$(basename $dsl .dsl)
             mkdir "$foldername"
