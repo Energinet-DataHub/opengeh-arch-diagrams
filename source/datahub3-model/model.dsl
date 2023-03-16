@@ -4,6 +4,7 @@ workspace "DataHub 3.0" {
         extUser = person "External user" "Person that works with the DataHub 3 system" ""
         actor = softwareSystem "Actor" "For example a grid company or electricity supplier" "Actor"
         dh2 = softwareSystem "DataHub 2" "Developed and maintained by CGI"
+        sapBi = softwareSystem "SAP BI" "Provides reporting and in-sights on DataHub data" "Microsoft Azure - SAP Azure Monitor"
 
         dhOrganization = enterprise "DataHub Organization" {
             dh3User = person "DataHub system administrator" "Person that works within Energinet" ""
@@ -17,6 +18,7 @@ workspace "DataHub 3.0" {
         extUser -> dh3 "View and start jobs" "using browser"
         actor -> dh3 "See results (RSM messages)" "HTTPS"
         dh2 -> dh3 "Transferes data for calculations" "using AzCopy"
+        sapBi -> dh2 "Copies all data" "ODBC"
     }
 
     views {
