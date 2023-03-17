@@ -23,11 +23,6 @@ jobs:
     if: ${{ needs.changes.outputs.render_diagrams == 'true' }}
     uses: ./.github/workflows/render-diagrams.yml
 
-  diagrams_added:
-    needs: changes
-    if: ${{ needs.changes.outputs.diagrams_added == 'true' }}
-    uses: ./.github/workflows/diagrams-added.yml
-
   #
   # Branch policy status check
   #
