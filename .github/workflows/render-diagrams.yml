@@ -5,8 +5,8 @@ on:
 
 jobs:
   render-c4:
-    # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
     permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
       contents: write
 
     uses: Energinet-DataHub/.github/.github/workflows/structurizr.yml@v10
