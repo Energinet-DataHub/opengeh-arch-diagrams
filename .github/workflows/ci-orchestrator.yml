@@ -23,13 +23,18 @@ jobs:
     if: ${{ needs.changes.outputs.render_diagrams == 'true' }}
     uses: ./.github/workflows/render-diagrams.yml
 
+  diagrams_added:
+    needs: changes
+    if: ${{ needs.changes.outputs.diagrams_added == 'true' }}
+    uses: ./.github/workflows/diagrams-added.yml
+
   #
   # Branch policy status check
   #
 
   allow_merge_ci_orchestrator:
     runs-on: ubuntu-latest
-    needs: [ci_base, render_diagrams]
+    needs: [ci_base, render_diagrams, diagrams_added]
     if: |
       always()
     steps:

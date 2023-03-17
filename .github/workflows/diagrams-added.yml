@@ -1,0 +1,17 @@
+name: Diagrams added
+
+# DESCRIPTION:
+# Dummy workflow to use when Structurizr has auto committed PNG files
+
+on:
+  workflow_call: {}
+
+jobs:
+  diagrams-added:
+    name: New diagrams has been detected
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dummy
+        shell: bash
+        run: |
+          exit 0
