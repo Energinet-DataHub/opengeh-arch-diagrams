@@ -1,9 +1,9 @@
 workspace "DataHub 3.0" {
 
     model {
-        extUser = person "External user" "Person that works with the DataHub 3 system" ""
-        actor = softwareSystem "Actor" "For example a grid company or electricity supplier" "Actor"
-        dh2 = softwareSystem "DataHub 2" "Developed and maintained by CGI"
+        extUser = person "External user" "Person that works with the DataHub 3 system." ""
+        actor = softwareSystem "Actor" "For example a grid company or electricity supplier." "Actor"
+        dh2 = softwareSystem "DataHub 2" "Developed and maintained by CGI."
 
         dhOrganization = enterprise "DataHub Organization" {
             dh3User = person "DataHub system administrator" "Person that works within Energinet" ""
@@ -11,8 +11,8 @@ workspace "DataHub 3.0" {
                 # Containers and groups described in separate repos
             }
         }
-        
-        # Relationships to/from 
+
+        # Relationships to/from
         dh3User -> dh3 "View and start jobs" "using browser"
         extUser -> dh3 "View and start jobs" "using browser"
         actor -> dh3 "See results (RSM messages)" "HTTPS"
