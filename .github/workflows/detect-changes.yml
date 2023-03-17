@@ -31,3 +31,5 @@ jobs:
           filters: |
             render_diagrams:
               - 'source/**'
+              - '.github/workflows/render-diagrams.yml'
+              - '.github/workflows/detect-changes.yml'
