@@ -22,6 +22,7 @@ jobs:
     needs: changes
     if: ${{ needs.changes.outputs.render_diagrams == 'true' }}
     uses: ./.github/workflows/render-diagrams.yml
+    secrets: inherit
 
   #
   # Branch policy status check
