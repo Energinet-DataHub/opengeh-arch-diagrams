@@ -9,4 +9,4 @@ jobs:
     with:
       dsl: "source/datahub3-model/model.dsl"
     secrets:
-      pat_token: ${{ secrets.pat_token }}
+      pat_token: ${{ secrets.PAT_TOKEN }}
