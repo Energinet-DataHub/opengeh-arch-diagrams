@@ -12,8 +12,6 @@ jobs:
   ci_base:
     uses: Energinet-DataHub/.github/.github/workflows/ci-base.yml@v10
     with:
-      skip_markdown_check: false
-      skip_license_check: false
       skip_yaml_lint: false
       skip_actions_casing_validation: false
 
