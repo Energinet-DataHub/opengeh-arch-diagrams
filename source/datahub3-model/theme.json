@@ -343,8 +343,6 @@
       "icon" : "https://static.structurizr.com/themes/microsoft-azure-2021.01.26/10822-icon-service-Mobile.png"
     }, {
       "tag" : "Microsoft Azure - Storage Accounts",
-      "stroke" : "#37c2b1",
-      "color" : "#37c2b1",
       "icon" : "https://static.structurizr.com/themes/microsoft-azure-2021.01.26/10086-icon-service-Storage-Accounts.png"
     }, {
       "tag" : "Microsoft Azure - Azure Backup Center",
@@ -1084,8 +1082,6 @@
       "icon" : "https://static.structurizr.com/themes/microsoft-azure-2021.01.26/10033-icon-service-Images.png"
     }, {
       "tag" : "Microsoft Azure - Storage Container",
-      "stroke" : "#0078d4",
-      "color" : "#0078d4",
       "icon" : "https://static.structurizr.com/themes/microsoft-azure-2021.01.26/10839-icon-service-Storage-Container.png"
     }, {
       "tag" : "Microsoft Azure - Groups",

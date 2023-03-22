@@ -5,7 +5,7 @@ workspace "DataHub 3.0" {
             actorGUI = person "Actor (GUI)" "For example a person who works at an electricity supplier or grid company" ""
             actorB2B = softwareSystem "Actor (B2B)" "For example a grid company or electricity supplier." "Actor"
         }
-        dh2 = softwareSystem "DataHub 2" "Developed and maintained by CGI."
+        dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI."
 
         dhOrganization = enterprise "DataHub Organization" {
             dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet DataHub" ""
