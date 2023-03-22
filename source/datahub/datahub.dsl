@@ -1,15 +1,16 @@
+# Entire SystemLandscape in DataHub Organization
 workspace "DataHub 3.0" {
 
     model {
         group "Actor" {
-            extUser = person "External user" "Person that works with the DataHub 3 system" "DH3"
-            actor = softwareSystem "Actor" "For example a grid company or electricity supplier" "Actor,DH3"
+            actorGUI = person "Actor (GUI)" "For example a person who works at an electricity supplier or grid company" "DH3"
+            actorB2B = softwareSystem "Actor (B2B)" "For example a grid company or electricity supplier" "Actor,DH3"
         }
         
         dh2 = softwareSystem "DataHub 2" "Developed and maintained by CGI" "ENE,ELO,ELO2,DH3"
 
         dhOrganization = enterprise "DataHub Organization" {
-            dh3User = person "DataHub system administrator" "Person that works within Energinet" "DH3"
+            dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet" "DH3"
             dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." "DH3,ELO2" {
                 # Containers and groups described in separate repos
             }
@@ -25,11 +26,11 @@ workspace "DataHub 3.0" {
         goSystem = softwareSystem "GO, GC, Project Origin" "Project Origin, Granular Certificates (GCs), Guarantee of origin (GO)" "ENE"
         eds = softwareSystem "EnergiDataService" "Public service, grid data" "ENE"
         
-        # Relationships to/from DH3
-        dh3User -> dh3 "View and start jobs" "using browser" "DH3"
-        extUser -> dh3 "View and start jobs" "using browser" "DH3"
-        actor -> dh3 "See results (RSM messages)" "HTTPS" "DH3"
-        dh2 -> dh3 "Transferes data for calculations" "using AzCopy" "DH3,ELO2"
+        # Relationships to/from
+        dhSysAdmin -> dh3 "Uses" "browser" "DH3"
+        actorGUI -> dh3 "Uses" "browser" "DH3"
+        actorB2B -> dh3 "Get calculations from" "https" "DH3"
+        dh2 -> dh3 "Transferes data" "using AzCopy" "DH3,ELO2"
         
         
         # Relationships to/from ElOverblik
@@ -46,18 +47,15 @@ workspace "DataHub 3.0" {
         energiOprindelse -> eds "Gets emission and residual mix data" "REST/HTTPS"  "ENE"
         
         #Future
-        
         energiOprindelse -> dh3  "Fetch data" "" "ENE2"
     }
 
     views {
         systemlandscape SystemLandscape "System Landscape, filtered" {
+            title "[System Landscape] DataHub"
+            description "Level 0"
             include *
-            
         }
-
-
-        
         filtered SystemLandscape include "ENE" 1-EnergiOprindelse "[1] The current system landscape for EnergiOprindelse."
         filtered SystemLandscape include "ELO" 2-ElOverblik "[2] The current system landscape for ElOverblik."
         filtered SystemLandscape include "ELO2" 3-ElOverblik2 "[3] The future system landscape for ElOverblik."
