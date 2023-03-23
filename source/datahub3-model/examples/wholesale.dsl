@@ -1,7 +1,7 @@
 workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-arch-diagrams/main/source/datahub3-model/model.dsl {
     model {
         !ref dh3 {
-            dh3WebApp = group "Web App" {
+            dh3WebApp = group "Web App." {
                 frontend = container "UI" "Provides DH3 functionality to users via their web browser." "Angular"
                 bff = container "Backend for frontend" "Combines data for presentation on DataHub 3 UI" "Asp.Net Core Web API"
 
@@ -10,7 +10,7 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
 
             wholesale = group "Wholesale" {
                 wholesaleApi = container "Wholesale API" "" "Asp.Net Core Web API"
-                wholesaleDb = container "Database" "Stores batch processing state" "SQL Database Schema" "Data Storage,Microsoft Azure - SQL Database" 
+                wholesaleDb = container "Database" "Stores batch processing state" "SQL Database Schema" "Data Storage,Microsoft Azure - SQL Database"
 
                 wholesaleProcessManager = container "Process Manager" "Handles batch processing" "Azure Function App" "Microsoft Azure - Function Apps"
 
@@ -29,7 +29,7 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
         dh3User -> frontend "View and start jobs using"
         extUser -> frontend "View and start jobs using"
         bff -> wholesaleApi "Uses" "JSON/HTTPS"
-        
+
     }
 
     views {
