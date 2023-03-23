@@ -1,31 +1,30 @@
 workspace "DataHub 3.0" {
 
     model {
-        extUser = person "External user" "Person that works with the DataHub 3 system." ""
-        actor = softwareSystem "Actor" "For example a grid company or electricity supplier." "Actor"
-        dh2 = softwareSystem "DataHub 2" "Developed and maintained by CGI."
+        group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
+            extUser = person "User" "A person who interacts with DataHub" ""
+            extSoftSystem = softwareSystem "External software system" "External business transaction system. System-to-system communication (B2B)." "Actor"
+        }
+        dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI."
 
         dhOrganization = enterprise "DataHub Organization" {
-            dh3User = person "DataHub system administrator" "Person that works within Energinet" ""
+            dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet DataHub" ""
             dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." {
                 # Containers and groups described in separate repos
             }
         }
 
         # Relationships to/from
-        dh3User -> dh3 "View and start jobs" "using browser"
-        extUser -> dh3 "View and start jobs" "using browser"
-        actor -> dh3 "See results (RSM messages)" "HTTPS"
-        dh2 -> dh3 "Transferes data for calculations" "using AzCopy"
+        dhSysAdmin -> dh3 "Uses" "browser"
+        extUser -> dh3 "Uses" "browser"
+        extSoftSystem -> dh3 "Get calculations from" "https"
+        dh2 -> dh3 "Transferes data" "using AzCopy"
     }
 
     views {
-        systemlandscape "SystemLandscape" {
-            include *
-            autoLayout
-        }
-
         systemcontext dh3 "SystemContext" {
+            title "[System Context] DataHub 3.0"
+            description "Level 1"
             include *
             autoLayout
         }
