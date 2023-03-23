@@ -10,7 +10,7 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
 
             wholesale = group "Wholesale" {
                 wholesaleApi = container "Wholesale API" "" "Asp.Net Core Web API"
-                wholesaleDb = container "Database" "Stores batch processing state" "SQL Database Schema" "Data Storage,Microsoft Azure - SQL Database" 
+                wholesaleDb = container "Database" "Stores batch processing state" "SQL Database Schema" "Data Storage,Microsoft Azure - SQL Database"
 
                 wholesaleProcessManager = container "Process Manager" "Handles batch processing" "Azure Function App" "Microsoft Azure - Function Apps"
 
@@ -29,7 +29,7 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
         dh3User -> frontend "View and start jobs using"
         extUser -> frontend "View and start jobs using"
         bff -> wholesaleApi "Uses" "JSON/HTTPS"
-        
+
     }
 
     views {
