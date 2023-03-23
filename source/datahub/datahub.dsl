@@ -2,12 +2,12 @@
 workspace "DataHub 3.0" {
 
     model {
-        group "Actor" {
-            actorGUI = person "Actor (GUI)" "For example a person who works at an electricity supplier or grid company" "DH3"
-            actorB2B = softwareSystem "Actor (B2B)" "For example a grid company or electricity supplier" "Actor,DH3"
+        group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
+            extUser = person "User" "A person who interacts with DataHub" ""
+            extSoftSystem = softwareSystem "External software system" "External business transaction system. System-to-system communication (B2B)." "Actor"
         }
 
-        dh2 = softwareSystem "DataHub 2" "Developed and maintained by CGI" "ENE,ELO,ELO2,DH3"
+        dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI" "ENE,ELO,ELO2,DH3"
 
         dhOrganization = enterprise "DataHub Organization" {
             dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet" "DH3"
@@ -27,9 +27,9 @@ workspace "DataHub 3.0" {
         eds = softwareSystem "EnergiDataService" "Public service, grid data" "ENE"
 
         # Relationships to/from DH3
-        dh3User -> dh3 "View and start jobs" "using browser" "DH3"
+        dhSysAdmin -> dh3 "View and start jobs" "using browser" "DH3"
         extUser -> dh3 "View and start jobs" "using browser" "DH3"
-        actor -> dh3 "See results (RSM messages)" "HTTPS" "DH3"
+        extSoftSystem -> dh3 "See results (RSM messages)" "HTTPS" "DH3"
         dh2 -> dh3 "Transferes data for calculations" "using AzCopy" "DH3,ELO2"
 
 
