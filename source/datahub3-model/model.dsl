@@ -1,9 +1,9 @@
 workspace "DataHub 3.0" {
 
     model {
-        group "External organization (e.g. Energy Supplier or Grid Access Provider)" {
-            actorGUI = person "Actor (GUI)" "For example a person who works at an electricity supplier or grid company" ""
-            actorB2B = softwareSystem "Actor (B2B)" "For example a grid company or electricity supplier." "Actor"
+        group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
+            extUser = person "User" "A person who interacts with DataHub" ""
+            extSoftSystem = softwareSystem "External software system" "External business transaction system. System-to-system communication (B2B)." "Actor"
         }
         dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI."
 
@@ -16,8 +16,8 @@ workspace "DataHub 3.0" {
 
         # Relationships to/from
         dhSysAdmin -> dh3 "Uses" "browser"
-        actorGUI -> dh3 "Uses" "browser"
-        actorB2B -> dh3 "Get calculations from" "https"
+        extUser -> dh3 "Uses" "browser"
+        extSoftSystem -> dh3 "Get calculations from" "https"
         dh2 -> dh3 "Transferes data" "using AzCopy"
     }
 
