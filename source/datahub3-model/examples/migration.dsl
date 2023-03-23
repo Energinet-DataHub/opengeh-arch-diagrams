@@ -2,7 +2,7 @@ workspace extends ../model.dsl {
     model {
         !ref dh3 {
             dropZoneGrp = group "Drop Zone" {
-                dropZoneC = container "Drop Zone." ""
+                dropZoneC = container "Drop Zone" ""
             }
             migration = group "DataMigration" {
                 databricks = container "Databricks Notebook" "Extract migrated JSON files and load into bronze/silver/gold table" "Databricks Notebook" "Microsoft Azure - Azure Databricks"
