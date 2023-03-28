@@ -14,9 +14,9 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
 
                 wholesaleProcessManager = container "Process Manager" "Handles batch processing" "Azure Function App" "Microsoft Azure - Function Apps"
 
-                wholesaleStorage = container "Storage" "Stores batch results" "JSON and CSV files" "Data Storage"
+                wholesaleStorage = container "Storage" "Stores gold layer from migration and batch results" "Blob container" "Microsoft Azure - Storage Container"
                 wholesaleCalculator = container "Calculator" "" "Python wheel" "Microsoft Azure - Azure Databricks"
-
+                
                 wholesaleApi -> wholesaleDb "Reads from and writes to"
                 wholesaleApi -> wholesaleStorage "Reads from"
 
@@ -26,30 +26,18 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
             }
         }
         # Relationships to/from containers
-        dh3User -> frontend "View and start jobs using"
+        dhSysAdmin -> frontend "View and start jobs using"
         extUser -> frontend "View and start jobs using"
         bff -> wholesaleApi "Uses" "JSON/HTTPS"
 
     }
 
     views {
-        container dh3 {
+        container dh3 "Wholesale" {
+            title "[Container] DataHub 3.0 - Wholesale"
+            description "Level 2"
             include *
             autolayout lr
-        }
-
-        container dh3 "WebApp" {
-            title "DataHub 3.0 - Wholesale - WebApp"
-            description "Level 2"
-            include dh3WebApp wholesaleApi
-            autolayout
-        }
-
-        container dh3 "Wholesale" {
-            title "DataHub 3.0 - Wholesale"
-            description "Level 2"
-            include wholesale
-            autolayout
         }
     }
 }

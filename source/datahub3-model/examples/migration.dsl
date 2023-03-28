@@ -1,4 +1,4 @@
-workspace extends ../model.dsl {
+workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-arch-diagrams/main/source/datahub3-model/model.dsl {
     model {
         !ref dh3 {
             dropZoneGrp = group "Drop Zone" {
