@@ -5,10 +5,11 @@ workspace "DataHub 3.0" {
             extUser = person "User" "A person who interacts with DataHub" ""
             extSoftSystem = softwareSystem "External software system" "External business transaction system. System-to-system communication (B2B)." "Actor"
         }
-        #dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI."
-
+        dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI."
+        eSett = softwareSystem "eSett" "Imbalance"
+        
         dhOrganization = enterprise "DataHub Organization" {
-            #dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet DataHub" ""
+            dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet DataHub" ""
             dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." {
                 migration = group "Migration" {
                     migrationFlow = container "Data Migration " "Extract migrated JSON files. Load and transform data using Notebooks" "Azure Databricks" "Microsoft Azure - Azure Databricks"
@@ -21,6 +22,13 @@ workspace "DataHub 3.0" {
                     wholesaleResultStorage = container "Calc. result (Landevej) (Delta Lake)" "Azure Data Lake" "Azure Data Lake" "Microsoft Azure - Data Lake Store Gen1"
                     wholesaleDb = container "Wholesale database" "" "MS SQL Server" "Data Storage, Microsoft Azure - SQL Database"
                 }
+                markpart = group "Market Participant" {
+                    markpartC = container "Market Participant" "Multi-tenant API for managing actors, users and permissions + functions." "Asp.Net Core Web API"
+                    markpartDb = container "Market Participant Database" "Stores data regarding actors, users and permissions." "SQL Database Schema" "Data Storage,Microsoft Azure - SQL Database"
+
+                    markpartC -> markpartDb "Reads and writes actor/user data." "Entity Framework Core"
+                }
+                
                 edi = group "EDI" {
                     ediC = container "EDI Peek/deque" "Handles peek/deque requests from actors" "C#, Azure function" "Microsoft Azure - Function Apps"
                     ediDb = container "EDI database" "Stores information related to business transactions and outgoing messages""" "SQL server database,Microsoft Azure - SQL Database,Data Storage"                    
@@ -32,18 +40,27 @@ workspace "DataHub 3.0" {
                     bff = container "Backend for frontend" "Combines data for presentation on DataHub 3 UI" "Asp.Net Core Web API"
                     frontend -> bff "Uses" "JSON/HTTPS"
                 }
+                group "eSett integration" {
+                    eSettIntegration = container "eSett integration" "Send calculation results - adapter" ""
+                    eSettBiztalk = container "eSett Biztalk" "Owned by 'integrationsteamet'" "" "Microsoft Azure - Biz Talk"
+                }
+                
                 
                 
             }
             group "Eloverblik" {
                 elOverblik = softwareSystem "Eloverblik" ""
             }
-            powerBI = softwareSystem "PowerBI" "Data and validation"
+            powerBI = softwareSystem "Analysis tool (eg. PowerBI)" "Data and validation"
+            
+            
+            
             
         }
 
         # Relationships to/from
-              
+        bff -> markpartC "Uses" "JSON/HTTPS"
+        dh2 -> migrationFlow "ingest"      
         extSoftSystem -> ediC "Get calculations from" "https"
         ediC -> ediDb "Stores state of edi-trx"
         ediC -> eventQueue "Sending/receiving events"
@@ -58,10 +75,16 @@ workspace "DataHub 3.0" {
         migrationTimeSeriesApi -> migrationStorage "Read"
 
 
-        extUser -> frontend "View and start jobs using"
+        extUser -> frontend "using"
+        dhSysAdmin -> frontend "using"
         bff -> wholesaleLogic "uses" "JSON/HTTPS"
         powerBI -> wholesaleResultStorage "read results"
-        #dh2 -> dh3 "Transferes data" "using AzCopy"
+
+        eventQueue ->   eSettIntegration "sends calc. results"
+        eSettIntegration -> eSettBiztalk "sends calc. results (nbs)"
+        eSettBiztalk -> eSett "sends calc. results (nbs)"
+        
+        dh2 -> dh3 "Transferes data" "using AzCopy"
     }
 
     views {
@@ -75,7 +98,39 @@ workspace "DataHub 3.0" {
             title "DRAFT - FUTURE [Container] DataHub 3.0"
             description "Level 2"
             include *
+        }
+
+        dynamic dh3 "anmodninger" {
+            title "DRAFT - Anmodninger"
+            description "Level 2"
+            extSoftSystem -> ediC "'anmod' - RSM016"
+            ediC -> eventQueue "anmodning"
+            eventQueue -> wholesaleLogic "anmodning"
+            wholesaleLogic -> wholesaleResultStorage "fetch calc. result"
+            wholesaleResultStorage -> wholesaleLogic 
+            wholesaleLogic -> eventQueue "calcResult"
+            eventQueue -> ediC "calcResult"
+            ediC -> extSoftSystem "anmod respons - RSM014?"
             autoLayout
+        }
+
+        dynamic dh3 "platform" {
+            title "Phase 1"
+            description "Level 2"
+            dh2 -> migrationFlow "Ingest"      
+            migrationFlow -> wholesaleStorage "Deliver"
+            extUser -> frontend "Using"
+            frontend -> bff "Uses"
+            bff -> markpartC "Uses"
+            bff -> wholesaleLogic "Uses"
+            wholesaleStorage -> wholesaleLogic "Timeseries"
+            wholesaleLogic -> eventQueue "Sending calculations result"
+            eventQueue -> ediC "Sending calculations result" 
+            ediC -> extSoftSystem "Sending calculations results"
+        
+            autoLayout lr
+        
+        
         }
         themes https://raw.githubusercontent.com/Energinet-DataHub/opengeh-arch-diagrams/main/source/datahub3-model/theme.json
 
