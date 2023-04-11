@@ -2,30 +2,33 @@
 workspace "DataHub 3.0" {
 
     model {
-        group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
-            extUser = person "User" "A person who interacts with DataHub" ""
-            extSoftSystem = softwareSystem "External software system" "External business transaction system. System-to-system communication (B2B)." "Actor"
-        }
+        
 
         dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI" "ENE,ELO,ELO2,DH3"
 
         dhOrganization = enterprise "DataHub Organization" {
             dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet" "DH3"
-            dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." "DH3,ELO2" {
-                # Containers and groups described in separate repos
-            }
+            
+            dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." "DH3,ELO2" 
             elOverblik = softwareSystem "ElOverblik" "ElOverblik is a platform that is available to private individuals, businesses and third parties. The purpose of the platform is to provide data regarding electricity consumption and production." "ELO,ELO2"
-            energiOprindelse = softwareSystem "EnergiOprindelse" "EnergiOprindelse is a platform which provides access to data about the origins of the energy and the corresponding emissions" "ENE"
+            energiOprindelse = softwareSystem "EnergiOprindelse" "Full platform supporting creating a market for issuing and managing accounts, GC issuance, transfer and claims across european energy markets" "ENE"
+        }
+        # DH3 context
+        group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
+            extUser = person "User" "A person who interacts with DataHub" ""
+            extSoftSystem = softwareSystem "External software system" "External business transaction system. System-to-system communication (B2B)." "Actor"
         }
 
-        # Eloverblik users
-        persUser = person "Individual private user" "CPR-customer" "ELO,ELO2"
+        # Eloverblik context 
+        elOUsers = person "ElOverblik User" "Private / business - CPR/CVR-customer" "ELO,ELO2"
+        elOThirdparty = softwareSystem "Third party" "Third party" "ELO,ELO2,Actor"
+        
+        # EnergiOprindelse context
         businessThirdparty = softwareSystem "Business or third party" "Large power producers, large power consumers, traders, and market players" "Actor,ELO,ELO2,ENE"
-
-        # EnergiOprindelse
         goSystem = softwareSystem "GO, GC, Project Origin" "Project Origin, Granular Certificates (GCs), Guarantee of origin (GO)" "ENE"
         eds = softwareSystem "EnergiDataService" "Public service, grid data" "ENE"
-
+        iam = softwareSystem "IAM Service" "The IAM Service is a software component that provides Identity and Access Management (IAM) functionality. Eg. MitId Erhverv"
+        
         # Relationships to/from DH3
         dhSysAdmin -> dh3 "View and start jobs" "using browser" "DH3"
         extUser -> dh3 "View and start jobs" "using browser" "DH3"
@@ -34,20 +37,19 @@ workspace "DataHub 3.0" {
 
 
         # Relationships to/from ElOverblik
-        persUser -> elOverblik  "Fetch data" "" "ELO,ELO2"
-        businessThirdparty -> elOverblik  "Fetch data" "" "ELO,ELO2"
+        elOUsers -> elOverblik  "Fetch own data" "" "ELO,ELO2"
+        elOThirdparty -> elOverblik  "Fetch others data" "" "ELO,ELO2"
+        dhSysAdmin -> elOverblik  "Administrate" "" "ELO,ELO2"
         elOverblik -> dh2  "Fetch data" "SOAP/HTTPS" "ELO,old"
-        elOverblik -> dh3  "Fetch data" "Deltatables" "ELO2"
-
-
+        elOverblik -> eds "Fetch data"
+        
         # Relationships to/from EnergiOprindelse
         businessThirdparty -> energiOprindelse "View consumption, emissions and granular-certificates" "" "ENE"
-        energiOprindelse -> dh2 "Get meter masterdata" "SOAP/HTTPS"  "ENE"
-        energiOprindelse -> goSystem "Manage Guarantees of Origin" ""  "ENE"
+        energiOprindelse -> goSystem "Link to Guarantees of Origin" ""  "ENE"
         energiOprindelse -> eds "Gets emission and residual mix data" "REST/HTTPS"  "ENE"
-
-        #Future
-        energiOprindelse -> dh3  "Fetch data" "" "ENE2"
+        energiOprindelse -> dh2  "Fetch data" "SOAP/HTTPS" "ELO,old"
+        energiOprindelse -> iam "Authenticate using"
+        
     }
 
     views {
@@ -56,11 +58,11 @@ workspace "DataHub 3.0" {
             description "Level 0"
             include *
         }
-        filtered SystemLandscape include "ENE" 1-EnergiOprindelse "[1] The current system landscape for EnergiOprindelse."
-        filtered SystemLandscape include "ELO" 2-ElOverblik "[2] The current system landscape for ElOverblik."
-        filtered SystemLandscape include "ELO2" 3-ElOverblik2 "[3] The future system landscape for ElOverblik."
-        filtered SystemLandscape include "DH3" 4-DH3 "[4] The future system landscape for DH3."
-        filtered SystemLandscape include "ENE,ELO2,DH3" 5-All "[5] The future system landscape for DataHub Organization."
+        #filtered SystemLandscape include "ENE" 1-EnergiOprindelse "[1] The current system landscape for EnergiOprindelse."
+        #filtered SystemLandscape include "ELO" 2-ElOverblik "[2] The current system landscape for ElOverblik."
+        #filtered SystemLandscape include "ELO2" 3-ElOverblik2 "[3] The future system landscape for ElOverblik."
+        #filtered SystemLandscape include "DH3" 4-DH3 "[4] The future system landscape for DH3."
+        #filtered SystemLandscape include "ENE,ELO2,DH3" 5-All "[5] The future system landscape for DataHub Organization."
 
 
 
