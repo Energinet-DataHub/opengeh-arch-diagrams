@@ -28,7 +28,7 @@ workspace "DataHub 3.0" {
             include *
             autoLayout
         }
-        themes https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
+        themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
 
         styles {
             element "Data Storage" {
