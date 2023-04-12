@@ -9,6 +9,9 @@ workspace "DataHub 3.0" {
 
         dhOrganization = enterprise "DataHub Organization" {
             dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet DataHub" ""
+
+            elOverblik = softwareSystem "Eloverblik"
+
             dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." {
                 # Containers and groups described in separate repos
             }
@@ -19,6 +22,7 @@ workspace "DataHub 3.0" {
         extUser -> dh3 "Uses" "browser"
         extSoftSystem -> dh3 "Get calculations from" "https"
         dh2 -> dh3 "Transferes data" "using AzCopy"
+        elOverblik -> dh3 "Get timeseries from" "https"
     }
 
     views {
@@ -28,6 +32,7 @@ workspace "DataHub 3.0" {
             include *
             autoLayout
         }
+
         themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
 
         styles {
