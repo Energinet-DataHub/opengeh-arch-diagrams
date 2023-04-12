@@ -5,9 +5,12 @@ workspace "DataHub 3.0" {
             extUser = person "User" "A person who interacts with DataHub" ""
             extSoftSystem = softwareSystem "External software system" "External business transaction system. System-to-system communication (B2B)." "Actor"
         }
-        dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI."
 
-        dhOrganization = enterprise "DataHub Organization" {
+        group "CGI Organization" {
+            dh2 = softwareSystem "DataHub 2.0" "Developed and maintained by CGI."
+        }
+
+        dhOrganization = group "DataHub Organization" {
             dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet DataHub" ""
 
             elOverblik = softwareSystem "Eloverblik"
