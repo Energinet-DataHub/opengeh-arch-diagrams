@@ -39,6 +39,9 @@ workspace "DataHub 3.0" {
         themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
 
         styles {
+            element "Infrastructure Node" {
+                background #dddddd
+            }
             element "Data Storage" {
                 shape Cylinder
             }
