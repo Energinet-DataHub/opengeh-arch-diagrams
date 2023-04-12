@@ -50,10 +50,8 @@ workspace "DataHub 3.0" {
                 background #08427b
                 color #ffffff
             }
-            element "Frontend" {
+            element "Web Browser" {
                 shape WebBrowser
-                background #08427b
-                color #ffffff
             }
             element "Actor" {
                 shape RoundedBox
