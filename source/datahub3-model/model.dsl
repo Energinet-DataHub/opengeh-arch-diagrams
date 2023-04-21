@@ -63,15 +63,17 @@ workspace "DataHub 3.0" {
 
         # Relationships to/from
         # DH eSett
-        dhESett -> dh2 "<add description>" "peek+dequeue/https"
         dhESett -> btESett "<add description>" "https"
         btESett -> eSett "<add description>" "<add technology>"
+        # DH2
+        dhESett -> dh2 "Requests <data>" "peek+dequeue/https"
+        extSoftwareSystem -> dh2 "Requests <data> except calculations" "peek+dequeue/https"
         # DH3
-        elOverblik -> dh3 "Requests timeseries" "https"
+        elOverblik -> dh3 "Requests <timeseries>" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
         extUser -> dh3 "Uses" "browser"
-        extSoftwareSystem -> dh3 "Requests calculations" "https"
-        dh2 -> dh3 "Transfers data" "AzCopy/https"
+        extSoftwareSystem -> dh3 "Requests calculations" "peek+dequeue/https"
+        dh2 -> dh3 "Transfers <data>" "AzCopy/https"
     }
 
     views {
