@@ -33,7 +33,7 @@ workspace "DataHub 3.0" {
         }
 
         group "Energinet Organization" {
-            bizTalk = softwareSystem "BizTalk" {
+            btESett = softwareSystem "BizTalk eSett" {
                 description "<add description for Energinet BizTalk eSett endpoint>"
                 tags "Out of focus"
             }
@@ -63,8 +63,8 @@ workspace "DataHub 3.0" {
 
         # Relationships to/from
         dhESett -> dh2 "<add description>" "peek+dequeue/https"
-        dhESett -> bizTalk "<add description>" "https"
-        bizTalk -> eSett "<add description>" "<add technology>"
+        dhESett -> btESett "<add description>" "https"
+        btESett -> eSett "<add description>" "<add technology>"
 
         elOverblik -> dh3 "Get timeseries from" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
