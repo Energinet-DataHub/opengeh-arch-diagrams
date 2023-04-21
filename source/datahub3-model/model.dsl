@@ -66,16 +66,16 @@ workspace "DataHub 3.0" {
         dhESett -> btESett "<add description>" "https"
         btESett -> eSett "<add description>" "<add technology>"
 
-        elOverblik -> dh3 "Get timeseries from" "https"
+        elOverblik -> dh3 "Requests timeseries" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
         extUser -> dh3 "Uses" "browser"
-        extSoftwareSystem -> dh3 "Get calculations from" "https"
-        dh2 -> dh3 "Transferes data" "using AzCopy"
+        extSoftwareSystem -> dh3 "Requests calculations" "https"
+        dh2 -> dh3 "Transfers data" "AzCopy/https"
     }
 
     views {
         systemlandscape "SystemLandscape" {
-            title "[System Landscape] DataHub Organization"
+            title "[System Landscape] DataHub (both versions)"
             description "'As-is' view of DataHub (both versions) and nearby software systems"
             include *
             autoLayout
@@ -83,7 +83,7 @@ workspace "DataHub 3.0" {
 
         systemcontext dh3 "SystemContext" {
             title "[System Context] DataHub 3.0"
-            description "'As-is' view of the DH 3.0 software system"
+            description "'As-is' view of the DH 3.0 software system and dependencies"
             include *
             autoLayout
         }
