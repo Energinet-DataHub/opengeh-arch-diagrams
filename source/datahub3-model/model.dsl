@@ -62,10 +62,11 @@ workspace "DataHub 3.0" {
         }
 
         # Relationships to/from
+        # DH eSett
         dhESett -> dh2 "<add description>" "peek+dequeue/https"
         dhESett -> btESett "<add description>" "https"
         btESett -> eSett "<add description>" "<add technology>"
-
+        # DH3
         elOverblik -> dh3 "Requests timeseries" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
         extUser -> dh3 "Uses" "browser"
