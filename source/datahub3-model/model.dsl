@@ -34,7 +34,7 @@ workspace "DataHub 3.0" {
 
         group "Energinet Organization" {
             btESett = softwareSystem "BizTalk eSett" {
-                description "<add description for Energinet BizTalk eSett endpoint>"
+                description "<add description>"
                 tags "Out of focus"
             }
 
@@ -45,7 +45,7 @@ workspace "DataHub 3.0" {
                 }
 
                 elOverblik = softwareSystem "Eloverblik" {
-                    description "<add description of DH 2>"
+                    description "<add description>"
                     tags "Out of focus"
                 }
                 dhESett = softwareSystem "DataHub eSett" {
