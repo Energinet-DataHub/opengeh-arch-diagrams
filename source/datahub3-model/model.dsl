@@ -13,7 +13,7 @@ workspace "DataHub 3.0" {
         dhOrganization = group "DataHub Organization" {
             dhSysAdmin = person "DataHub System Admin" "Person that works within Energinet DataHub" ""
 
-            elOverblik = softwareSystem "Eloverblik"
+            elOverblik = softwareSystem "EL Overblik"
 
             dh3 = softwareSystem "DataHub 3.0" "Provides uniform communication and standardized processes for actors operating on the Danish electricity market." {
                 # Containers and groups described in separate repos
