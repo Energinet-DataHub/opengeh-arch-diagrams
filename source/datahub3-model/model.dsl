@@ -69,6 +69,7 @@ workspace "DataHub 3.0" {
         dhESett -> dh2 "Requests <data>" "peek+dequeue/https"
         extSoftwareSystem -> dh2 "Requests <data> except calculations" "peek+dequeue/https"
         # DH3
+        elOverblik -> dh2 "Requests <data>" "https"
         elOverblik -> dh3 "Requests <timeseries>" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
         extUser -> dh3 "Uses" "browser"
