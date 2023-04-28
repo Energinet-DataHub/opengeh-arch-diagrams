@@ -12,8 +12,7 @@ workspace "DataHub 3.0" {
                 tags ""
             }
 
-            # Suggestion: It is possible to find a more precise name than "External software system"? Maybe the english version of "Aktør B2B system".
-            extSoftwareSystem = softwareSystem "External software system" {
+            extSoftwareSystem = softwareSystem "Actor B2B System" {
                 description "External business transaction system. System-to-system communication (B2B)."
                 tags "Actor"
             }
