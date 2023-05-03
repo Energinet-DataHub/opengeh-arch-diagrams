@@ -58,10 +58,17 @@ workspace "DataHub 3.0" {
                     tags ""
                 }
                 dh3 = softwareSystem "DataHub 3.0" {
-                    # Containers and groups described in separate repos
-
                     description "Provides uniform communication and standardized processes for actors operating on the Danish electricity market."
                     tags ""
+
+                    # Shared containers must be added in the base model
+                    sharedServiceBus = container "Message broker" {
+                        description "Message broker with message queues and publish-subscribe topics"
+                        technology "Azure Service Bus"
+                        tags "Intermediate Technology" "PaaS" "Microsoft Azure - Azure Service Bus"
+                    }
+
+                    # Extend with groups and containers in separate repos
                 }
             }
         }
