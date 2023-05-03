@@ -1,8 +1,13 @@
 workspace "DataHub 3.0" {
 
+    # Enable hierarchical element identifier (relationship identifiers are unaffected).
+    # See https://github.com/structurizr/dsl/blob/master/docs/language-reference.md#identifier-scope
+    !identifiers hierarchical
+
     model {
         properties {
-            # Enable nested groups, see https://github.com/structurizr/dsl/tree/master/docs/cookbook/groups#nested-groups
+            # Enable nested groups.
+            # See https://github.com/structurizr/dsl/tree/master/docs/cookbook/groups#nested-groups
             "structurizr.groupSeparator" "/"
         }
 
