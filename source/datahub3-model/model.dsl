@@ -11,7 +11,7 @@ workspace "DataHub 3.0" {
             "structurizr.groupSeparator" "/"
         }
 
-        group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
+        extGroup = group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
             extUser = person "User" {
                 description "Person who interacts with DataHub"
                 tags ""
