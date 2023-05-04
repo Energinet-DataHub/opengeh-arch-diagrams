@@ -1,8 +1,13 @@
 workspace "DataHub 3.0" {
 
+    # Enable hierarchical element identifier (relationship identifiers are unaffected).
+    # See https://github.com/structurizr/dsl/blob/master/docs/language-reference.md#identifier-scope
+    !identifiers hierarchical
+
     model {
         properties {
-            # Enable nested groups, see https://github.com/structurizr/dsl/tree/master/docs/cookbook/groups#nested-groups
+            # Enable nested groups.
+            # See https://github.com/structurizr/dsl/tree/master/docs/cookbook/groups#nested-groups
             "structurizr.groupSeparator" "/"
         }
 
@@ -53,10 +58,17 @@ workspace "DataHub 3.0" {
                     tags ""
                 }
                 dh3 = softwareSystem "DataHub 3.0" {
-                    # Containers and groups described in separate repos
-
                     description "Provides uniform communication and standardized processes for actors operating on the Danish electricity market."
                     tags ""
+
+                    # Shared containers must be added in the base model
+                    sharedServiceBus = container "Message broker" {
+                        description "Message broker with message queues and publish-subscribe topics"
+                        technology "Azure Service Bus"
+                        tags "Intermediate Technology" "PaaS" "Microsoft Azure - Azure Service Bus"
+                    }
+
+                    # Extend with groups and containers in separate repos
                 }
             }
         }
@@ -95,6 +107,20 @@ workspace "DataHub 3.0" {
         themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
 
         styles {
+            # Use to mark an element that is somehow not compliant to the projects standards.
+            element "Not Compliant" {
+                background #ffbb55
+                color #ffffff
+            }
+            # Use to mark an element that is acting as a mediator between other elements in focus.
+            # E.g. an element that we would like to show for the overall picture, to be able to clearly communicate dependencies.
+            # Typically this is an element that we configure, instead of develop.
+            element "Intermediate Technology" {
+                background #dddddd
+                color #999999
+            }
+            # Use to mark an elements that is not an active part of the DataHub 3.0 project.
+            # E.g. an software system to which the project has dependencies.
             element "Out of focus" {
                 background #999999
                 color #ffffff
@@ -105,10 +131,7 @@ workspace "DataHub 3.0" {
             element "Data Storage" {
                 shape Cylinder
             }
-            # Disabled to test if its still relevant
-            #element "Group" {
-            #    color #444444
-            #}
+            # Style for the DataHub Organization group which should make it stand out compared to other groups.
             element "Group:Energinet Organization/DataHub Organization" {
                 color #0000ff
             }
