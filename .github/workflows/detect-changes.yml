@@ -34,8 +34,6 @@ jobs:
           filters: |
             render_c4model_future_model:
               - 'source/datahub3-model/future-model.dsl'
-              - '.github/workflows/detect-changes.yml'
             render_c4model_dh3_base_model:
               - 'docs/diagrams/c4-model/dh3-base-model.dsl'
               - 'docs/diagrams/c4-model/dh3-base-model.json'
-              - '.github/workflows/detect-changes.yml'
