@@ -1,5 +1,8 @@
 .github/.DS_Store
 
+# Structurizr Lite files
+.structurizr/
+
 # VS Code files for those working on multiple tools
 .vscode/*
 !.vscode/settings.json
