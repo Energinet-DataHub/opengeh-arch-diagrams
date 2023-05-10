@@ -32,8 +32,7 @@ jobs:
   render_c4model_dh3_base_model:
     needs: changes
     if: ${{ needs.changes.outputs.render_c4model_dh3_base_model == 'true' }}
-    uses: Energinet-DataHub/.github/.github/workflows/structurizr-render-diagrams.yml@dstenroejl/refactor-structurizr
-    with:
+    uses: Energinet-DataHub/.github/.github/workflows/structurizr-render-diagrams.yml@v11
       structurizr_workspace_filename: dh3-base-model
     secrets:
       pat_token_retrigger_workflow: ${{ secrets.pat_token_repo_workflow }}
