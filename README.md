@@ -32,13 +32,17 @@ This repository is structured according to the following sketch:
 
 ## DataHub 3 base model
 
-The DataHub 3 base model is a C4 model that describes the big picture of the DataHub 3 project. This primarily means organizations, software systems and actors.
+The DataHub 3 base model is a C4 model that describes the big picture of the DataHub 3 project.
+
+The `model` describes elements like organizations, software systems and actors. The `views` contains the System Landscape and System Context level, as well as the `themes` and `styles` we want to be able to use throughout all C4 models.
+
+In domain repositories developers should `extend` on the base model to be able to add additional elements within e.g. software systems, to define relationships with elements, or to simply reuse `styles`.
 
 The C4 model and rendered diagrams are located in the folder hierarchy [docs/diagrams/c4-model](./docs/diagrams/c4-model/) and consists of:
 
-- `dh3-base-model.dsl`: Contains the Structurizr DSL describing the C4 model and views.
-- `dh3-base-model.json`: Contains the Structurizr layout information for views.
-- `dh3-base-model/*.png`: Contains a PNG file per view described in the Structurizr DSL.
+- `dh3-base-model.dsl`: Structurizr DSL describing the C4 model and views.
+- `dh3-base-model.json`: Structurizr layout information for views.
+- `/dh3-base-model/*.png`: A PNG file per view described in the Structurizr DSL.
 
 Maintenance of the C4 model should be performed using VS Code and a local version of Structurizr Lite running in Docker.
 
