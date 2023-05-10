@@ -49,22 +49,26 @@ Maintenance of the C4 model should be performed using VS Code and a local versio
 ### Prerequisites
 
 - Docker
-- "C4 DSL Extension" as recommended in `.vscode\extensions.json`
+- VS Code extensions "C4 DSL Extension" and "Docker" as recommended in `.vscode\extensions.json`
 
 ### Open Structurizr Lite in workspace
 
 It is possible to view a single diagram at a time in VS Code using the "C4 DSL Extension". But the support for viewing diagrams is better with [Structurizr Lite](https://structurizr.com/share/76352/documentation), which also allows us to **perform manual layout**.
 
-Thanks to the configuration in `launch.json` and `tasks.json` it is possible to launch Structurizr Lite from within VS Code using either of the following techniques:
+To launch Structurizr Lite from within VS Code do the following:
 
-- **Either:** Find the task "Structurizr Lite: Open workspace" using "Quick Open" (CTRL + P) by typing 'debug', `Space` and start typing 'Structurizr Lite'.
-- **Or:** Open the debug pane (CTRL + SHIFT + D) and choose the configuration "Structurizr Lite: Open workspace".
+1. Run the task "Structurizr Lite: Load 'dh3-base-model'"
+    - Use "Quick Open" (CTRL + P)
+    - Type 'task' and `Space` to see a list of available tasks defined in `tasks.json`
+    - Select the "Structurizr Lite: Load 'dh3-base-model'" task
 
 This will:
 
-- Pull the latest Structurizr Lite docker image
+- If necessary: Pull the latest Structurizr Lite docker image
 - Run the image in Docker
 - Start Structurizr Lite pointing to the `dh3-base-model.dsl` workspace file
+
+To view it in a browser, use the Docker extension pane and right-click the `structurizr/lite` container and select "Open in browser".
 
 ### Modeling
 
