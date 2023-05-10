@@ -35,7 +35,8 @@ jobs:
     uses: Energinet-DataHub/.github/.github/workflows/structurizr-render-diagrams.yml@dstenroejl/refactor-structurizr
     with:
       structurizr_workspace_filename: dh3-base-model
-    secrets: inherit
+    secrets:
+      pat_token_retrigger_workflow: ${{ secrets.pat_token_repo_workflow }}
 
   #
   # Branch policy status check
