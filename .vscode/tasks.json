@@ -24,6 +24,11 @@
                     "STRUCTURIZR_WORKSPACE_FILENAME": "dh3-base-model"
                 },
                 "remove": true
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
         }
     ]

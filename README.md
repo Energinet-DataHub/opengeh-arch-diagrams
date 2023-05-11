@@ -57,10 +57,17 @@ It is possible to view a single diagram at a time in VS Code using the "C4 DSL E
 
 To launch Structurizr Lite from within VS Code do the following:
 
-1. Run the task "Structurizr Lite: Load 'dh3-base-model'"
-    - Use "Quick Open" (CTRL + P)
-    - Type 'task' and `Space` to see a list of available tasks defined in `tasks.json`
-    - Select the "Structurizr Lite: Load 'dh3-base-model'" task
+- MacOS
+    - Run the task "Structurizr Lite: Load 'dh3-base-model'"
+        - Use "Quick Open" (Shift + Cmd + P)
+        - Select `Tasks: Run Task`
+        - Select the "Structurizr Lite: Load 'dh3-base-model'" task
+
+- Windows OS
+    - Run the task "Structurizr Lite: Load 'dh3-base-model'"
+        - Use "Quick Open" (CTRL + P)
+        - Type 'task' and `Space` to see a list of available tasks defined in `tasks.json`
+        - Select the "Structurizr Lite: Load 'dh3-base-model'" task
 
 This will:
 
