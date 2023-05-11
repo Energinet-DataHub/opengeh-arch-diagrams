@@ -21,11 +21,22 @@ jobs:
   changes:
     uses: ./.github/workflows/detect-changes.yml
 
-  render_diagrams:
+  render_c4model_future_model:
     needs: changes
-    if: ${{ needs.changes.outputs.render_diagrams == 'true' }}
-    uses: ./.github/workflows/render-diagrams.yml
+    if: ${{ needs.changes.outputs.render_c4model_future_model == 'true' }}
+    uses: Energinet-DataHub/.github/.github/workflows/structurizr.yml@v11
+    with:
+      dsl: source/datahub3-model/future-model.dsl
     secrets: inherit
+
+  render_c4model_dh3_base_model:
+    needs: changes
+    if: ${{ needs.changes.outputs.render_c4model_dh3_base_model == 'true' }}
+    uses: Energinet-DataHub/.github/.github/workflows/structurizr-render-diagrams.yml@v11
+    with:
+      structurizr_workspace_filename: dh3-base-model
+    secrets:
+      pat_token_retrigger_workflow: ${{ secrets.pat_token_repo_workflow }}
 
   #
   # Branch policy status check
@@ -33,7 +44,7 @@ jobs:
 
   allow_merge_ci_orchestrator:
     runs-on: ubuntu-latest
-    needs: [ci_base, render_diagrams]
+    needs: [ci_base, render_c4model_future_model, render_c4model_dh3_base_model]
     if: |
       always()
     steps:

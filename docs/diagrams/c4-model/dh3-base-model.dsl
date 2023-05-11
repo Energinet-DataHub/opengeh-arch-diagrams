@@ -94,14 +94,12 @@ workspace "DataHub 3.0" {
             title "[System Landscape] DataHub (both versions)"
             description "'As-is' view of DataHub (both versions) and nearby software systems"
             include *
-            autoLayout
         }
 
         systemcontext dh3 "SystemContext" {
             title "[System Context] DataHub 3.0"
             description "'As-is' view of the DH 3.0 software system and dependencies"
             include *
-            autoLayout
         }
 
         themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json

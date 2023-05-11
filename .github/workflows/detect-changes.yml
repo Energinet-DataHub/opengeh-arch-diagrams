@@ -8,8 +8,10 @@ name: Detect changes
 on:
   workflow_call:
     outputs:
-      render_diagrams:
-        value: ${{ jobs.changes.outputs.render_diagrams }}
+      render_c4model_future_model:
+        value: ${{ jobs.changes.outputs.render_c4model_future_model }}
+      render_c4model_dh3_base_model:
+        value: ${{ jobs.changes.outputs.render_c4model_dh3_base_model }}
 
 jobs:
   changes:
@@ -17,7 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     # Set job outputs to values from filter step
     outputs:
-      render_diagrams: ${{ steps.filter.outputs.render_diagrams }}
+      render_c4model_future_model: ${{ steps.filter.outputs.render_c4model_future_model }}
+      render_c4model_dh3_base_model: ${{ steps.filter.outputs.render_c4model_dh3_base_model }}
     steps:
       # For pull requests it's not necessary to checkout the code because GitHub REST API is used to determine changes
       - name: Checkout repository
@@ -29,7 +32,8 @@ jobs:
         id: filter
         with:
           filters: |
-            render_diagrams:
-              - 'source/**'
-              - '.github/workflows/render-diagrams.yml'
-              - '.github/workflows/detect-changes.yml'
+            render_c4model_future_model:
+              - 'source/datahub3-model/future-model.dsl'
+            render_c4model_dh3_base_model:
+              - 'docs/diagrams/c4-model/dh3-base-model.dsl'
+              - 'docs/diagrams/c4-model/dh3-base-model.json'
