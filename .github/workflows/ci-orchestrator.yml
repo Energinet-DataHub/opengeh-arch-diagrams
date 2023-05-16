@@ -21,14 +21,6 @@ jobs:
   changes:
     uses: ./.github/workflows/detect-changes.yml
 
-  render_c4model_future_model:
-    needs: changes
-    if: ${{ needs.changes.outputs.render_c4model_future_model == 'true' }}
-    uses: Energinet-DataHub/.github/.github/workflows/structurizr.yml@v11
-    with:
-      dsl: source/datahub3-model/future-model.dsl
-    secrets: inherit
-
   render_c4model_dh3_base_model:
     needs: changes
     if: ${{ needs.changes.outputs.render_c4model_dh3_base_model == 'true' }}
@@ -44,7 +36,7 @@ jobs:
 
   allow_merge_ci_orchestrator:
     runs-on: ubuntu-latest
-    needs: [ci_base, render_c4model_future_model, render_c4model_dh3_base_model]
+    needs: [ci_base, render_c4model_dh3_base_model]
     if: |
       always()
     steps:
