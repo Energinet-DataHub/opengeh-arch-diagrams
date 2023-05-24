@@ -34,7 +34,9 @@ This repository is structured according to the following sketch:
 
 The DataHub 3 base model is a C4 model that describes the big picture of the DataHub 3 project.
 
-The `model` describes elements like organizations, software systems and actors. The `views` contains the System Landscape and System Context level, as well as the `themes` and `styles` we want to be able to use throughout all C4 models.
+The `model` describes elements like organizations, software systems and actors. Any person or software system that we want to use in any of our C4 models must be defined here.
+
+The `views` contains the System Landscape and System Context level, as well as the `themes` and `styles` we want to be able to use throughout all C4 models.
 
 In domain repositories developers should `extend` on the base model to be able to add additional elements within e.g. software systems, to define relationships with elements, or to simply reuse `styles`.
 
