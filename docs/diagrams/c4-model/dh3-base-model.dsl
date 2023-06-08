@@ -84,8 +84,7 @@ workspace "DataHub 3.0" {
         dhESett -> dh2 "Requests <data>" "peek+dequeue/https"
         actorB2BSystem -> dh2 "Requests <data> except calculations" "peek+dequeue/https"
         # DH3
-        energyOrigin -> dh2 "(Future) Requests measurements" "https"
-        energyOrigin -> dh3 "Requests measurements" "https"
+        energyOrigin -> dh2 "Requests measurements" "https"
         elOverblik -> dh2 "Requests <data>" "https"
         elOverblik -> dh3 "Requests <timeseries>" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
