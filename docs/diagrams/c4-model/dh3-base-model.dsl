@@ -54,8 +54,7 @@ workspace "DataHub 3.0" {
                     tags "Out of focus"
                 }
                 energyOrigin = softwareSystem "Energy Origin" {
-                    description "Provides a way to issue and claim granular certificates for selected metering points"
-                    tags "Out of focus"
+                    description "Provides a way to issue and claim granular certificates"
                 }
                 dhESett = softwareSystem "DataHub eSett" {
                     description "<add description>"
