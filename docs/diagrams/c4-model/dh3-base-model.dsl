@@ -11,7 +11,7 @@ workspace "DataHub 3.0" {
             "structurizr.groupSeparator" "/"
         }
 
-        group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
+        group "Energy Supplier or Grid Access Provider" {
             extUser = person "User" {
                 description "Person who interacts with DataHub"
                 tags ""
@@ -19,6 +19,22 @@ workspace "DataHub 3.0" {
 
             actorB2BSystem = softwareSystem "Actor B2B System" {
                 description "External business transaction system. System-to-system communication (B2B)."
+                tags "Actor"
+            }
+        }
+        group "Large power producers and consumers" {
+            energyOriginUser = softwareSystem "Energy Origin User" {
+                description "System at large power producers and consumers that interacts with Energy Origin."
+                tags "Actor"
+            }
+        }
+        group "Business or private person" {
+            elOverblikUser = person "ElOverblik user" {
+                description "Person who interacts with ElOverblik. Both private and business users."
+                tags ""
+            }
+            elOverblikThirdPartyUser = softwareSystem "Eloverblik Third Party" {
+                description "System that interacts with ElOverblik on behalf of a user."
                 tags "Actor"
             }
         }
@@ -40,6 +56,14 @@ workspace "DataHub 3.0" {
         group "Energinet Organization" {
             btESett = softwareSystem "BizTalk eSett" {
                 description "<add description>"
+                tags "Out of focus"
+            }
+            eds = softwareSystem "Energi Data Service" {
+                description "<add description>"
+                tags "Out of focus"
+            }
+            po = softwareSystem "Project Origin" {
+                description "Public permissioned distributed ledger where everyone can validate the Guarantee of Origin for their electricity."
                 tags "Out of focus"
             }
 
@@ -81,15 +105,21 @@ workspace "DataHub 3.0" {
         btESett -> eSett "<add description>" "<add technology>"
         # DH2
         dhESett -> dh2 "Requests <data>" "peek+dequeue/https"
-        actorB2BSystem -> dh2 "Requests <data> except calculations" "peek+dequeue/https"
         # DH3
-        energyOrigin -> dh2 "Requests measurements" "https"
         elOverblik -> dh2 "Requests <data>" "https"
-        elOverblik -> dh3 "Requests <timeseries>" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
         extUser -> dh3 "Uses" "browser"
         actorB2BSystem -> dh3 "Requests calculations" "peek+dequeue/https"
         dh2 -> dh3 "Transfers <data>" "AzCopy/https"
+        # ElOverblik
+        elOverblikUser -> elOverblik "Requests <data>" "browser"
+        elOverblik -> eds "Requests emission and residual mix data" "https"
+        elOverblikThirdPartyUser -> elOverblik "Requests <data>" "https"
+        # Energy Origin
+        energyOrigin -> dh2 "Requests measurements" "https"
+        energyOrigin -> po "Links to guarantees of origin" "https"
+        energyOrigin -> eds "Requests emission and residual mix data" "https"
+        energyOriginUser -> energyOrigin "Requests granular certificates" "https"
     }
 
     views {
