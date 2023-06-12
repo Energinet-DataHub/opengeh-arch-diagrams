@@ -50,8 +50,7 @@ workspace "DataHub 3.0" {
                 }
 
                 elOverblik = softwareSystem "Eloverblik" {
-                    description "<add description>"
-                    tags "Out of focus"
+                    description "The platform provides data on electricity consumption and production, allowing customers to have a comprehensive overview across grid areas and energy suppliers."
                 }
                 energyOrigin = softwareSystem "Energy Origin" {
                     description "Provides a way to issue and claim granular certificates"
