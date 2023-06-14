@@ -52,6 +52,12 @@ workspace "DataHub 3.0" {
                 tags "Out of focus"
             }
         }
+        group "Signaturgruppen Organization" {
+            mitId = softwareSystem "MitID" {
+                description "MitID is a common login solution for the public sector in Denmark."
+                tags "Out of focus"
+            }
+        }
 
         group "Energinet Organization" {
             btESett = softwareSystem "BizTalk eSett" {
@@ -125,8 +131,14 @@ workspace "DataHub 3.0" {
 
     views {
         systemlandscape "SystemLandscape" {
-            title "[System Landscape] DataHub (both versions)"
-            description "'As-is' view of the DataHub company (both versions) and nearby software systems"
+            title "[System Landscape] DataHub (Simplified)"
+            description "'As-is' view of the DataHub company"
+            include *
+            exclude "element.tag==Out of focus"
+        }
+        systemlandscape "SystemLandscapeDetailed" {
+            title "[System Landscape] DataHub (Detailed)"
+            description "'As-is' view of the DataHub company and nearby software systems"
             include *
         }
 
