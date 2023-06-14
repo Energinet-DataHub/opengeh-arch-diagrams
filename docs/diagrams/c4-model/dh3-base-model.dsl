@@ -103,6 +103,7 @@ workspace "DataHub 3.0" {
         # DH eSett
         dhESett -> btESett "<add description>" "https"
         btESett -> eSett "<add description>" "<add technology>"
+        dhSystemAdmin -> dhESett "Monitors" "browser"
         # DH2
         dhESett -> dh2 "Requests <data>" "peek+dequeue/https"
         # DH3
