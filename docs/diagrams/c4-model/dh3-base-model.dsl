@@ -12,7 +12,7 @@ workspace "DataHub 3.0" {
         }
 
         group "Energy Supplier or Grid Access Provider" {
-            extUser = person "User" {
+            extUser = person "DH3 User" {
                 description "Person who interacts with DataHub"
                 tags ""
             }
@@ -41,25 +41,25 @@ workspace "DataHub 3.0" {
 
         group "CGI Organization" {
             dh2 = softwareSystem "DataHub 2.0" {
-                description "<add description>"
+                description "Existing DataHub system. Provides uniform communication and standardized processes for actors operating on the Danish electricity market."
                 tags "Out of focus"
             }
         }
 
         group "eSett Organization" {
             eSett = softwareSystem "eSett" {
-                description "<add description>"
+                description "Balance settlement system for the Nordic electricity market."
                 tags "Out of focus"
             }
         }
 
         group "Energinet Organization" {
             btESett = softwareSystem "BizTalk eSett" {
-                description "<add description>"
+                description "Handles communication and network between Energinet and eSett."
                 tags "Out of focus"
             }
             eds = softwareSystem "Energi Data Service" {
-                description "<add description>"
+                description "Data and services about the Danish energy system such as CO2 emissions and consumption and production data."
                 tags "Out of focus"
             }
             po = softwareSystem "Project Origin" {
@@ -80,7 +80,7 @@ workspace "DataHub 3.0" {
                     description "Provides a way to issue and claim granular certificates"
                 }
                 dhESett = softwareSystem "DataHub eSett" {
-                    description "<add description>"
+                    description "Converts ebix messages, which contain aggregated energy time series, into a format eSett understands (nbs)."
                     tags ""
                 }
                 dh3 = softwareSystem "DataHub 3.0" {
@@ -101,8 +101,8 @@ workspace "DataHub 3.0" {
 
         # Relationships to/from
         # DH eSett
-        dhESett -> btESett "<add description>" "https"
-        btESett -> eSett "<add description>" "<add technology>"
+        dhESett -> btESett "Sends calculations" "https"
+        btESett -> eSett "Sends calculations" "<add technology>"
         dhSystemAdmin -> dhESett "Monitors" "browser"
         # DH2
         dhESett -> dh2 "Requests <data>" "peek+dequeue/https"
@@ -126,7 +126,7 @@ workspace "DataHub 3.0" {
     views {
         systemlandscape "SystemLandscape" {
             title "[System Landscape] DataHub (both versions)"
-            description "'As-is' view of DataHub (both versions) and nearby software systems"
+            description "'As-is' view of the DataHub company (both versions) and nearby software systems"
             include *
         }
 
