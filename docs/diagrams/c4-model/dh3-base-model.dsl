@@ -12,7 +12,7 @@ workspace "DataHub 3.0" {
         }
 
         group "Energy Supplier or Grid Access Provider" {
-            extUser = person "DH3 User" {
+            dh3User = person "DH3 User" {
                 description "Person who interacts with DataHub"
                 tags ""
             }
@@ -22,7 +22,7 @@ workspace "DataHub 3.0" {
                 tags "Actor"
             }
         }
-        group "Large power producers and consumers" {
+        group "Large power producer or consumer" {
             energyOriginUser = softwareSystem "Energy Origin User" {
                 description "System at large power producers and consumers that interacts with Energy Origin."
                 tags "Actor"
@@ -81,9 +81,11 @@ workspace "DataHub 3.0" {
 
                 elOverblik = softwareSystem "Eloverblik" {
                     description "The platform provides data on electricity consumption and production, allowing customers to have a comprehensive overview across grid areas and energy suppliers."
+                    # Extend with groups and containers in separate repos
                 }
                 energyOrigin = softwareSystem "Energy Origin" {
                     description "Provides a way to issue and claim granular certificates"
+                    # Extend with groups and containers in separate repos
                 }
                 dhESett = softwareSystem "DataHub eSett" {
                     description "Converts ebix messages, which contain aggregated energy time series, into a format eSett understands (nbs)."
@@ -115,7 +117,7 @@ workspace "DataHub 3.0" {
         # DH3
         elOverblik -> dh2 "Requests <data>" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
-        extUser -> dh3 "Uses" "browser"
+        dh3User -> dh3 "Uses" "browser"
         actorB2BSystem -> dh3 "Requests calculations" "peek+dequeue/https"
         dh2 -> dh3 "Transfers <data>" "AzCopy/https"
         # ElOverblik
