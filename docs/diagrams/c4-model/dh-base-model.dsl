@@ -11,8 +11,8 @@ workspace "DataHub 3.0" {
             "structurizr.groupSeparator" "/"
         }
 
-        group "External organization (actor) e.g. Energy Supplier or Grid Access Provider" {
-            extUser = person "User" {
+        group "Energy Supplier or Grid Access Provider" {
+            dh3User = person "DH3 User" {
                 description "Person who interacts with DataHub"
                 tags ""
             }
@@ -22,24 +22,54 @@ workspace "DataHub 3.0" {
                 tags "Actor"
             }
         }
+        group "Large power producer or consumer" {
+            energyOriginUser = softwareSystem "Energy Origin User" {
+                description "System at large power producers and consumers that interacts with Energy Origin."
+                tags "Actor"
+            }
+        }
+        group "Business or private person" {
+            elOverblikUser = person "ElOverblik user" {
+                description "Person who interacts with ElOverblik. Both private and business users."
+                tags ""
+            }
+            elOverblikThirdPartyUser = softwareSystem "Eloverblik Third Party" {
+                description "System that interacts with ElOverblik on behalf of a user."
+                tags "Actor"
+            }
+        }
 
         group "CGI Organization" {
             dh2 = softwareSystem "DataHub 2.0" {
-                description "<add description>"
+                description "Existing DataHub system. Provides uniform communication and standardized processes for actors operating on the Danish electricity market."
                 tags "Out of focus"
             }
         }
 
         group "eSett Organization" {
             eSett = softwareSystem "eSett" {
-                description "<add description>"
+                description "Balance settlement system for the Nordic electricity market."
+                tags "Out of focus"
+            }
+        }
+        group "Signaturgruppen Organization" {
+            mitId = softwareSystem "MitID" {
+                description "MitID is a common login solution for the public sector in Denmark."
                 tags "Out of focus"
             }
         }
 
         group "Energinet Organization" {
             btESett = softwareSystem "BizTalk eSett" {
-                description "<add description>"
+                description "Handles communication and network between Energinet and eSett."
+                tags "Out of focus"
+            }
+            eds = softwareSystem "Energi Data Service" {
+                description "Data and services about the Danish energy system such as CO2 emissions and consumption and production data."
+                tags "Out of focus"
+            }
+            po = softwareSystem "Project Origin" {
+                description "Public permissioned distributed ledger where everyone can validate the Guarantee of Origin for their electricity."
                 tags "Out of focus"
             }
 
@@ -51,12 +81,14 @@ workspace "DataHub 3.0" {
 
                 elOverblik = softwareSystem "Eloverblik" {
                     description "The platform provides data on electricity consumption and production, allowing customers to have a comprehensive overview across grid areas and energy suppliers."
+                    # Extend with groups and containers in separate repos
                 }
                 energyOrigin = softwareSystem "Energy Origin" {
                     description "Provides a way to issue and claim granular certificates"
+                    # Extend with groups and containers in separate repos
                 }
                 dhESett = softwareSystem "DataHub eSett" {
-                    description "<add description>"
+                    description "Converts ebix messages, which contain aggregated energy time series, into a format eSett understands (nbs)."
                     tags ""
                 }
                 dh3 = softwareSystem "DataHub 3.0" {
@@ -77,25 +109,38 @@ workspace "DataHub 3.0" {
 
         # Relationships to/from
         # DH eSett
-        dhESett -> btESett "<add description>" "https"
-        btESett -> eSett "<add description>" "<add technology>"
+        dhESett -> btESett "Sends calculations" "https"
+        btESett -> eSett "Sends calculations" "<add technology>"
+        dhSystemAdmin -> dhESett "Monitors" "browser"
         # DH2
         dhESett -> dh2 "Requests <data>" "peek+dequeue/https"
-        actorB2BSystem -> dh2 "Requests <data> except calculations" "peek+dequeue/https"
         # DH3
-        energyOrigin -> dh2 "Requests measurements" "https"
         elOverblik -> dh2 "Requests <data>" "https"
-        elOverblik -> dh3 "Requests <timeseries>" "https"
         dhSystemAdmin -> dh3 "Uses" "browser"
-        extUser -> dh3 "Uses" "browser"
+        dh3User -> dh3 "Uses" "browser"
         actorB2BSystem -> dh3 "Requests calculations" "peek+dequeue/https"
         dh2 -> dh3 "Transfers <data>" "AzCopy/https"
+        # ElOverblik
+        elOverblikUser -> elOverblik "Requests <data>" "browser"
+        elOverblik -> eds "Requests emission and residual mix data" "https"
+        elOverblikThirdPartyUser -> elOverblik "Requests <data>" "https"
+        # Energy Origin
+        energyOrigin -> dh2 "Requests measurements" "https"
+        energyOrigin -> po "Links to guarantees of origin" "https"
+        energyOrigin -> eds "Requests emission and residual mix data" "https"
+        energyOriginUser -> energyOrigin "Requests granular certificates" "https"
     }
 
     views {
         systemlandscape "SystemLandscape" {
-            title "[System Landscape] DataHub (both versions)"
-            description "'As-is' view of DataHub (both versions) and nearby software systems"
+            title "[System Landscape] DataHub (Simplified)"
+            description "'As-is' view of the DataHub company"
+            include *
+            exclude "element.tag==Out of focus"
+        }
+        systemlandscape "SystemLandscapeDetailed" {
+            title "[System Landscape] DataHub (Detailed)"
+            description "'As-is' view of the DataHub company and nearby software systems"
             include *
         }
 
