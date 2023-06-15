@@ -4,7 +4,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Structurizr Lite: Load 'dh3-base-model'",
+            "label": "Structurizr Lite: Load 'dh-base-model'",
             "type": "docker-run",
             "dockerRun": {
                 "image": "structurizr/lite:latest",
@@ -21,7 +21,7 @@
                     }
                 ],
                 "env": {
-                    "STRUCTURIZR_WORKSPACE_FILENAME": "dh3-base-model"
+                    "STRUCTURIZR_WORKSPACE_FILENAME": "dh-base-model"
                 },
                 "remove": true
             },
