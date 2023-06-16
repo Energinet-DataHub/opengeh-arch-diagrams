@@ -1,4 +1,6 @@
-workspace "DataHub 3.0" {
+# Read description in the 'views.dsl' file.
+
+workspace "DataHub" {
 
     # Enable hierarchical element identifier (relationship identifiers are unaffected).
     # See https://github.com/structurizr/dsl/blob/master/docs/language-reference.md#identifier-scope
@@ -132,23 +134,7 @@ workspace "DataHub 3.0" {
     }
 
     views {
-        systemlandscape "SystemLandscape" {
-            title "[System Landscape] DataHub (Simplified)"
-            description "'As-is' view of the DataHub company"
-            include *
-            exclude "element.tag==Out of focus"
-        }
-        systemlandscape "SystemLandscapeDetailed" {
-            title "[System Landscape] DataHub (Detailed)"
-            description "'As-is' view of the DataHub company and nearby software systems"
-            include *
-        }
-
-        systemcontext dh3 "SystemContext" {
-            title "[System Context] DataHub 3.0"
-            description "'As-is' view of the DH 3.0 software system and dependencies"
-            include *
-        }
+        # Place any 'views' in the 'views.dsl' file.
 
         themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
 
