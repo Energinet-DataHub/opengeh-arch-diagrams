@@ -1,6 +1,6 @@
 # Read description in the 'views.dsl' file.
 
-workspace "DataHub 3.0" {
+workspace "DataHub" {
 
     # Enable hierarchical element identifier (relationship identifiers are unaffected).
     # See https://github.com/structurizr/dsl/blob/master/docs/language-reference.md#identifier-scope
