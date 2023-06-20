@@ -104,6 +104,27 @@ workspace "DataHub" {
                         tags "Intermediate Technology" "PaaS" "Microsoft Azure - Azure Service Bus"
                     }
 
+                    sharedSendGrid = container "SendGrid" {
+                        description "EMail dispatcher"
+                        technology "Twilio SendGrid"
+                        tags "Intermediate Technology" "SaaS" "Microsoft Azure - SendGrid Accounts"
+
+                        # Base model relationships
+                        this -> dh3User "Sends mail"
+                    }
+
+                    sharedB2C = container "App Registrations" {
+                        description "Cloud identity directory"
+                        technology "Azure AD B2C"
+                        tags "Microsoft Azure - Azure AD B2C"
+
+                        # Base model relationships
+                        actorB2BSystem -> this "Request OAuth token" "https" {
+                            tags "OAuth"
+                        }
+                    }
+
+
                     # Extend with groups and containers in separate repos
                 }
             }
