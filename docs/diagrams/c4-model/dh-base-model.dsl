@@ -104,7 +104,7 @@ workspace "DataHub" {
                         tags "Intermediate Technology" "PaaS" "Microsoft Azure - Azure Service Bus"
                     }
 
-                    sharedSendGrid = container "SendGrid" {
+                    sharedSendGrid = container "SendGrid (shared)" {
                         description "EMail dispatcher"
                         technology "Twilio SendGrid"
                         tags "Intermediate Technology" "SaaS" "Microsoft Azure - SendGrid Accounts"
@@ -113,7 +113,7 @@ workspace "DataHub" {
                         this -> dh3User "Sends mail"
                     }
 
-                    sharedB2C = container "App Registrations" {
+                    sharedB2C = container "App Registrations (shared)" {
                         description "Cloud identity directory"
                         technology "Azure AD B2C"
                         tags "Microsoft Azure - Azure AD B2C"
