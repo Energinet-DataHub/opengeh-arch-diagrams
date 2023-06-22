@@ -15,18 +15,22 @@ workspace extends dh-base-model.dsl {
             title "[System Landscape] DataHub (Simplified)"
             description "'As-is' view of the DataHub company"
             include *
+            exclude "relationship.tag==OAuth"
             exclude "element.tag==Out of focus"
         }
+
         systemlandscape "SystemLandscapeDetailed" {
             title "[System Landscape] DataHub (Detailed)"
             description "'As-is' view of the DataHub company and nearby software systems"
             include *
+            exclude "relationship.tag==OAuth"
         }
 
         systemcontext dh3 "SystemContext" {
             title "[System Context] DataHub 3.0"
             description "'As-is' view of the DH 3.0 software system and dependencies"
             include *
+            exclude "relationship.tag==OAuth"
         }
     }
 }
