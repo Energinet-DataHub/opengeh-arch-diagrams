@@ -124,7 +124,6 @@ workspace "DataHub" {
                         }
                     }
 
-
                     # Extend with groups and containers in separate repos
                 }
             }
