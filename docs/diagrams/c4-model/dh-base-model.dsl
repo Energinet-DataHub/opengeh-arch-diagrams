@@ -112,7 +112,7 @@ workspace "DataHub" {
                         # Base model relationships
                         this -> dh3User "Sends mail"
                     }
-
+                    
                     sharedB2C = container "App Registrations (shared)" {
                         description "Cloud identity directory"
                         technology "Azure AD B2C"
@@ -158,7 +158,7 @@ workspace "DataHub" {
         # Place any 'views' in the 'views.dsl' file.
 
         themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
-
+     
         styles {
             # Use to mark an element that is somehow not compliant to the projects standards.
             element "Not Compliant" {
