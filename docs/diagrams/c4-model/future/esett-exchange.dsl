@@ -32,9 +32,10 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
             # Future models
             
             eSettDomain = group "eSett Exchange" {
-                esettExchange = container "eSett Exchange - Message broker  -EcpOutbox ?" {
+                esettExchange = container "eSett Exchange" {
                     description "Converts calculation messages, which contain aggregated energy time series, into a format eSett understands (nbs)."
                     technology ""
+                    tags "Microsoft Azure - Function Apps"
                     
                     
                     this -> eSett "Sends calculations (via ECP)" "https/nbs"
@@ -73,6 +74,22 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
             title "[Future] [Container] DataHub 3.0 - eSett Exchange"
             include ->eSettDomain->
             exclude "relationship.tag==Simple View"
+        }
+        container dh3 "All_no_OAuth" {
+            title "[Container] DataHub 3.0 (Detailed, no OAuth)"
+            description "Detailed 'as-is' view of all domains, which includes 'Intermediate Technology' elements, but excludes 'OAuth' relationships"
+            include *
+            exclude "relationship.tag==Deployment Diagram"
+            exclude "relationship.tag==OAuth"
+            exclude "relationship.tag==Simple View"
+        }
+        container dh3 "All_simple" {
+            title "[Container] DataHub 3.0 (Simplified, no OAuth)"
+            description "Simplified 'as-is' view of all domains, which excludes both 'Intermediate Technology' elements and 'OAuth' relationships"
+            include *
+            exclude "relationship.tag==Deployment Diagram"
+            exclude "relationship.tag==OAuth"
+            exclude "element.tag==Intermediate Technology"
         }
     }
 }
