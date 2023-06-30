@@ -21,7 +21,8 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
             !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-edi/main/docs/diagrams/c4-model/model.dsl
 
             # Include Wholesale model
-            !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-wholesale/main/docs/diagrams/c4-model/model.dsl
+            !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-wholesale/krmoos/dsl-model-update/docs/diagrams/c4-model/model.dsl 
+            #https://raw.githubusercontent.com/Energinet-DataHub/opengeh-wholesale/main/docs/diagrams/c4-model/model.dsl
 
             # Include Frontend model
             !include https://raw.githubusercontent.com/Energinet-DataHub/greenforce-frontend/main/docs/diagrams/c4-model/model.dsl
@@ -38,24 +39,24 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
                     tags "Microsoft Azure - Function Apps"
                     
                     
-                    this -> eSett "Sends calculations (via ECP)" "https/nbs"
-                    dh3.sharedServiceBus -> this "Subscribe to events" ""
+                    this -> eSett "Sends calculations" "ECP - nbs/https"
+                    dh3.sharedServiceBus -> this "Consumes events" "messages/amqp"
                     wholesaleApi -> this "Sends calculations" {
                         tags "Simple View"
                     }
-                    markpartApi -> this "Sends <markpart> data" {
+                    markpartApi -> this "Sends <actor-gridarea details?> data" {
                         tags "Simple View"
                     }
             
                 }
-                markpartApi -> dh3.sharedServiceBus "publishes events" ""
+                markpartApi -> dh3.sharedServiceBus "Sends <actor-gridarea details>" "integration event/amqp"
                 dh2Bridge = container "DH2 Bridge" {
                     description "Get calculations from DH2."
-                    technology ""
+                    technology "<add technology>"
                     
                     
                     this -> dh2 "Pulls calculations" "peek+dequeue/https"
-                    this -> dh3.sharedServiceBus "publishes events" ""
+                    this -> dh3.sharedServiceBus "Sends calculations" "point to point/amqp"
                     this -> esettExchange "Sends calculations" {
                         tags "Simple View"
                     }
