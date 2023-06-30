@@ -38,23 +38,24 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
                     technology ""
                     tags "Microsoft Azure - Function Apps"
                     
-                    
+                    # Relationships
                     this -> eSett "Sends calculations" "ECP - nbs/https"
                     dh3.sharedServiceBus -> this "Consumes events" "messages/amqp"
                     wholesaleApi -> this "Sends calculations" {
                         tags "Simple View"
                     }
-                    markpartApi -> this "Sends <actor-gridarea details?> data" {
+                    markpartApi -> this "Sends <actor/gridarea details?> data" {
                         tags "Simple View"
                     }
+                    markpartApi -> dh3.sharedServiceBus "Sends <actor/gridarea details?>" "integration event/amqp"
+                
             
                 }
-                markpartApi -> dh3.sharedServiceBus "Sends <actor-gridarea details>" "integration event/amqp"
                 dh2Bridge = container "DH2 Bridge" {
                     description "Get calculations from DH2."
                     technology "<add technology>"
                     
-                    
+                    # Relationships
                     this -> dh2 "Pulls calculations" "peek+dequeue/https"
                     this -> dh3.sharedServiceBus "Sends calculations" "point to point/amqp"
                     this -> esettExchange "Sends calculations" {
@@ -62,39 +63,20 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
                     }
                 }
             }
-
         }
-
-   
     }
 
     views {
-        container dh3 "eSettExchange" {
+        container dh3 "future-eSettExchange" {
             title "[Future] [Container] DataHub 3.0 - eSett Exchange"
             include ->eSettDomain->
             exclude "relationship.tag==OAuth"
             exclude "element.tag==Intermediate Technology"
         }
-        container dh3 "eSettExchangeDetailed" {
+        container dh3 "future-eSettExchangeDetailed" {
             title "[Future] [Container] DataHub 3.0 - eSett Exchange"
             include ->eSettDomain->
             exclude "relationship.tag==Simple View"
-        }
-        container dh3 "All_no_OAuth" {
-            title "[Container] DataHub 3.0 (Detailed, no OAuth)"
-            description "Detailed 'as-is' view of all domains, which includes 'Intermediate Technology' elements, but excludes 'OAuth' relationships"
-            include *
-            exclude "relationship.tag==Deployment Diagram"
-            exclude "relationship.tag==OAuth"
-            exclude "relationship.tag==Simple View"
-        }
-        container dh3 "All_simple" {
-            title "[Container] DataHub 3.0 (Simplified, no OAuth)"
-            description "Simplified 'as-is' view of all domains, which excludes both 'Intermediate Technology' elements and 'OAuth' relationships"
-            include *
-            exclude "relationship.tag==Deployment Diagram"
-            exclude "relationship.tag==OAuth"
-            exclude "element.tag==Intermediate Technology"
         }
     }
 }
