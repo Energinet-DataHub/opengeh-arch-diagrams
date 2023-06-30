@@ -43,8 +43,12 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
                     wholesaleApi -> this "Sends calculations" {
                         tags "Simple View"
                     }
+                    markpartApi -> this "Sends <markpart> data" {
+                        tags "Simple View"
+                    }
             
                 }
+                markpartApi -> dh3.sharedServiceBus "publishes events" ""
                 dh2Bridge = container "DH2 Bridge" {
                     description "Get calculations from DH2."
                     technology ""
