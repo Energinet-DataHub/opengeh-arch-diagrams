@@ -32,3 +32,4 @@ jobs:
             render_c4model_views:
               - 'docs/diagrams/c4-model/views.dsl'
               - 'docs/diagrams/c4-model/views.json'
+              - 'docs/diagrams/c4-model/dh-base-model.dsl'
