@@ -33,7 +33,7 @@ workspace "DataHub" {
                 description "System that interacts with ElOverblik on behalf of a user."
                 tags "Actor"
             }
-            energyOriginThirdPartyUser = softwareSystem "Energy Origin Third Party" {
+            energyOriginThirdPartySystem = softwareSystem "Energy Origin Third Party" {
                 description "Third party system that interacts with Energy Origin APIs."
                 tags "Actor"
             }
@@ -151,7 +151,8 @@ workspace "DataHub" {
         energyOrigin -> dh2 "Requests measurements" "https"
         energyOrigin -> po "Links to guarantees of origin" "https"
         energyOrigin -> eds "Requests emission and residual mix data" "https"
-        energyOriginUser -> energyOrigin "Requests granular certificates" "https"
+        energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
+        energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
     }
 
     views {
