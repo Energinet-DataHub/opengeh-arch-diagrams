@@ -24,12 +24,6 @@ workspace "DataHub" {
                 tags "Actor"
             }
         }
-        group "Large power producer or consumer" {
-            energyOriginUser = softwareSystem "Energy Origin User" {
-                description "System at large power producers and consumers that interacts with Energy Origin."
-                tags "Actor"
-            }
-        }
         group "Business or private person" {
             elOverblikUser = person "ElOverblik user" {
                 description "Person who interacts with ElOverblik. Both private and business users."
@@ -38,6 +32,13 @@ workspace "DataHub" {
             elOverblikThirdPartyUser = softwareSystem "Eloverblik Third Party" {
                 description "System that interacts with ElOverblik on behalf of a user."
                 tags "Actor"
+            }
+            energyOriginThirdPartyUser = softwareSystem "Energy Origin Third Party" {
+                description "Third party system that interacts with Energy Origin APIs."
+                tags "Actor"
+            }
+            energyOriginUser = person "Energy Origin user" {
+                description "Person who on behalf of a power producer/consumer interacts with Energy Origin."
             }
         }
 
