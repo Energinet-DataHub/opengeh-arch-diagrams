@@ -21,17 +21,15 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
             !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-edi/main/docs/diagrams/c4-model/model.dsl
 
             # Include Wholesale model
-            !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-wholesale/krmoos/dsl-model-update/docs/diagrams/c4-model/model.dsl 
-            #https://raw.githubusercontent.com/Energinet-DataHub/opengeh-wholesale/main/docs/diagrams/c4-model/model.dsl
+            !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-wholesale/main/docs/diagrams/c4-model/model.dsl
 
             # Include Frontend model
             !include https://raw.githubusercontent.com/Energinet-DataHub/greenforce-frontend/main/docs/diagrams/c4-model/model.dsl
 
             # Include Migration model - requires a token because its located in a private repository
-            !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-migration/main/docs/diagrams/c4-model/model.dsl?token=GHSAT0AAAAAACDNGUTLNFVCZZ2A6SFWDU7MZE4IKVQ
+            !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-migration/main/docs/diagrams/c4-model/model.dsl?token=GHSAT0AAAAAACDNGUTKKRJDJ65AX26JPQDUZFGWZGQ
 
             # Future models
-            
             eSettDomain = group "eSett Exchange" {
                 esettExchange = container "eSett Exchange" {
                     description "Converts calculation messages, which contain aggregated energy time series, into a format eSett understands (nbs)."
@@ -48,8 +46,6 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
                         tags "Simple View"
                     }
                     markpartApi -> dh3.sharedServiceBus "Sends <actor/gridarea details?>" "integration event/amqp"
-                
-            
                 }
                 dh2Bridge = container "DH2 Bridge" {
                     description "Get calculations from DH2."
