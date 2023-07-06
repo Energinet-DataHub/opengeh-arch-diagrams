@@ -24,12 +24,6 @@ workspace "DataHub" {
                 tags "Actor"
             }
         }
-        group "Large power producer or consumer" {
-            energyOriginUser = softwareSystem "Energy Origin User" {
-                description "System at large power producers and consumers that interacts with Energy Origin."
-                tags "Actor"
-            }
-        }
         group "Business or private person" {
             elOverblikUser = person "ElOverblik user" {
                 description "Person who interacts with ElOverblik. Both private and business users."
@@ -38,6 +32,13 @@ workspace "DataHub" {
             elOverblikThirdPartyUser = softwareSystem "Eloverblik Third Party" {
                 description "System that interacts with ElOverblik on behalf of a user."
                 tags "Actor"
+            }
+            energyOriginThirdPartySystem = softwareSystem "Energy Origin Third Party" {
+                description "Third party system that interacts with Energy Origin APIs."
+                tags "Actor"
+            }
+            energyOriginUser = person "Energy Origin user" {
+                description "Person who on behalf of a power producer/consumer interacts with Energy Origin."
             }
         }
 
@@ -150,7 +151,8 @@ workspace "DataHub" {
         energyOrigin -> dh2 "Requests measurements" "https"
         energyOrigin -> po "Links to guarantees of origin" "https"
         energyOrigin -> eds "Requests emission and residual mix data" "https"
-        energyOriginUser -> energyOrigin "Requests granular certificates" "https"
+        energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
+        energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
     }
 
     views {
