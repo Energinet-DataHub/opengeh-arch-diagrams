@@ -1,0 +1,522 @@
+{
+  "id" : 1,
+  "name" : "DataHub",
+  "description" : "Description",
+  "lastModifiedDate" : "2023-06-28T13:25:10Z",
+  "properties" : {
+    "structurizr.dsl" : "IyBSZWFkIGRlc2NyaXB0aW9uIGluIHRoZSAndmlld3MuZHNsJyBmaWxlLgoKd29ya3NwYWNlICJEYXRhSHViIiB7CgogICAgIyBFbmFibGUgaGllcmFyY2hpY2FsIGVsZW1lbnQgaWRlbnRpZmllciAocmVsYXRpb25zaGlwIGlkZW50aWZpZXJzIGFyZSB1bmFmZmVjdGVkKS4KICAgICMgU2VlIGh0dHBzOi8vZ2l0aHViLmNvbS9zdHJ1Y3R1cml6ci9kc2wvYmxvYi9tYXN0ZXIvZG9jcy9sYW5ndWFnZS1yZWZlcmVuY2UubWQjaWRlbnRpZmllci1zY29wZQogICAgIWlkZW50aWZpZXJzIGhpZXJhcmNoaWNhbAoKICAgIG1vZGVsIHsKICAgICAgICBwcm9wZXJ0aWVzIHsKICAgICAgICAgICAgIyBFbmFibGUgbmVzdGVkIGdyb3Vwcy4KICAgICAgICAgICAgIyBTZWUgaHR0cHM6Ly9naXRodWIuY29tL3N0cnVjdHVyaXpyL2RzbC90cmVlL21hc3Rlci9kb2NzL2Nvb2tib29rL2dyb3VwcyNuZXN0ZWQtZ3JvdXBzCiAgICAgICAgICAgICJzdHJ1Y3R1cml6ci5ncm91cFNlcGFyYXRvciIgIi8iCiAgICAgICAgfQoKICAgICAgICBncm91cCAiRW5lcmd5IFN1cHBsaWVyIG9yIEdyaWQgQWNjZXNzIFByb3ZpZGVyIiB7CiAgICAgICAgICAgIGRoM1VzZXIgPSBwZXJzb24gIkRIMyBVc2VyIiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiUGVyc29uIHdobyBpbnRlcmFjdHMgd2l0aCBEYXRhSHViIgogICAgICAgICAgICAgICAgdGFncyAiIgogICAgICAgICAgICB9CgogICAgICAgICAgICBhY3RvckIyQlN5c3RlbSA9IHNvZnR3YXJlU3lzdGVtICJBY3RvciBCMkIgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiRXh0ZXJuYWwgYnVzaW5lc3MgdHJhbnNhY3Rpb24gc3lzdGVtLiBTeXN0ZW0tdG8tc3lzdGVtIGNvbW11bmljYXRpb24gKEIyQikuIgogICAgICAgICAgICAgICAgdGFncyAiQWN0b3IiCiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgZ3JvdXAgIkxhcmdlIHBvd2VyIHByb2R1Y2VyIG9yIGNvbnN1bWVyIiB7CiAgICAgICAgICAgIGVuZXJneU9yaWdpblVzZXIgPSBzb2Z0d2FyZVN5c3RlbSAiRW5lcmd5IE9yaWdpbiBVc2VyIiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiU3lzdGVtIGF0IGxhcmdlIHBvd2VyIHByb2R1Y2VycyBhbmQgY29uc3VtZXJzIHRoYXQgaW50ZXJhY3RzIHdpdGggRW5lcmd5IE9yaWdpbi4iCiAgICAgICAgICAgICAgICB0YWdzICJBY3RvciIKICAgICAgICAgICAgfQogICAgICAgIH0KICAgICAgICBncm91cCAiQnVzaW5lc3Mgb3IgcHJpdmF0ZSBwZXJzb24iIHsKICAgICAgICAgICAgZWxPdmVyYmxpa1VzZXIgPSBwZXJzb24gIkVsT3ZlcmJsaWsgdXNlciIgewogICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIlBlcnNvbiB3aG8gaW50ZXJhY3RzIHdpdGggRWxPdmVyYmxpay4gQm90aCBwcml2YXRlIGFuZCBidXNpbmVzcyB1c2Vycy4iCiAgICAgICAgICAgICAgICB0YWdzICIiCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxPdmVyYmxpa1RoaXJkUGFydHlVc2VyID0gc29mdHdhcmVTeXN0ZW0gIkVsb3ZlcmJsaWsgVGhpcmQgUGFydHkiIHsKICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJTeXN0ZW0gdGhhdCBpbnRlcmFjdHMgd2l0aCBFbE92ZXJibGlrIG9uIGJlaGFsZiBvZiBhIHVzZXIuIgogICAgICAgICAgICAgICAgdGFncyAiQWN0b3IiCiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIGdyb3VwICJDR0kgT3JnYW5pemF0aW9uIiB7CiAgICAgICAgICAgIGRoMiA9IHNvZnR3YXJlU3lzdGVtICJEYXRhSHViIDIuMCIgewogICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkV4aXN0aW5nIERhdGFIdWIgc3lzdGVtLiBQcm92aWRlcyB1bmlmb3JtIGNvbW11bmljYXRpb24gYW5kIHN0YW5kYXJkaXplZCBwcm9jZXNzZXMgZm9yIGFjdG9ycyBvcGVyYXRpbmcgb24gdGhlIERhbmlzaCBlbGVjdHJpY2l0eSBtYXJrZXQuIgogICAgICAgICAgICAgICAgdGFncyAiT3V0IG9mIGZvY3VzIgogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICBncm91cCAiZVNldHQgT3JnYW5pemF0aW9uIiB7CiAgICAgICAgICAgIGVTZXR0ID0gc29mdHdhcmVTeXN0ZW0gImVTZXR0IiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiQmFsYW5jZSBzZXR0bGVtZW50IHN5c3RlbSBmb3IgdGhlIE5vcmRpYyBlbGVjdHJpY2l0eSBtYXJrZXQuIgogICAgICAgICAgICAgICAgdGFncyAiT3V0IG9mIGZvY3VzIgogICAgICAgICAgICB9CiAgICAgICAgfQogICAgICAgIGdyb3VwICJTaWduYXR1cmdydXBwZW4gT3JnYW5pemF0aW9uIiB7CiAgICAgICAgICAgIG1pdElkID0gc29mdHdhcmVTeXN0ZW0gIk1pdElEIiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiTWl0SUQgaXMgYSBjb21tb24gbG9naW4gc29sdXRpb24gZm9yIHRoZSBwdWJsaWMgc2VjdG9yIGluIERlbm1hcmsuIgogICAgICAgICAgICAgICAgdGFncyAiT3V0IG9mIGZvY3VzIgogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICBncm91cCAiRW5lcmdpbmV0IE9yZ2FuaXphdGlvbiIgewogICAgICAgICAgICBidEVTZXR0ID0gc29mdHdhcmVTeXN0ZW0gIkJpelRhbGsgZVNldHQiIHsKICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJIYW5kbGVzIGNvbW11bmljYXRpb24gYW5kIG5ldHdvcmsgYmV0d2VlbiBFbmVyZ2luZXQgYW5kIGVTZXR0LiIKICAgICAgICAgICAgICAgIHRhZ3MgIk91dCBvZiBmb2N1cyIKICAgICAgICAgICAgfQogICAgICAgICAgICBlZHMgPSBzb2Z0d2FyZVN5c3RlbSAiRW5lcmdpIERhdGEgU2VydmljZSIgewogICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkRhdGEgYW5kIHNlcnZpY2VzIGFib3V0IHRoZSBEYW5pc2ggZW5lcmd5IHN5c3RlbSBzdWNoIGFzIENPMiBlbWlzc2lvbnMgYW5kIGNvbnN1bXB0aW9uIGFuZCBwcm9kdWN0aW9uIGRhdGEuIgogICAgICAgICAgICAgICAgdGFncyAiT3V0IG9mIGZvY3VzIgogICAgICAgICAgICB9CiAgICAgICAgICAgIHBvID0gc29mdHdhcmVTeXN0ZW0gIlByb2plY3QgT3JpZ2luIiB7CiAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiUHVibGljIHBlcm1pc3Npb25lZCBkaXN0cmlidXRlZCBsZWRnZXIgd2hlcmUgZXZlcnlvbmUgY2FuIHZhbGlkYXRlIHRoZSBHdWFyYW50ZWUgb2YgT3JpZ2luIGZvciB0aGVpciBlbGVjdHJpY2l0eS4iCiAgICAgICAgICAgICAgICB0YWdzICJPdXQgb2YgZm9jdXMiCiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGdyb3VwICJEYXRhSHViIE9yZ2FuaXphdGlvbiIgewogICAgICAgICAgICAgICAgZGhTeXN0ZW1BZG1pbiA9IHBlcnNvbiAiRGF0YUh1YiBTeXN0ZW0gQWRtaW4iIHsKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiUGVyc29uIHdobyB3b3JrcyB3aXRoaW4gRW5lcmdpbmV0IERhdGFIdWIiCiAgICAgICAgICAgICAgICAgICAgdGFncyAiIgogICAgICAgICAgICAgICAgfQoKICAgICAgICAgICAgICAgIGVsT3ZlcmJsaWsgPSBzb2Z0d2FyZVN5c3RlbSAiRWxvdmVyYmxpayIgewogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJUaGUgcGxhdGZvcm0gcHJvdmlkZXMgZGF0YSBvbiBlbGVjdHJpY2l0eSBjb25zdW1wdGlvbiBhbmQgcHJvZHVjdGlvbiwgYWxsb3dpbmcgY3VzdG9tZXJzIHRvIGhhdmUgYSBjb21wcmVoZW5zaXZlIG92ZXJ2aWV3IGFjcm9zcyBncmlkIGFyZWFzIGFuZCBlbmVyZ3kgc3VwcGxpZXJzLiIKICAgICAgICAgICAgICAgICAgICAjIEV4dGVuZCB3aXRoIGdyb3VwcyBhbmQgY29udGFpbmVycyBpbiBzZXBhcmF0ZSByZXBvcwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZW5lcmd5T3JpZ2luID0gc29mdHdhcmVTeXN0ZW0gIkVuZXJneSBPcmlnaW4iIHsKICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiUHJvdmlkZXMgYSB3YXkgdG8gaXNzdWUgYW5kIGNsYWltIGdyYW51bGFyIGNlcnRpZmljYXRlcyIKICAgICAgICAgICAgICAgICAgICAjIEV4dGVuZCB3aXRoIGdyb3VwcyBhbmQgY29udGFpbmVycyBpbiBzZXBhcmF0ZSByZXBvcwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgZGhFU2V0dCA9IHNvZnR3YXJlU3lzdGVtICJEYXRhSHViIGVTZXR0IiB7CiAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNvbnZlcnRzIGViaXggbWVzc2FnZXMsIHdoaWNoIGNvbnRhaW4gYWdncmVnYXRlZCBlbmVyZ3kgdGltZSBzZXJpZXMsIGludG8gYSBmb3JtYXQgZVNldHQgdW5kZXJzdGFuZHMgKG5icykuIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIiIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGRoMyA9IHNvZnR3YXJlU3lzdGVtICJEYXRhSHViIDMuMCIgewogICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJQcm92aWRlcyB1bmlmb3JtIGNvbW11bmljYXRpb24gYW5kIHN0YW5kYXJkaXplZCBwcm9jZXNzZXMgZm9yIGFjdG9ycyBvcGVyYXRpbmcgb24gdGhlIERhbmlzaCBlbGVjdHJpY2l0eSBtYXJrZXQuIgogICAgICAgICAgICAgICAgICAgIHRhZ3MgIiIKCiAgICAgICAgICAgICAgICAgICAgIyBTaGFyZWQgY29udGFpbmVycyBtdXN0IGJlIGFkZGVkIGluIHRoZSBiYXNlIG1vZGVsCiAgICAgICAgICAgICAgICAgICAgc2hhcmVkU2VydmljZUJ1cyA9IGNvbnRhaW5lciAiTWVzc2FnZSBicm9rZXIiIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIk1lc3NhZ2UgYnJva2VyIHdpdGggbWVzc2FnZSBxdWV1ZXMgYW5kIHB1Ymxpc2gtc3Vic2NyaWJlIHRvcGljcyIKICAgICAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQXp1cmUgU2VydmljZSBCdXMiCiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIkludGVybWVkaWF0ZSBUZWNobm9sb2d5IiAiUGFhUyIgIk1pY3Jvc29mdCBBenVyZSAtIEF6dXJlIFNlcnZpY2UgQnVzIgogICAgICAgICAgICAgICAgICAgIH0KCiAgICAgICAgICAgICAgICAgICAgc2hhcmVkU2VuZEdyaWQgPSBjb250YWluZXIgIlNlbmRHcmlkIChzaGFyZWQpIiB7CiAgICAgICAgICAgICAgICAgICAgICAgIGRlc2NyaXB0aW9uICJFTWFpbCBkaXNwYXRjaGVyIgogICAgICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJUd2lsaW8gU2VuZEdyaWQiCiAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIkludGVybWVkaWF0ZSBUZWNobm9sb2d5IiAiU2FhUyIgIk1pY3Jvc29mdCBBenVyZSAtIFNlbmRHcmlkIEFjY291bnRzIgoKICAgICAgICAgICAgICAgICAgICAgICAgIyBCYXNlIG1vZGVsIHJlbGF0aW9uc2hpcHMKICAgICAgICAgICAgICAgICAgICAgICAgdGhpcyAtPiBkaDNVc2VyICJTZW5kcyBtYWlsIgogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICB3aG9sZXNhbGVBcGkgPSBjb250YWluZXIgIldob2xlc2FsZSBBUEkiIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIjxhZGQgZGVzY3JpcHRpb24+IgogICAgICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICJBc3AuTmV0IENvcmUgV2ViIEFQSSIKICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiTWljcm9zb2Z0IEF6dXJlIC0gQXBwIFNlcnZpY2VzIiAiZXMiCgogICAgICAgICAgICAgICAgICAgICAgICAjIEJhc2UgbW9kZWwgcmVsYXRpb25zaGlwcwogICAgICAgICAgICAgICAgICAgICAgICB0aGlzIC0+IGRoMy5zaGFyZWRTZXJ2aWNlQnVzICJwdWJsaXNoZXMgZXZlbnRzIgoKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgIGVTZXR0RG9tID0gZ3JvdXAgImVTZXR0IEV4Y2hhbmdlIiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBlc2V0dEV4Y2hhbmdlID0gY29udGFpbmVyICJlU2V0dCBFeGNoYW5nZSBTZXJ2aWNlIiB7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNvbnZlcnRzIGNhbGN1bGF0aW9uIG1lc3NhZ2VzLCB3aGljaCBjb250YWluIGFnZ3JlZ2F0ZWQgZW5lcmd5IHRpbWUgc2VyaWVzLCBpbnRvIGEgZm9ybWF0IGVTZXR0IHVuZGVyc3RhbmRzIChuYnMpLiIKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0ZWNobm9sb2d5ICIiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFncyAiZXMiCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIyBCYXNlIG1vZGVsIHJlbGF0aW9uc2hpcHMKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aGlzIC0+IGVTZXR0ICJTZW5kcyBjYWxjdWxhdGlvbnMgKHZpYSBFQ1ApIiAiaHR0cHMvbmJzIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHNoYXJlZFNlcnZpY2VCdXMgLT4gdGhpcyAiU2VuZHMgY2FsY3VsYXRpb25zIiAiIgogICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgICAgICAgICBkaDJCcmlkZ2UgPSBjb250YWluZXIgIkRIMiBCcmlkZ2UiIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBkZXNjcmlwdGlvbiAiR2V0IGNhbGN1bGF0aW9ucyBmcm9tIERIMi4iCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgImVzIgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICMgQmFzZSBtb2RlbCByZWxhdGlvbnNoaXBzCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGhpcyAtPiBkaDIgIlB1bGxzIGNhbGN1bGF0aW9ucyIgInBlZWsrZGVxdWV1ZS9odHRwcyIKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aGlzIC0+IHNoYXJlZFNlcnZpY2VCdXMgIlNlbmRzIGNhbGN1bGF0aW9ucyIgIiIKICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgICAgICB9CgogICAgICAgICAgICAgICAgICAgIHNoYXJlZEIyQyA9IGNvbnRhaW5lciAiQXBwIFJlZ2lzdHJhdGlvbnMgKHNoYXJlZCkiIHsKICAgICAgICAgICAgICAgICAgICAgICAgZGVzY3JpcHRpb24gIkNsb3VkIGlkZW50aXR5IGRpcmVjdG9yeSIKICAgICAgICAgICAgICAgICAgICAgICAgdGVjaG5vbG9neSAiQXp1cmUgQUQgQjJDIgogICAgICAgICAgICAgICAgICAgICAgICB0YWdzICJNaWNyb3NvZnQgQXp1cmUgLSBBenVyZSBBRCBCMkMiCgogICAgICAgICAgICAgICAgICAgICAgICAjIEJhc2UgbW9kZWwgcmVsYXRpb25zaGlwcwogICAgICAgICAgICAgICAgICAgICAgICBhY3RvckIyQlN5c3RlbSAtPiB0aGlzICJSZXF1ZXN0IE9BdXRoIHRva2VuIiAiaHR0cHMiIHsKICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhZ3MgIk9BdXRoIgogICAgICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAgICAgfQoKCiAgICAgICAgICAgICAgICAgICAgIyBFeHRlbmQgd2l0aCBncm91cHMgYW5kIGNvbnRhaW5lcnMgaW4gc2VwYXJhdGUgcmVwb3MKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgIyBSZWxhdGlvbnNoaXBzIHRvL2Zyb20KICAgICAgICAjIERIIGVTZXR0CiAgICAgICAgZGhFU2V0dCAtPiBidEVTZXR0ICJTZW5kcyBjYWxjdWxhdGlvbnMiICJodHRwcyIKICAgICAgICBidEVTZXR0IC0+IGVTZXR0ICJTZW5kcyBjYWxjdWxhdGlvbnMiICI8YWRkIHRlY2hub2xvZ3k+IgogICAgICAgIGRoU3lzdGVtQWRtaW4gLT4gZGhFU2V0dCAiTW9uaXRvcnMiICJicm93c2VyIgogICAgICAgICMgREgyCiAgICAgICAgZGhFU2V0dCAtPiBkaDIgIlJlcXVlc3RzIDxkYXRhPiIgInBlZWsrZGVxdWV1ZS9odHRwcyIKICAgICAgICAjIERIMwogICAgICAgIGVsT3ZlcmJsaWsgLT4gZGgyICJSZXF1ZXN0cyA8ZGF0YT4iICJodHRwcyIKICAgICAgICBkaFN5c3RlbUFkbWluIC0+IGRoMyAiVXNlcyIgImJyb3dzZXIiCiAgICAgICAgZGgzVXNlciAtPiBkaDMgIlVzZXMiICJicm93c2VyIgogICAgICAgIGFjdG9yQjJCU3lzdGVtIC0+IGRoMyAiUmVxdWVzdHMgY2FsY3VsYXRpb25zIiAicGVlaytkZXF1ZXVlL2h0dHBzIgogICAgICAgIGRoMiAtPiBkaDMgIlRyYW5zZmVycyA8ZGF0YT4iICJBekNvcHkvaHR0cHMiCiAgICAgICAgIyBFbE92ZXJibGlrCiAgICAgICAgZWxPdmVyYmxpa1VzZXIgLT4gZWxPdmVyYmxpayAiUmVxdWVzdHMgPGRhdGE+IiAiYnJvd3NlciIKICAgICAgICBlbE92ZXJibGlrIC0+IGVkcyAiUmVxdWVzdHMgZW1pc3Npb24gYW5kIHJlc2lkdWFsIG1peCBkYXRhIiAiaHR0cHMiCiAgICAgICAgZWxPdmVyYmxpa1RoaXJkUGFydHlVc2VyIC0+IGVsT3ZlcmJsaWsgIlJlcXVlc3RzIDxkYXRhPiIgImh0dHBzIgogICAgICAgICMgRW5lcmd5IE9yaWdpbgogICAgICAgIGVuZXJneU9yaWdpbiAtPiBkaDIgIlJlcXVlc3RzIG1lYXN1cmVtZW50cyIgImh0dHBzIgogICAgICAgIGVuZXJneU9yaWdpbiAtPiBwbyAiTGlua3MgdG8gZ3VhcmFudGVlcyBvZiBvcmlnaW4iICJodHRwcyIKICAgICAgICBlbmVyZ3lPcmlnaW4gLT4gZWRzICJSZXF1ZXN0cyBlbWlzc2lvbiBhbmQgcmVzaWR1YWwgbWl4IGRhdGEiICJodHRwcyIKICAgICAgICBlbmVyZ3lPcmlnaW5Vc2VyIC0+IGVuZXJneU9yaWdpbiAiUmVxdWVzdHMgZ3JhbnVsYXIgY2VydGlmaWNhdGVzIiAiaHR0cHMiCiAgICB9CgogICAgdmlld3MgewogICAgICAgICMgUGxhY2UgYW55ICd2aWV3cycgaW4gdGhlICd2aWV3cy5kc2wnIGZpbGUuCgogICAgICAgIHRoZW1lcyBkZWZhdWx0IGh0dHBzOi8vc3RhdGljLnN0cnVjdHVyaXpyLmNvbS90aGVtZXMvbWljcm9zb2Z0LWF6dXJlLTIwMjMuMDEuMjQvaWNvbnMuanNvbgogICAgICAgIGNvbnRhaW5lciBkaDMgIk1hcmtldFBhcnRpY2lwYW50IiB7CiAgICAgICAgICAgIHRpdGxlICJbQ29udGFpbmVyXSBEYXRhSHViIDMuMCAtIE1hcmtldCBQYXJ0aWNpcGFudCAoU2ltcGxpZmllZCkiCiAgICAgICAgICAgIGluY2x1ZGUgImVsZW1lbnQudGFnPT1lcyIKICAgICAgICAgICAgCiAgICAgICAgfQoKICAgICAgICAKICAgICAKICAgICAgICBzdHlsZXMgewogICAgICAgICAgICAjIFVzZSB0byBtYXJrIGFuIGVsZW1lbnQgdGhhdCBpcyBzb21laG93IG5vdCBjb21wbGlhbnQgdG8gdGhlIHByb2plY3RzIHN0YW5kYXJkcy4KICAgICAgICAgICAgZWxlbWVudCAiTm90IENvbXBsaWFudCIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjZmZiYjU1CiAgICAgICAgICAgICAgICBjb2xvciAjZmZmZmZmCiAgICAgICAgICAgIH0KICAgICAgICAgICAgIyBVc2UgdG8gbWFyayBhbiBlbGVtZW50IHRoYXQgaXMgYWN0aW5nIGFzIGEgbWVkaWF0b3IgYmV0d2VlbiBvdGhlciBlbGVtZW50cyBpbiBmb2N1cy4KICAgICAgICAgICAgIyBFLmcuIGFuIGVsZW1lbnQgdGhhdCB3ZSB3b3VsZCBsaWtlIHRvIHNob3cgZm9yIHRoZSBvdmVyYWxsIHBpY3R1cmUsIHRvIGJlIGFibGUgdG8gY2xlYXJseSBjb21tdW5pY2F0ZSBkZXBlbmRlbmNpZXMuCiAgICAgICAgICAgICMgVHlwaWNhbGx5IHRoaXMgaXMgYW4gZWxlbWVudCB0aGF0IHdlIGNvbmZpZ3VyZSwgaW5zdGVhZCBvZiBkZXZlbG9wLgogICAgICAgICAgICBlbGVtZW50ICJJbnRlcm1lZGlhdGUgVGVjaG5vbG9neSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjZGRkZGRkCiAgICAgICAgICAgICAgICBjb2xvciAjOTk5OTk5CiAgICAgICAgICAgIH0KICAgICAgICAgICAgIyBVc2UgdG8gbWFyayBhbiBlbGVtZW50cyB0aGF0IGlzIG5vdCBhbiBhY3RpdmUgcGFydCBvZiB0aGUgRGF0YUh1YiAzLjAgcHJvamVjdC4KICAgICAgICAgICAgIyBFLmcuIGFuIHNvZnR3YXJlIHN5c3RlbSB0byB3aGljaCB0aGUgcHJvamVjdCBoYXMgZGVwZW5kZW5jaWVzLgogICAgICAgICAgICBlbGVtZW50ICJPdXQgb2YgZm9jdXMiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgIzk5OTk5OQogICAgICAgICAgICAgICAgY29sb3IgI2ZmZmZmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkluZnJhc3RydWN0dXJlIE5vZGUiIHsKICAgICAgICAgICAgICAgIGJhY2tncm91bmQgI2RkZGRkZAogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGEgU3RvcmFnZSIgewogICAgICAgICAgICAgICAgc2hhcGUgQ3lsaW5kZXIKICAgICAgICAgICAgfQogICAgICAgICAgICAjIFN0eWxlIGZvciB0aGUgRGF0YUh1YiBPcmdhbml6YXRpb24gZ3JvdXAgd2hpY2ggc2hvdWxkIG1ha2UgaXQgc3RhbmQgb3V0IGNvbXBhcmVkIHRvIG90aGVyIGdyb3Vwcy4KICAgICAgICAgICAgZWxlbWVudCAiR3JvdXA6RW5lcmdpbmV0IE9yZ2FuaXphdGlvbi9EYXRhSHViIE9yZ2FuaXphdGlvbiIgewogICAgICAgICAgICAgICAgY29sb3IgIzAwMDBmZgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIlBlcnNvbiIgewogICAgICAgICAgICAgICAgc2hhcGUgcGVyc29uCiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwODQyN2IKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJXZWIgQnJvd3NlciIgewogICAgICAgICAgICAgICAgc2hhcGUgV2ViQnJvd3NlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkFjdG9yIiB7CiAgICAgICAgICAgICAgICBzaGFwZSBSb3VuZGVkQm94CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICMwODQyN2IKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQo="
+  },
+  "configuration" : { },
+  "model" : {
+    "people" : [ {
+      "id" : "1",
+      "tags" : "Element,Person,",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dh3user"
+      },
+      "name" : "DH3 User",
+      "description" : "Person who interacts with DataHub",
+      "relationships" : [ {
+        "id" : "40",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "16",
+        "description" : "Uses",
+        "technology" : "browser"
+      } ],
+      "group" : "Energy Supplier or Grid Access Provider",
+      "location" : "Unspecified"
+    }, {
+      "id" : "4",
+      "tags" : "Element,Person,",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eloverblikuser"
+      },
+      "name" : "ElOverblik user",
+      "description" : "Person who interacts with ElOverblik. Both private and business users.",
+      "relationships" : [ {
+        "id" : "43",
+        "tags" : "Relationship",
+        "sourceId" : "4",
+        "destinationId" : "13",
+        "description" : "Requests <data>",
+        "technology" : "browser"
+      } ],
+      "group" : "Business or private person",
+      "location" : "Unspecified"
+    }, {
+      "id" : "12",
+      "tags" : "Element,Person,",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dhsystemadmin"
+      },
+      "name" : "DataHub System Admin",
+      "description" : "Person who works within Energinet DataHub",
+      "relationships" : [ {
+        "id" : "36",
+        "tags" : "Relationship",
+        "sourceId" : "12",
+        "destinationId" : "15",
+        "description" : "Monitors",
+        "technology" : "browser"
+      }, {
+        "id" : "39",
+        "tags" : "Relationship",
+        "sourceId" : "12",
+        "destinationId" : "16",
+        "description" : "Uses",
+        "technology" : "browser"
+      } ],
+      "group" : "Energinet Organization/DataHub Organization",
+      "location" : "Unspecified"
+    } ],
+    "softwareSystems" : [ {
+      "id" : "2",
+      "tags" : "Element,Software System,Actor",
+      "properties" : {
+        "structurizr.dsl.identifier" : "actorb2bsystem"
+      },
+      "name" : "Actor B2B System",
+      "description" : "External business transaction system. System-to-system communication (B2B).",
+      "relationships" : [ {
+        "id" : "32",
+        "tags" : "Relationship,OAuth",
+        "sourceId" : "2",
+        "destinationId" : "31",
+        "description" : "Request OAuth token",
+        "technology" : "https"
+      }, {
+        "id" : "33",
+        "sourceId" : "2",
+        "destinationId" : "16",
+        "description" : "Request OAuth token",
+        "technology" : "https",
+        "linkedRelationshipId" : "32"
+      }, {
+        "id" : "41",
+        "tags" : "Relationship",
+        "sourceId" : "2",
+        "destinationId" : "16",
+        "description" : "Requests calculations",
+        "technology" : "peek+dequeue/https"
+      } ],
+      "group" : "Energy Supplier or Grid Access Provider",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "3",
+      "tags" : "Element,Software System,Actor",
+      "properties" : {
+        "structurizr.dsl.identifier" : "energyoriginuser"
+      },
+      "name" : "Energy Origin User",
+      "description" : "System at large power producers and consumers that interacts with Energy Origin.",
+      "relationships" : [ {
+        "id" : "49",
+        "tags" : "Relationship",
+        "sourceId" : "3",
+        "destinationId" : "14",
+        "description" : "Requests granular certificates",
+        "technology" : "https"
+      } ],
+      "group" : "Large power producer or consumer",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "5",
+      "tags" : "Element,Software System,Actor",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eloverblikthirdpartyuser"
+      },
+      "name" : "Eloverblik Third Party",
+      "description" : "System that interacts with ElOverblik on behalf of a user.",
+      "relationships" : [ {
+        "id" : "45",
+        "tags" : "Relationship",
+        "sourceId" : "5",
+        "destinationId" : "13",
+        "description" : "Requests <data>",
+        "technology" : "https"
+      } ],
+      "group" : "Business or private person",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "6",
+      "tags" : "Element,Software System,Out of focus",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dh2"
+      },
+      "name" : "DataHub 2.0",
+      "description" : "Existing DataHub system. Provides uniform communication and standardized processes for actors operating on the Danish electricity market.",
+      "relationships" : [ {
+        "id" : "42",
+        "tags" : "Relationship",
+        "sourceId" : "6",
+        "destinationId" : "16",
+        "description" : "Transfers <data>",
+        "technology" : "AzCopy/https"
+      } ],
+      "group" : "CGI Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "7",
+      "tags" : "Element,Software System,Out of focus",
+      "properties" : {
+        "structurizr.dsl.identifier" : "esett"
+      },
+      "name" : "eSett",
+      "description" : "Balance settlement system for the Nordic electricity market.",
+      "group" : "eSett Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "8",
+      "tags" : "Element,Software System,Out of focus",
+      "properties" : {
+        "structurizr.dsl.identifier" : "mitid"
+      },
+      "name" : "MitID",
+      "description" : "MitID is a common login solution for the public sector in Denmark.",
+      "group" : "Signaturgruppen Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "9",
+      "tags" : "Element,Software System,Out of focus",
+      "properties" : {
+        "structurizr.dsl.identifier" : "btesett"
+      },
+      "name" : "BizTalk eSett",
+      "description" : "Handles communication and network between Energinet and eSett.",
+      "relationships" : [ {
+        "id" : "35",
+        "tags" : "Relationship",
+        "sourceId" : "9",
+        "destinationId" : "7",
+        "description" : "Sends calculations",
+        "technology" : "<add technology>"
+      } ],
+      "group" : "Energinet Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "10",
+      "tags" : "Element,Software System,Out of focus",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eds"
+      },
+      "name" : "Energi Data Service",
+      "description" : "Data and services about the Danish energy system such as CO2 emissions and consumption and production data.",
+      "group" : "Energinet Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "11",
+      "tags" : "Element,Software System,Out of focus",
+      "properties" : {
+        "structurizr.dsl.identifier" : "po"
+      },
+      "name" : "Project Origin",
+      "description" : "Public permissioned distributed ledger where everyone can validate the Guarantee of Origin for their electricity.",
+      "group" : "Energinet Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "13",
+      "tags" : "Element,Software System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eloverblik"
+      },
+      "name" : "Eloverblik",
+      "description" : "The platform provides data on electricity consumption and production, allowing customers to have a comprehensive overview across grid areas and energy suppliers.",
+      "relationships" : [ {
+        "id" : "38",
+        "tags" : "Relationship",
+        "sourceId" : "13",
+        "destinationId" : "6",
+        "description" : "Requests <data>",
+        "technology" : "https"
+      }, {
+        "id" : "44",
+        "tags" : "Relationship",
+        "sourceId" : "13",
+        "destinationId" : "10",
+        "description" : "Requests emission and residual mix data",
+        "technology" : "https"
+      } ],
+      "group" : "Energinet Organization/DataHub Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "14",
+      "tags" : "Element,Software System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "energyorigin"
+      },
+      "name" : "Energy Origin",
+      "description" : "Provides a way to issue and claim granular certificates",
+      "relationships" : [ {
+        "id" : "46",
+        "tags" : "Relationship",
+        "sourceId" : "14",
+        "destinationId" : "6",
+        "description" : "Requests measurements",
+        "technology" : "https"
+      }, {
+        "id" : "47",
+        "tags" : "Relationship",
+        "sourceId" : "14",
+        "destinationId" : "11",
+        "description" : "Links to guarantees of origin",
+        "technology" : "https"
+      }, {
+        "id" : "48",
+        "tags" : "Relationship",
+        "sourceId" : "14",
+        "destinationId" : "10",
+        "description" : "Requests emission and residual mix data",
+        "technology" : "https"
+      } ],
+      "group" : "Energinet Organization/DataHub Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "15",
+      "tags" : "Element,Software System,",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dhesett"
+      },
+      "name" : "DataHub eSett",
+      "description" : "Converts ebix messages, which contain aggregated energy time series, into a format eSett understands (nbs).",
+      "relationships" : [ {
+        "id" : "34",
+        "tags" : "Relationship",
+        "sourceId" : "15",
+        "destinationId" : "9",
+        "description" : "Sends calculations",
+        "technology" : "https"
+      }, {
+        "id" : "37",
+        "tags" : "Relationship",
+        "sourceId" : "15",
+        "destinationId" : "6",
+        "description" : "Requests <data>",
+        "technology" : "peek+dequeue/https"
+      } ],
+      "group" : "Energinet Organization/DataHub Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "16",
+      "tags" : "Element,Software System,",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dh3"
+      },
+      "name" : "DataHub 3.0",
+      "description" : "Provides uniform communication and standardized processes for actors operating on the Danish electricity market.",
+      "relationships" : [ {
+        "id" : "20",
+        "sourceId" : "16",
+        "destinationId" : "1",
+        "description" : "Sends mail",
+        "linkedRelationshipId" : "19"
+      }, {
+        "id" : "25",
+        "sourceId" : "16",
+        "destinationId" : "7",
+        "description" : "Sends calculations (via ECP)",
+        "technology" : "https/nbs",
+        "linkedRelationshipId" : "24"
+      }, {
+        "id" : "29",
+        "sourceId" : "16",
+        "destinationId" : "6",
+        "description" : "Pulls calculations",
+        "technology" : "peek+dequeue/https",
+        "linkedRelationshipId" : "28"
+      } ],
+      "group" : "Energinet Organization/DataHub Organization",
+      "location" : "Unspecified",
+      "containers" : [ {
+        "id" : "18",
+        "tags" : "Element,Container,Intermediate Technology,SaaS,Microsoft Azure - SendGrid Accounts",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedsendgrid"
+        },
+        "name" : "SendGrid (shared)",
+        "description" : "EMail dispatcher",
+        "relationships" : [ {
+          "id" : "19",
+          "tags" : "Relationship",
+          "sourceId" : "18",
+          "destinationId" : "1",
+          "description" : "Sends mail"
+        } ],
+        "technology" : "Twilio SendGrid",
+        "documentation" : { }
+      }, {
+        "id" : "31",
+        "tags" : "Element,Container,Microsoft Azure - Azure AD B2C",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedb2c"
+        },
+        "name" : "App Registrations (shared)",
+        "description" : "Cloud identity directory",
+        "technology" : "Azure AD B2C",
+        "documentation" : { }
+      }, {
+        "id" : "23",
+        "tags" : "Element,Container,es",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.esettexchange"
+        },
+        "name" : "eSett Exchange Service",
+        "description" : "Converts calculation messages, which contain aggregated energy time series, into a format eSett understands (nbs).",
+        "relationships" : [ {
+          "id" : "24",
+          "tags" : "Relationship",
+          "sourceId" : "23",
+          "destinationId" : "7",
+          "description" : "Sends calculations (via ECP)",
+          "technology" : "https/nbs"
+        } ],
+        "group" : "eSett Exchange",
+        "documentation" : { }
+      }, {
+        "id" : "21",
+        "tags" : "Element,Container,Microsoft Azure - App Services,es",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.wholesaleapi"
+        },
+        "name" : "Wholesale API",
+        "description" : "<add description>",
+        "relationships" : [ {
+          "id" : "22",
+          "tags" : "Relationship",
+          "sourceId" : "21",
+          "destinationId" : "17",
+          "description" : "publishes events"
+        } ],
+        "technology" : "Asp.Net Core Web API",
+        "documentation" : { }
+      }, {
+        "id" : "17",
+        "tags" : "Element,Container,Intermediate Technology,PaaS,Microsoft Azure - Azure Service Bus",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedservicebus"
+        },
+        "name" : "Message broker",
+        "description" : "Message broker with message queues and publish-subscribe topics",
+        "relationships" : [ {
+          "id" : "26",
+          "tags" : "Relationship",
+          "sourceId" : "17",
+          "destinationId" : "23",
+          "description" : "Sends calculations"
+        } ],
+        "technology" : "Azure Service Bus",
+        "documentation" : { }
+      }, {
+        "id" : "27",
+        "tags" : "Element,Container,es",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.dh2bridge"
+        },
+        "name" : "DH2 Bridge",
+        "description" : "Get calculations from DH2.",
+        "relationships" : [ {
+          "id" : "28",
+          "tags" : "Relationship",
+          "sourceId" : "27",
+          "destinationId" : "6",
+          "description" : "Pulls calculations",
+          "technology" : "peek+dequeue/https"
+        }, {
+          "id" : "30",
+          "tags" : "Relationship",
+          "sourceId" : "27",
+          "destinationId" : "17",
+          "description" : "Sends calculations"
+        } ],
+        "group" : "eSett Exchange",
+        "documentation" : { }
+      } ],
+      "documentation" : { }
+    } ],
+    "properties" : {
+      "structurizr.groupSeparator" : "/"
+    }
+  },
+  "documentation" : { },
+  "views" : {
+    "containerViews" : [ {
+      "key" : "MarketParticipant",
+      "order" : 1,
+      "title" : "[Container] DataHub 3.0 - Market Participant (Simplified)",
+      "softwareSystemId" : "16",
+      "dimensions" : {
+        "width" : 1810,
+        "height" : 2551
+      },
+      "externalSoftwareSystemBoundariesVisible" : true,
+      "elements" : [ {
+        "id" : "23",
+        "x" : 894,
+        "y" : 1470
+      }, {
+        "id" : "27",
+        "x" : 964,
+        "y" : 630
+      }, {
+        "id" : "21",
+        "x" : 374,
+        "y" : 625
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "styles" : {
+        "elements" : [ {
+          "tag" : "Not Compliant",
+          "background" : "#ffbb55",
+          "color" : "#ffffff"
+        }, {
+          "tag" : "Intermediate Technology",
+          "background" : "#dddddd",
+          "color" : "#999999"
+        }, {
+          "tag" : "Out of focus",
+          "background" : "#999999",
+          "color" : "#ffffff"
+        }, {
+          "tag" : "Infrastructure Node",
+          "background" : "#dddddd"
+        }, {
+          "tag" : "Data Storage",
+          "shape" : "Cylinder"
+        }, {
+          "tag" : "Group:Energinet Organization/DataHub Organization",
+          "color" : "#0000ff"
+        }, {
+          "tag" : "Person",
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "shape" : "Person"
+        }, {
+          "tag" : "Web Browser",
+          "shape" : "WebBrowser"
+        }, {
+          "tag" : "Actor",
+          "background" : "#08427b",
+          "color" : "#ffffff",
+          "shape" : "RoundedBox"
+        } ]
+      },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json", "https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json" ],
+      "terminology" : { },
+      "lastSavedView" : "MarketParticipant"
+    }
+  }
+}

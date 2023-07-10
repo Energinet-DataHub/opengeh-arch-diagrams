@@ -97,6 +97,6 @@ Use VS Code with the "C4 DSL Extension" to update the model file `dh-base-model.
 
 It is possible to view a single diagram in VS Code using the "C4 DSL Extension", but it has its limitations, so its usage is primarily for the editing support.
 
-After editing in the model or views, refresh the browser running Structurizr Lite to reload the views. Note that unfortunately added boxes may be hidden behind existing ones, in that case you can drag boxes manually to fix the layout.
+After editing in the model or views, refresh the browser running Structurizr Lite to reload the views. **Note** that unfortunately added boxes may be hidden behind existing ones, in that case you can drag boxes manually to fix the layout.
 
 If `autolayout` is not enabled, it is possible to perform manual layout of elements in the model. Layout informations are saved in a `views.json` file. There are situations where the layout might be lost, or changed. See also [Structurizr - Troubleshooting](https://structurizr.com/share/76352/documentation#installation-2).
