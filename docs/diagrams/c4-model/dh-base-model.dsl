@@ -81,7 +81,6 @@ workspace "DataHub" {
                     description "Person who works within Energinet DataHub"
                     tags ""
                 }
-
                 elOverblik = softwareSystem "Eloverblik" {
                     description "The platform provides data on electricity consumption and production, allowing customers to have a comprehensive overview across grid areas and energy suppliers."
                     # Extend with groups and containers in separate repos
@@ -104,7 +103,6 @@ workspace "DataHub" {
                         technology "Azure Service Bus"
                         tags "Intermediate Technology" "PaaS" "Microsoft Azure - Azure Service Bus"
                     }
-
                     sharedSendGrid = container "SendGrid (shared)" {
                         description "EMail dispatcher"
                         technology "Twilio SendGrid"
@@ -113,7 +111,6 @@ workspace "DataHub" {
                         # Base model relationships
                         this -> dh3User "Sends mail"
                     }
-                    
                     sharedB2C = container "App Registrations (shared)" {
                         description "Cloud identity directory"
                         technology "Azure AD B2C"
@@ -159,7 +156,6 @@ workspace "DataHub" {
         # Place any 'views' in the 'views.dsl' file.
 
         themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
-     
         styles {
             # Use to mark an element that is somehow not compliant to the projects standards.
             element "Not Compliant" {
