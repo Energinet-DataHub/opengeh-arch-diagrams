@@ -13,7 +13,7 @@ workspace "DataHub" {
             "structurizr.groupSeparator" "/"
         }
 
-        group "Energy Supplier or Grid Access Provider" {
+        group "Electricity Supplier or Grid Company" {
             dh3User = person "DH3 User" {
                 description "Person who interacts with DataHub"
                 tags ""
