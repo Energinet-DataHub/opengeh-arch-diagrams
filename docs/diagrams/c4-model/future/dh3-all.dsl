@@ -27,7 +27,7 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
             !include https://raw.githubusercontent.com/Energinet-DataHub/greenforce-frontend/main/docs/diagrams/c4-model/model.dsl
 
             # Include Migration model - requires a token because its located in a private repository
-            !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-migration/main/docs/diagrams/c4-model/model.dsl?token=GHSAT0AAAAAACDNGUTKKRJDJ65AX26JPQDUZFGWZGQ
+            !include https://raw.githubusercontent.com/Energinet-DataHub/opengeh-migration/main/docs/diagrams/c4-model/model.dsl?token=GHSAT0AAAAAACDNGUTL3YABMJUOD4IVUJZEZGHRWXA
 
             eSettDomain = group "eSett Exchange" {
                 esettExchange = container "eSett Exchange" {
@@ -61,6 +61,9 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
                     }
                 }
             }
+        }
+        wholesaleCalculator -> edi "Calculated timeseries and metering data" {
+            tags "Simple View" "epic4"
         }
         biDomain = group "Data and Analytics" {
             bi = softwareSystem "Reports and Analytics" {
@@ -157,6 +160,16 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
             title "[Future] [Container] DataHub 3.0 - eSett Exchange"
             include ->eSettDomain->
             exclude "relationship.tag==Simple View"
+        }
+        dynamic dh3 "functionalUseCase1" {
+            title "[Dynamic] DataHub 3.0 - Functional Use Case 1"
+            dh2 -> dropZoneStorage "Raw timeseries and metering data" 
+            dropZoneStorage -> migrationDatabricks  "Raw timeseries and metering data"
+            migrationDatabricks -> wholesaleDataLake "Refined timeseries and metering data"
+            wholesaleDataLake -> wholesaleCalculator "Refined timeseries and metering data"
+            wholesaleCalculator -> edi "Calculated timeseries and metering data"
+            
+            edi -> actorB2BSystem "Calculated timeseries and metering data"
         }
     
     }
