@@ -98,6 +98,7 @@ workspace "DataHub" {
                     tags ""
 
                     # Shared containers must be added in the base model
+                    # TODO: Should we show this resource, or use "infrastructureNode" or another "style"?
                     sharedAppInsights = container "Application Insights" {
                         description "Application performance monitoring (APM) tool"
                         technology "Azure Application Insights"
