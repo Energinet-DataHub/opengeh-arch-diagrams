@@ -101,7 +101,7 @@ workspace "DataHub" {
                     sharedKeyVault = container "Key Vault" {
                         description "Store for secrets and signing keys"
                         technology "Azure Key Vault"
-                        tags "Intermediate Technology" "Microsoft Azure - Key Vaults"
+                        tags "Microsoft Azure - Key Vaults"
                     }
                     sharedServiceBus = container "Message broker" {
                         description "Message broker with message queues and publish-subscribe topics"
