@@ -509,7 +509,7 @@
         "documentation" : { }
       }, {
         "id" : "60",
-        "tags" : "Element,Container,Microsoft Azure - Function Apps,Phoenix",
+        "tags" : "Element,Container,Microsoft Azure - Function Apps,Mosaic",
         "properties" : {
           "structurizr.dsl.identifier" : "edi"
         },
@@ -533,7 +533,7 @@
         "technology" : "Azure function, C#",
         "components" : [ {
           "id" : "66",
-          "tags" : "Element,Component,Microsoft Azure - Function Apps,Phoenix",
+          "tags" : "Element,Component,Microsoft Azure - Function Apps,Mosaic",
           "properties" : {
             "structurizr.dsl.identifier" : "editimeseriesrequester"
           },
@@ -551,7 +551,7 @@
           "documentation" : { }
         }, {
           "id" : "68",
-          "tags" : "Element,Component,Microsoft Azure - Function Apps,Phoenix",
+          "tags" : "Element,Component,Microsoft Azure - Function Apps,Mosaic",
           "properties" : {
             "structurizr.dsl.identifier" : "editimeserieslistener"
           },
@@ -574,7 +574,7 @@
           "documentation" : { }
         }, {
           "id" : "64",
-          "tags" : "Element,Component,Microsoft Azure - Function Apps,Phoenix",
+          "tags" : "Element,Component,Microsoft Azure - Function Apps,Mosaic",
           "properties" : {
             "structurizr.dsl.identifier" : "edidequeuecomponent"
           },
@@ -592,7 +592,7 @@
           "documentation" : { }
         }, {
           "id" : "61",
-          "tags" : "Element,Component,Microsoft Azure - Function Apps,Phoenix",
+          "tags" : "Element,Component,Microsoft Azure - Function Apps,Mosaic",
           "properties" : {
             "structurizr.dsl.identifier" : "edipeekcomponent"
           },
@@ -668,7 +668,7 @@
         "documentation" : { }
       }, {
         "id" : "59",
-        "tags" : "Element,Container,Data Storage,Microsoft Azure - SQL Database,Phoenix",
+        "tags" : "Element,Container,Data Storage,Microsoft Azure - SQL Database,Mosaic",
         "properties" : {
           "structurizr.dsl.identifier" : "edidb"
         },
@@ -992,7 +992,7 @@
         "documentation" : { }
       }, {
         "id" : "73",
-        "tags" : "Element,Container,Intermediate Technology,Microsoft Azure - API Management Services,Phoenix",
+        "tags" : "Element,Container,Intermediate Technology,Microsoft Azure - API Management Services,Mosaic",
         "properties" : {
           "structurizr.dsl.identifier" : "ediapi"
         },
@@ -1205,9 +1205,9 @@
         "y" : 245
       } ]
     }, {
-      "key" : "Phoenix",
+      "key" : "Mosaic",
       "order" : 3,
-      "title" : "Owned by Phoenix",
+      "title" : "Owned by Mosaic",
       "softwareSystemId" : "17",
       "dimensions" : {
         "width" : 2430,

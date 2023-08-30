@@ -45,10 +45,10 @@ workspace extends https://raw.githubusercontent.com/Energinet-DataHub/opengeh-ar
             include "element.tag==Mandalorian"
             exclude "* -> *"
         }
-        container dh3 "Phoenix" {
-            title "Owned by Phoenix"
+        container dh3 "Mosaic" {
+            title "Owned by Mosaic"
             description ""
-            include "element.tag==Phoenix"
+            include "element.tag==Mosaic"
             exclude "* -> *"
         }
         container dh3 "Titans" {
