@@ -108,8 +108,13 @@ workspace "DataHub" {
                         technology "Azure Service Bus"
                         tags "Intermediate Technology" "PaaS" "Microsoft Azure - Azure Service Bus"
                     }
-                    sharedSendGrid = container "SendGrid (shared)" {
-                        description "EMail dispatcher"
+                    sharedInternalSendGrid = container "SendGrid (internal)" {
+                        description "EMail dispatcher for internal use"
+                        technology "Twilio SendGrid"
+                        tags "Intermediate Technology" "SaaS" "Microsoft Azure - SendGrid Accounts"
+                    }
+                    sharedExternalSendGrid = container "SendGrid (external)" {
+                        description "EMail dispatcher for external use"
                         technology "Twilio SendGrid"
                         tags "Intermediate Technology" "SaaS" "Microsoft Azure - SendGrid Accounts"
 
