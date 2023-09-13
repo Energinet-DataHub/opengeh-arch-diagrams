@@ -109,15 +109,12 @@ workspace "DataHub" {
                         tags "Intermediate Technology" "PaaS" "Microsoft Azure - Azure Service Bus"
                     }
                     sharedInternalSendGrid = container "SendGrid (internal)" {
-                        description "EMail dispatcher for internal use deployed on prod_001"
+                        description "EMail dispatcher for internal use"
                         technology "Twilio SendGrid"
                         tags "Intermediate Technology" "SaaS" "Microsoft Azure - SendGrid Accounts"
-
-                        # Base model relationships
-                        this -> dh3User "Sends mail"
                     }
                     sharedExternalSendGrid = container "SendGrid (external)" {
-                        description "EMail dispatcher for external use deployed on prod_001"
+                        description "EMail dispatcher for external use"
                         technology "Twilio SendGrid"
                         tags "Intermediate Technology" "SaaS" "Microsoft Azure - SendGrid Accounts"
 
