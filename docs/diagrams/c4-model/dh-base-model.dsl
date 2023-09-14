@@ -130,6 +130,10 @@ workspace "DataHub" {
                         actorB2BSystem -> this "Request OAuth token" "https" {
                             tags "OAuth"
                         }
+
+                        elOverblik -> this "Request OAuth token" "https" {
+                            tags "OAuth"
+                        }
                     }
 
                     # Extend with groups and containers in separate repos
