@@ -71,16 +71,12 @@ workspace "DataHub" {
                 description "Data and services about the Danish energy system such as CO2 emissions and consumption and production data."
                 tags "Out of focus"
             }
-            po = softwareSystem "Project Origin" {
-                description "TO BE DELETED - USE poRegistry"
-                tags "Out of focus"
-            }
             poRegistry = softwareSystem "Project Origin Registry" {
                 description "Public permissioned distributed ledger where everyone can validate the granular certificates for their electricity."
                 tags "Out of focus"
             }
             poWallet = softwareSystem "Project Origin Wallet System" {
-                description "System with wallets to hold granular certificates in the registries.s"
+                description "System with wallets to hold granular certificates in the registries."
                 tags "Out of focus"
             }
 
