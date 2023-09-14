@@ -72,7 +72,15 @@ workspace "DataHub" {
                 tags "Out of focus"
             }
             po = softwareSystem "Project Origin" {
+                description "TO BE DELETED - USE poRegistry"
+                tags "Out of focus"
+            }
+            poRegistry = softwareSystem "Project Origin Registry" {
                 description "Public permissioned distributed ledger where everyone can validate the Guarantee of Origin for their electricity."
+                tags "Out of focus"
+            }
+            poWallet = softwareSystem "Project Origin Wallet" {
+                description "..."
                 tags "Out of focus"
             }
 
@@ -160,7 +168,8 @@ workspace "DataHub" {
         elOverblikThirdPartyUser -> elOverblik "Requests <data>" "https"
         # Energy Origin
         energyOrigin -> dh2 "Requests measurements" "https"
-        energyOrigin -> po "Links to guarantees of origin" "https"
+        energyOrigin -> poRegistry "Links to guarantees of origin" "https"
+        energyOrigin -> poWallet "Places certificates in" "https"
         energyOrigin -> eds "Requests emission and residual mix data" "https"
         energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
         energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
