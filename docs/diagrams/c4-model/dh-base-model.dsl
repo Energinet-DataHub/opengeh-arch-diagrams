@@ -76,11 +76,11 @@ workspace "DataHub" {
                 tags "Out of focus"
             }
             poRegistry = softwareSystem "Project Origin Registry" {
-                description "Public permissioned distributed ledger where everyone can validate the Guarantee of Origin for their electricity."
+                description "Public permissioned distributed ledger where everyone can validate the granular certificates for their electricity."
                 tags "Out of focus"
             }
-            poWallet = softwareSystem "Project Origin Wallet" {
-                description "..."
+            poWallet = softwareSystem "Project Origin Wallet System" {
+                description "System with wallets to hold granular certificates in the registries.s"
                 tags "Out of focus"
             }
 
