@@ -71,8 +71,12 @@ workspace "DataHub" {
                 description "Data and services about the Danish energy system such as CO2 emissions and consumption and production data."
                 tags "Out of focus"
             }
-            po = softwareSystem "Project Origin" {
-                description "Public permissioned distributed ledger where everyone can validate the Guarantee of Origin for their electricity."
+            poRegistry = softwareSystem "Project Origin Registry" {
+                description "Public permissioned distributed ledger where everyone can validate the granular certificates for their electricity."
+                tags "Out of focus"
+            }
+            poWallet = softwareSystem "Project Origin Wallet System" {
+                description "System with wallets to hold granular certificates in the registries."
                 tags "Out of focus"
             }
 
@@ -160,7 +164,8 @@ workspace "DataHub" {
         elOverblikThirdPartyUser -> elOverblik "Requests <data>" "https"
         # Energy Origin
         energyOrigin -> dh2 "Requests measurements" "https"
-        energyOrigin -> po "Links to guarantees of origin" "https"
+        energyOrigin -> poRegistry "Links to guarantees of origin" "https"
+        energyOrigin -> poWallet "Places certificates in" "https"
         energyOrigin -> eds "Requests emission and residual mix data" "https"
         energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
         energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
