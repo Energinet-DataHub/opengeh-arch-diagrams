@@ -61,6 +61,12 @@ workspace "DataHub" {
                 tags "Out of focus"
             }
         }
+        group "Erhvervsstyrelsen" {
+            cvr = softwareSystem "CVR" {
+                description "CVR is a state owned company register in Denmark."
+                tags "Out of focus"
+            }
+        }
 
         group "Energinet Organization" {
             btESett = softwareSystem "BizTalk eSett" {
@@ -169,6 +175,7 @@ workspace "DataHub" {
         energyOrigin -> eds "Requests emission and residual mix data" "https"
         energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
         energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
+        energyOrigin -> cvr "Reads CVR data" "https"
     }
 
     views {
