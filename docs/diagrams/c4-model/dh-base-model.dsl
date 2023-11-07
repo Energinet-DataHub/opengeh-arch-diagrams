@@ -113,7 +113,7 @@ workspace "DataHub" {
                         technology "Azure Key Vault"
                         tags "Microsoft Azure - Key Vaults"
                     }
-                    sharedApiMangement = container "API Mangement" {
+                    sharedApiManagement = container "API Management" {
                         description "Expose URL endpoints to the public"
                         technology "Azure - API Management"
                         tags "Microsoft Azure - API Management Services"
