@@ -171,13 +171,15 @@ workspace "DataHub" {
         dh2 -> dh3 "Transfers <data>" "AzCopy/https"
         # ElOverblik
         elOverblikUser -> elOverblik "Requests <data>" "browser"
-        elOverblik -> eds "Requests emission and residual mix data" "https"
         elOverblikThirdPartyUser -> elOverblik "Requests <data>" "https"
+        elOverblik -> eds "Requests emission and residual mix data" "https"
+        elOverblik -> mitId "Authenticate users" "https"
         # Energy Origin
         energyOrigin -> dh2 "Requests measurements" "https"
         energyOrigin -> poRegistry "Links to guarantees of origin" "https"
         energyOrigin -> poWallet "Places certificates in" "https"
         energyOrigin -> eds "Requests emission and residual mix data" "https"
+        energyOrigin -> mitId "Authenticate users" "https"
         energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
         energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
         energyOrigin -> cvr "Reads CVR data" "https"
