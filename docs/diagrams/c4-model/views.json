@@ -2,7 +2,7 @@
   "id" : 1,
   "name" : "DataHub",
   "description" : "Description",
-  "lastModifiedDate" : "2023-10-18T12:21:39Z",
+  "lastModifiedDate" : "2023-11-16T12:46:53Z",
   "lastModifiedAgent" : "structurizr-javascript",
   "properties" : {
     "structurizr.dsl" : "IyBUaGUgJ3ZpZXdzLmRzbCcgZmlsZSBpcyBpbnRlbmRlZCBhcyBhIG1lYW4gZm9yIHZpZXdpbmcgYW5kIHZhbGlkYXRpbmcgdGhlIG1vZGVsLgojIEl0IHNob3VsZAojICAgKiBFeHRlbmQgdGhlIGJhc2UgbW9kZWwgd29ya3NwYWNlIGFuZCBPTkxZIGFkZCB2aWV3cwojCiMgVGhlIGBkaC1iYXNlLW1vZGVsLmRzbGAgZmlsZSBtdXN0IGNvbnRhaW4gdGhlIGFjdHVhbCBiYXNlIG1vZGVsLCBhbmQgaXMgdGhlIHBpZWNlCiMgdGhhdCBtdXN0IGJlIGV4dGVuZGFibGUgaW4gZG9tYWluIHJlcG9zaXRvcmllcy4KIyBJdCBzaG91bGQKIyAgICogSW5jbHVkZSB0aGUgbW9kZWwKIyAgICogSW5jbHVkZSByZXVzYWJsZSB0aGVtZXMgYW5kIHN0eWxlcwoKd29ya3NwYWNlIGV4dGVuZHMgZGgtYmFzZS1tb2RlbC5kc2wgewoKICAgIHZpZXdzIHsKICAgICAgICBzeXN0ZW1sYW5kc2NhcGUgIlN5c3RlbUxhbmRzY2FwZSIgewogICAgICAgICAgICB0aXRsZSAiW1N5c3RlbSBMYW5kc2NhcGVdIERhdGFIdWIgKFNpbXBsaWZpZWQpIgogICAgICAgICAgICBkZXNjcmlwdGlvbiAiJ0FzLWlzJyB2aWV3IG9mIHRoZSBEYXRhSHViIGNvbXBhbnkiCiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBleGNsdWRlICJyZWxhdGlvbnNoaXAudGFnPT1PQXV0aCIKICAgICAgICAgICAgZXhjbHVkZSAiZWxlbWVudC50YWc9PU91dCBvZiBmb2N1cyIKICAgICAgICB9CgogICAgICAgIHN5c3RlbWxhbmRzY2FwZSAiU3lzdGVtTGFuZHNjYXBlRGV0YWlsZWQiIHsKICAgICAgICAgICAgdGl0bGUgIltTeXN0ZW0gTGFuZHNjYXBlXSBEYXRhSHViIChEZXRhaWxlZCkiCiAgICAgICAgICAgIGRlc2NyaXB0aW9uICInQXMtaXMnIHZpZXcgb2YgdGhlIERhdGFIdWIgY29tcGFueSBhbmQgbmVhcmJ5IHNvZnR3YXJlIHN5c3RlbXMiCiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBleGNsdWRlICJyZWxhdGlvbnNoaXAudGFnPT1PQXV0aCIKICAgICAgICB9CgogICAgICAgIHN5c3RlbWNvbnRleHQgZGgzICJTeXN0ZW1Db250ZXh0IiB7CiAgICAgICAgICAgIHRpdGxlICJbU3lzdGVtIENvbnRleHRdIERhdGFIdWIgMy4wIgogICAgICAgICAgICBkZXNjcmlwdGlvbiAiJ0FzLWlzJyB2aWV3IG9mIHRoZSBESCAzLjAgc29mdHdhcmUgc3lzdGVtIGFuZCBkZXBlbmRlbmNpZXMiCiAgICAgICAgICAgIGluY2x1ZGUgKgogICAgICAgICAgICBleGNsdWRlICJyZWxhdGlvbnNoaXAudGFnPT1PQXV0aCIKICAgICAgICB9CiAgICB9Cn0K"
@@ -10,25 +10,22 @@
   "configuration" : { },
   "model" : {
     "people" : [ {
-      "id" : "3",
+      "id" : "1",
       "tags" : "Element,Person",
       "properties" : {
-        "structurizr.dsl.identifier" : "eloverblikuser"
+        "structurizr.dsl.identifier" : "dh3user"
       },
-      "name" : "ElOverblik user",
-      "description" : "Person who interacts with ElOverblik. Both private and business users.",
+      "name" : "DH3 User",
+      "description" : "Person who interacts with DataHub",
       "relationships" : [ {
-        "id" : "40",
+        "id" : "39",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "de662e1e-3d3f-4f84-aa9b-77acdb6a295a"
-        },
-        "sourceId" : "3",
-        "destinationId" : "16",
-        "description" : "Requests <data>",
+        "sourceId" : "1",
+        "destinationId" : "20",
+        "description" : "Uses",
         "technology" : "browser"
       } ],
-      "group" : "Business or private person",
+      "group" : "Electricity Supplier or Grid Company",
       "location" : "Unspecified"
     }, {
       "id" : "6",
@@ -39,20 +36,17 @@
       "name" : "Energy Origin user",
       "description" : "Person who on behalf of a power producer/consumer interacts with Energy Origin.",
       "relationships" : [ {
-        "id" : "47",
+        "id" : "52",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "59f9d650-9ab3-4944-94df-9f43b58735a3"
-        },
         "sourceId" : "6",
-        "destinationId" : "17",
+        "destinationId" : "18",
         "description" : "Reads/manages granular certificates",
         "technology" : "browser"
       } ],
       "group" : "Business or private person",
       "location" : "Unspecified"
     }, {
-      "id" : "15",
+      "id" : "16",
       "tags" : "Element,Person",
       "properties" : {
         "structurizr.dsl.identifier" : "dhsystemadmin"
@@ -60,194 +54,42 @@
       "name" : "DataHub System Admin",
       "description" : "Person who works within Energinet DataHub",
       "relationships" : [ {
-        "id" : "33",
+        "id" : "35",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "f2e48120-c932-4b72-86ee-378abefaaa1e"
-        },
-        "sourceId" : "15",
-        "destinationId" : "18",
+        "sourceId" : "16",
+        "destinationId" : "19",
         "description" : "Monitors",
         "technology" : "browser"
       }, {
-        "id" : "36",
+        "id" : "38",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "3260d6b6-5b6c-499a-950e-e22eb1dbf6e4"
-        },
-        "sourceId" : "15",
-        "destinationId" : "19",
+        "sourceId" : "16",
+        "destinationId" : "20",
         "description" : "Uses",
         "technology" : "browser"
       } ],
       "group" : "Energinet Organization/DataHub Organization",
       "location" : "Unspecified"
     }, {
-      "id" : "1",
+      "id" : "3",
       "tags" : "Element,Person",
       "properties" : {
-        "structurizr.dsl.identifier" : "dh3user"
+        "structurizr.dsl.identifier" : "eloverblikuser"
       },
-      "name" : "DH3 User",
-      "description" : "Person who interacts with DataHub",
+      "name" : "ElOverblik user",
+      "description" : "Person who interacts with ElOverblik. Both private and business users.",
       "relationships" : [ {
-        "id" : "37",
+        "id" : "43",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "b8d33a03-51e2-4da7-9894-cd5804a3a186"
-        },
-        "sourceId" : "1",
-        "destinationId" : "19",
-        "description" : "Uses",
+        "sourceId" : "3",
+        "destinationId" : "17",
+        "description" : "Requests <data>",
         "technology" : "browser"
       } ],
-      "group" : "Electricity Supplier or Grid Company",
+      "group" : "Business or private person",
       "location" : "Unspecified"
     } ],
     "softwareSystems" : [ {
-      "id" : "8",
-      "tags" : "Element,Software System,Out of focus",
-      "properties" : {
-        "structurizr.dsl.identifier" : "esett"
-      },
-      "name" : "eSett",
-      "description" : "Balance settlement system for the Nordic electricity market.",
-      "group" : "eSett Organization",
-      "location" : "Unspecified",
-      "documentation" : { }
-    }, {
-      "id" : "4",
-      "tags" : "Element,Software System,Actor",
-      "properties" : {
-        "structurizr.dsl.identifier" : "eloverblikthirdpartyuser"
-      },
-      "name" : "Eloverblik Third Party",
-      "description" : "System that interacts with ElOverblik on behalf of a user.",
-      "relationships" : [ {
-        "id" : "42",
-        "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "8fa0de3c-9fa8-47ef-8789-1034d974bb09"
-        },
-        "sourceId" : "4",
-        "destinationId" : "16",
-        "description" : "Requests <data>",
-        "technology" : "https"
-      } ],
-      "group" : "Business or private person",
-      "location" : "Unspecified",
-      "documentation" : { }
-    }, {
-      "id" : "2",
-      "tags" : "Element,Software System,Actor",
-      "properties" : {
-        "structurizr.dsl.identifier" : "actorb2bsystem"
-      },
-      "name" : "Actor B2B System",
-      "description" : "External business transaction system. System-to-system communication (B2B).",
-      "relationships" : [ {
-        "id" : "27",
-        "tags" : "Relationship,OAuth",
-        "properties" : {
-          "structurizr.dsl.identifier" : "27b11686-b974-4387-9798-43a92ee39393"
-        },
-        "sourceId" : "2",
-        "destinationId" : "26",
-        "description" : "Request OAuth token",
-        "technology" : "https"
-      }, {
-        "id" : "28",
-        "sourceId" : "2",
-        "destinationId" : "19",
-        "description" : "Request OAuth token",
-        "technology" : "https",
-        "linkedRelationshipId" : "27"
-      }, {
-        "id" : "38",
-        "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "496a1a79-f3ea-48d9-a91b-cee17d6a30aa"
-        },
-        "sourceId" : "2",
-        "destinationId" : "19",
-        "description" : "Requests calculations",
-        "technology" : "peek+dequeue/https"
-      } ],
-      "group" : "Electricity Supplier or Grid Company",
-      "location" : "Unspecified",
-      "documentation" : { }
-    }, {
-      "id" : "16",
-      "tags" : "Element,Software System",
-      "properties" : {
-        "structurizr.dsl.identifier" : "eloverblik"
-      },
-      "name" : "Eloverblik",
-      "description" : "The platform provides data on electricity consumption and production, allowing customers to have a comprehensive overview across grid areas and energy suppliers.",
-      "relationships" : [ {
-        "id" : "29",
-        "tags" : "Relationship,OAuth",
-        "properties" : {
-          "structurizr.dsl.identifier" : "c3be2a18-3d68-4442-a19e-d52c4dd75651"
-        },
-        "sourceId" : "16",
-        "destinationId" : "26",
-        "description" : "Request OAuth token",
-        "technology" : "https"
-      }, {
-        "id" : "35",
-        "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "252f6df0-a675-4198-97e2-58abc61141c8"
-        },
-        "sourceId" : "16",
-        "destinationId" : "7",
-        "description" : "Requests <data>",
-        "technology" : "https"
-      }, {
-        "id" : "30",
-        "sourceId" : "16",
-        "destinationId" : "19",
-        "description" : "Request OAuth token",
-        "technology" : "https",
-        "linkedRelationshipId" : "29"
-      }, {
-        "id" : "41",
-        "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "b3987570-d745-4904-af75-0541d0160899"
-        },
-        "sourceId" : "16",
-        "destinationId" : "12",
-        "description" : "Requests emission and residual mix data",
-        "technology" : "https"
-      } ],
-      "group" : "Energinet Organization/DataHub Organization",
-      "location" : "Unspecified",
-      "documentation" : { }
-    }, {
-      "id" : "5",
-      "tags" : "Element,Software System,Actor",
-      "properties" : {
-        "structurizr.dsl.identifier" : "energyoriginthirdpartysystem"
-      },
-      "name" : "Energy Origin Third Party",
-      "description" : "Third party system that interacts with Energy Origin APIs.",
-      "relationships" : [ {
-        "id" : "48",
-        "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "c1c1222a-b096-440e-92a8-c5ebc08a768f"
-        },
-        "sourceId" : "5",
-        "destinationId" : "17",
-        "description" : "Integrates with platform on behalf of users",
-        "technology" : "https"
-      } ],
-      "group" : "Business or private person",
-      "location" : "Unspecified",
-      "documentation" : { }
-    }, {
       "id" : "10",
       "tags" : "Element,Software System,Out of focus",
       "properties" : {
@@ -259,7 +101,7 @@
       "location" : "Unspecified",
       "documentation" : { }
     }, {
-      "id" : "17",
+      "id" : "18",
       "tags" : "Element,Software System",
       "properties" : {
         "structurizr.dsl.identifier" : "energyorigin"
@@ -267,54 +109,46 @@
       "name" : "Energy Origin",
       "description" : "Provides a way to issue and claim granular certificates",
       "relationships" : [ {
-        "id" : "43",
+        "id" : "48",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "6ecf7301-7690-43d7-92f0-482d22f9b571"
-        },
-        "sourceId" : "17",
-        "destinationId" : "7",
-        "description" : "Requests measurements",
+        "sourceId" : "18",
+        "destinationId" : "14",
+        "description" : "Links to guarantees of origin",
         "technology" : "https"
       }, {
         "id" : "49",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "e33f22a2-c2ab-4c57-bbc7-2038df90f8f5"
-        },
-        "sourceId" : "17",
-        "destinationId" : "10",
-        "description" : "Reads CVR data",
-        "technology" : "https"
-      }, {
-        "id" : "44",
-        "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "a7fee589-175b-437c-8b42-8ebefeef9cd3"
-        },
-        "sourceId" : "17",
-        "destinationId" : "13",
-        "description" : "Links to guarantees of origin",
-        "technology" : "https"
-      }, {
-        "id" : "45",
-        "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "644b150c-0aa7-44db-84c2-0b80ccb67e58"
-        },
-        "sourceId" : "17",
-        "destinationId" : "14",
+        "sourceId" : "18",
+        "destinationId" : "15",
         "description" : "Places certificates in",
         "technology" : "https"
       }, {
-        "id" : "46",
+        "id" : "47",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "1c98bcb7-eb70-44a4-85f9-45123e5a4086"
-        },
-        "sourceId" : "17",
-        "destinationId" : "12",
+        "sourceId" : "18",
+        "destinationId" : "7",
+        "description" : "Requests measurements",
+        "technology" : "https"
+      }, {
+        "id" : "50",
+        "tags" : "Relationship",
+        "sourceId" : "18",
+        "destinationId" : "13",
         "description" : "Requests emission and residual mix data",
+        "technology" : "https"
+      }, {
+        "id" : "51",
+        "tags" : "Relationship",
+        "sourceId" : "18",
+        "destinationId" : "9",
+        "description" : "Authenticate users",
+        "technology" : "https"
+      }, {
+        "id" : "54",
+        "tags" : "Relationship",
+        "sourceId" : "18",
+        "destinationId" : "10",
+        "description" : "Reads CVR data",
         "technology" : "https"
       } ],
       "group" : "Energinet Organization/DataHub Organization",
@@ -322,6 +156,144 @@
       "documentation" : { }
     }, {
       "id" : "12",
+      "tags" : "Element,Software System,Out of focus",
+      "properties" : {
+        "structurizr.dsl.identifier" : "btesett"
+      },
+      "name" : "BizTalk eSett",
+      "description" : "Handles communication and network between Energinet and eSett.",
+      "relationships" : [ {
+        "id" : "34",
+        "tags" : "Relationship",
+        "sourceId" : "12",
+        "destinationId" : "8",
+        "description" : "Sends calculations",
+        "technology" : "<add technology>"
+      } ],
+      "group" : "Energinet Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "20",
+      "tags" : "Element,Software System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dh3"
+      },
+      "name" : "DataHub 3.0",
+      "description" : "Provides uniform communication and standardized processes for actors operating on the Danish electricity market.",
+      "relationships" : [ {
+        "id" : "27",
+        "sourceId" : "20",
+        "destinationId" : "1",
+        "description" : "Sends mail",
+        "linkedRelationshipId" : "26"
+      } ],
+      "group" : "Energinet Organization/DataHub Organization",
+      "location" : "Unspecified",
+      "containers" : [ {
+        "id" : "23",
+        "tags" : "Element,Container,Intermediate Technology,PaaS,Microsoft Azure - Azure Service Bus",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedservicebus"
+        },
+        "name" : "Message broker",
+        "description" : "Message broker with message queues and publish-subscribe topics",
+        "technology" : "Azure Service Bus",
+        "documentation" : { }
+      }, {
+        "id" : "25",
+        "tags" : "Element,Container,Intermediate Technology,SaaS,Microsoft Azure - SendGrid Accounts",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedexternalsendgrid"
+        },
+        "name" : "SendGrid (external)",
+        "description" : "EMail dispatcher for external use",
+        "relationships" : [ {
+          "id" : "26",
+          "tags" : "Relationship",
+          "sourceId" : "25",
+          "destinationId" : "1",
+          "description" : "Sends mail"
+        } ],
+        "technology" : "Twilio SendGrid",
+        "documentation" : { }
+      }, {
+        "id" : "28",
+        "tags" : "Element,Container,Microsoft Azure - Azure AD B2C",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedb2c"
+        },
+        "name" : "App Registrations (shared)",
+        "description" : "Cloud identity directory",
+        "technology" : "Azure AD B2C",
+        "documentation" : { }
+      }, {
+        "id" : "24",
+        "tags" : "Element,Container,Intermediate Technology,SaaS,Microsoft Azure - SendGrid Accounts",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedinternalsendgrid"
+        },
+        "name" : "SendGrid (internal)",
+        "description" : "EMail dispatcher for internal use",
+        "technology" : "Twilio SendGrid",
+        "documentation" : { }
+      }, {
+        "id" : "21",
+        "tags" : "Element,Container,Microsoft Azure - Key Vaults",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedkeyvault"
+        },
+        "name" : "Key Vault",
+        "description" : "Store for secrets and signing keys",
+        "technology" : "Azure Key Vault",
+        "documentation" : { }
+      }, {
+        "id" : "22",
+        "tags" : "Element,Container,Microsoft Azure - API Management Services",
+        "properties" : {
+          "structurizr.dsl.identifier" : "dh3.sharedapimanagement"
+        },
+        "name" : "API Management",
+        "description" : "Expose URL endpoints to the public",
+        "technology" : "Azure - API Management",
+        "documentation" : { }
+      } ],
+      "documentation" : { }
+    }, {
+      "id" : "2",
+      "tags" : "Element,Software System,Actor",
+      "properties" : {
+        "structurizr.dsl.identifier" : "actorb2bsystem"
+      },
+      "name" : "Actor B2B System",
+      "description" : "External business transaction system. System-to-system communication (B2B).",
+      "relationships" : [ {
+        "id" : "30",
+        "sourceId" : "2",
+        "destinationId" : "20",
+        "description" : "Request OAuth token",
+        "technology" : "https",
+        "linkedRelationshipId" : "29"
+      }, {
+        "id" : "40",
+        "tags" : "Relationship",
+        "sourceId" : "2",
+        "destinationId" : "20",
+        "description" : "Requests calculations",
+        "technology" : "peek+dequeue/https"
+      }, {
+        "id" : "29",
+        "tags" : "Relationship,OAuth",
+        "sourceId" : "2",
+        "destinationId" : "28",
+        "description" : "Request OAuth token",
+        "technology" : "https"
+      } ],
+      "group" : "Electricity Supplier or Grid Company",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "13",
       "tags" : "Element,Software System,Out of focus",
       "properties" : {
         "structurizr.dsl.identifier" : "eds"
@@ -335,96 +307,6 @@
       "id" : "14",
       "tags" : "Element,Software System,Out of focus",
       "properties" : {
-        "structurizr.dsl.identifier" : "powallet"
-      },
-      "name" : "Project Origin Wallet System",
-      "description" : "System with wallets to hold granular certificates in the registries.",
-      "group" : "Energinet Organization",
-      "location" : "Unspecified",
-      "documentation" : { }
-    }, {
-      "id" : "19",
-      "tags" : "Element,Software System",
-      "properties" : {
-        "structurizr.dsl.identifier" : "dh3"
-      },
-      "name" : "DataHub 3.0",
-      "description" : "Provides uniform communication and standardized processes for actors operating on the Danish electricity market.",
-      "relationships" : [ {
-        "id" : "25",
-        "sourceId" : "19",
-        "destinationId" : "1",
-        "description" : "Sends mail",
-        "linkedRelationshipId" : "24"
-      } ],
-      "group" : "Energinet Organization/DataHub Organization",
-      "location" : "Unspecified",
-      "containers" : [ {
-        "id" : "21",
-        "tags" : "Element,Container,Intermediate Technology,PaaS,Microsoft Azure - Azure Service Bus",
-        "properties" : {
-          "structurizr.dsl.identifier" : "dh3.sharedservicebus"
-        },
-        "name" : "Message broker",
-        "description" : "Message broker with message queues and publish-subscribe topics",
-        "technology" : "Azure Service Bus",
-        "documentation" : { }
-      }, {
-        "id" : "20",
-        "tags" : "Element,Container,Microsoft Azure - Key Vaults",
-        "properties" : {
-          "structurizr.dsl.identifier" : "dh3.sharedkeyvault"
-        },
-        "name" : "Key Vault",
-        "description" : "Store for secrets and signing keys",
-        "technology" : "Azure Key Vault",
-        "documentation" : { }
-      }, {
-        "id" : "26",
-        "tags" : "Element,Container,Microsoft Azure - Azure AD B2C",
-        "properties" : {
-          "structurizr.dsl.identifier" : "dh3.sharedb2c"
-        },
-        "name" : "App Registrations (shared)",
-        "description" : "Cloud identity directory",
-        "technology" : "Azure AD B2C",
-        "documentation" : { }
-      }, {
-        "id" : "22",
-        "tags" : "Element,Container,Intermediate Technology,SaaS,Microsoft Azure - SendGrid Accounts",
-        "properties" : {
-          "structurizr.dsl.identifier" : "dh3.sharedinternalsendgrid"
-        },
-        "name" : "SendGrid (internal)",
-        "description" : "EMail dispatcher for internal use",
-        "technology" : "Twilio SendGrid",
-        "documentation" : { }
-      }, {
-        "id" : "23",
-        "tags" : "Element,Container,Intermediate Technology,SaaS,Microsoft Azure - SendGrid Accounts",
-        "properties" : {
-          "structurizr.dsl.identifier" : "dh3.sharedexternalsendgrid"
-        },
-        "name" : "SendGrid (external)",
-        "description" : "EMail dispatcher for external use",
-        "relationships" : [ {
-          "id" : "24",
-          "tags" : "Relationship",
-          "properties" : {
-            "structurizr.dsl.identifier" : "e3d9e6cb-4a36-4308-99eb-affec485e579"
-          },
-          "sourceId" : "23",
-          "destinationId" : "1",
-          "description" : "Sends mail"
-        } ],
-        "technology" : "Twilio SendGrid",
-        "documentation" : { }
-      } ],
-      "documentation" : { }
-    }, {
-      "id" : "13",
-      "tags" : "Element,Software System,Out of focus",
-      "properties" : {
         "structurizr.dsl.identifier" : "poregistry"
       },
       "name" : "Project Origin Registry",
@@ -433,57 +315,41 @@
       "location" : "Unspecified",
       "documentation" : { }
     }, {
-      "id" : "11",
+      "id" : "7",
       "tags" : "Element,Software System,Out of focus",
       "properties" : {
-        "structurizr.dsl.identifier" : "btesett"
+        "structurizr.dsl.identifier" : "dh2"
       },
-      "name" : "BizTalk eSett",
-      "description" : "Handles communication and network between Energinet and eSett.",
+      "name" : "DataHub 2.0",
+      "description" : "Existing DataHub system. Provides uniform communication and standardized processes for actors operating on the Danish electricity market.",
       "relationships" : [ {
-        "id" : "32",
+        "id" : "41",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "8fd5acd0-1b4b-4c0d-b33b-7323de459a95"
-        },
-        "sourceId" : "11",
-        "destinationId" : "8",
-        "description" : "Sends calculations",
-        "technology" : "<add technology>"
+        "sourceId" : "7",
+        "destinationId" : "20",
+        "description" : "Transfers <data>",
+        "technology" : "AzCopy/https"
       } ],
-      "group" : "Energinet Organization",
+      "group" : "CGI Organization",
       "location" : "Unspecified",
       "documentation" : { }
     }, {
-      "id" : "18",
-      "tags" : "Element,Software System",
+      "id" : "11",
+      "tags" : "Element,Software System,Out of focus,github technology",
       "properties" : {
-        "structurizr.dsl.identifier" : "dhesett"
+        "structurizr.dsl.identifier" : "github"
       },
-      "name" : "DataHub eSett",
-      "description" : "Converts ebix messages, which contain aggregated energy time series, into a format eSett understands (nbs).",
+      "name" : "GitHub",
+      "description" : "GitHub is a code hosting platform for version control, collaboration and running deployment pipelines.",
       "relationships" : [ {
-        "id" : "34",
+        "id" : "42",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "b3a90d38-c00e-4ced-88ca-a4d37aea92b5"
-        },
-        "sourceId" : "18",
-        "destinationId" : "7",
-        "description" : "Requests <data>",
-        "technology" : "peek+dequeue/https"
-      }, {
-        "id" : "31",
-        "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "a744cda6-c0ba-4633-8648-b58a7f629878"
-        },
-        "sourceId" : "18",
-        "destinationId" : "11",
-        "description" : "Sends calculations",
+        "sourceId" : "11",
+        "destinationId" : "20",
+        "description" : "Pushes artifacts and data",
         "technology" : "https"
       } ],
-      "group" : "Energinet Organization/DataHub Organization",
+      "group" : "GitHub Organization",
       "location" : "Unspecified",
       "documentation" : { }
     }, {
@@ -498,25 +364,136 @@
       "location" : "Unspecified",
       "documentation" : { }
     }, {
-      "id" : "7",
+      "id" : "17",
+      "tags" : "Element,Software System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eloverblik"
+      },
+      "name" : "Eloverblik",
+      "description" : "The platform provides data on electricity consumption and production, allowing customers to have a comprehensive overview across grid areas and energy suppliers.",
+      "relationships" : [ {
+        "id" : "46",
+        "tags" : "Relationship",
+        "sourceId" : "17",
+        "destinationId" : "9",
+        "description" : "Authenticate users",
+        "technology" : "https"
+      }, {
+        "id" : "31",
+        "tags" : "Relationship,OAuth",
+        "sourceId" : "17",
+        "destinationId" : "28",
+        "description" : "Request OAuth token",
+        "technology" : "https"
+      }, {
+        "id" : "32",
+        "sourceId" : "17",
+        "destinationId" : "20",
+        "description" : "Request OAuth token",
+        "technology" : "https",
+        "linkedRelationshipId" : "31"
+      }, {
+        "id" : "45",
+        "tags" : "Relationship",
+        "sourceId" : "17",
+        "destinationId" : "13",
+        "description" : "Requests emission and residual mix data",
+        "technology" : "https"
+      }, {
+        "id" : "37",
+        "tags" : "Relationship",
+        "sourceId" : "17",
+        "destinationId" : "7",
+        "description" : "Requests <data>",
+        "technology" : "https"
+      } ],
+      "group" : "Energinet Organization/DataHub Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "8",
       "tags" : "Element,Software System,Out of focus",
       "properties" : {
-        "structurizr.dsl.identifier" : "dh2"
+        "structurizr.dsl.identifier" : "esett"
       },
-      "name" : "DataHub 2.0",
-      "description" : "Existing DataHub system. Provides uniform communication and standardized processes for actors operating on the Danish electricity market.",
+      "name" : "eSett",
+      "description" : "Balance settlement system for the Nordic electricity market.",
+      "group" : "eSett Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "19",
+      "tags" : "Element,Software System",
+      "properties" : {
+        "structurizr.dsl.identifier" : "dhesett"
+      },
+      "name" : "DataHub eSett",
+      "description" : "Converts ebix messages, which contain aggregated energy time series, into a format eSett understands (nbs).",
       "relationships" : [ {
-        "id" : "39",
+        "id" : "33",
         "tags" : "Relationship",
-        "properties" : {
-          "structurizr.dsl.identifier" : "f4d8ce64-06c6-4879-bd9b-447c3680320f"
-        },
-        "sourceId" : "7",
-        "destinationId" : "19",
-        "description" : "Transfers <data>",
-        "technology" : "AzCopy/https"
+        "sourceId" : "19",
+        "destinationId" : "12",
+        "description" : "Sends calculations",
+        "technology" : "https"
+      }, {
+        "id" : "36",
+        "tags" : "Relationship",
+        "sourceId" : "19",
+        "destinationId" : "7",
+        "description" : "Requests <data>",
+        "technology" : "peek+dequeue/https"
       } ],
-      "group" : "CGI Organization",
+      "group" : "Energinet Organization/DataHub Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "4",
+      "tags" : "Element,Software System,Actor",
+      "properties" : {
+        "structurizr.dsl.identifier" : "eloverblikthirdpartyuser"
+      },
+      "name" : "Eloverblik Third Party",
+      "description" : "System that interacts with ElOverblik on behalf of a user.",
+      "relationships" : [ {
+        "id" : "44",
+        "tags" : "Relationship",
+        "sourceId" : "4",
+        "destinationId" : "17",
+        "description" : "Requests <data>",
+        "technology" : "https"
+      } ],
+      "group" : "Business or private person",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "15",
+      "tags" : "Element,Software System,Out of focus",
+      "properties" : {
+        "structurizr.dsl.identifier" : "powallet"
+      },
+      "name" : "Project Origin Wallet System",
+      "description" : "System with wallets to hold granular certificates in the registries.",
+      "group" : "Energinet Organization",
+      "location" : "Unspecified",
+      "documentation" : { }
+    }, {
+      "id" : "5",
+      "tags" : "Element,Software System,Actor",
+      "properties" : {
+        "structurizr.dsl.identifier" : "energyoriginthirdpartysystem"
+      },
+      "name" : "Energy Origin Third Party",
+      "description" : "Third party system that interacts with Energy Origin APIs.",
+      "relationships" : [ {
+        "id" : "53",
+        "tags" : "Relationship",
+        "sourceId" : "5",
+        "destinationId" : "18",
+        "description" : "Integrates with platform on behalf of users",
+        "technology" : "https"
+      } ],
+      "group" : "Business or private person",
       "location" : "Unspecified",
       "documentation" : { }
     } ],
@@ -527,6 +504,88 @@
   "documentation" : { },
   "views" : {
     "systemLandscapeViews" : [ {
+      "key" : "SystemLandscape",
+      "order" : 1,
+      "title" : "[System Landscape] DataHub (Simplified)",
+      "description" : "'As-is' view of the DataHub company",
+      "dimensions" : {
+        "width" : 2991,
+        "height" : 2148
+      },
+      "enterpriseBoundaryVisible" : true,
+      "elements" : [ {
+        "id" : "1",
+        "x" : 219,
+        "y" : 1389
+      }, {
+        "id" : "2",
+        "x" : 224,
+        "y" : 779
+      }, {
+        "id" : "3",
+        "x" : 1600,
+        "y" : 320
+      }, {
+        "id" : "4",
+        "x" : 850,
+        "y" : 370
+      }, {
+        "id" : "5",
+        "x" : 850,
+        "y" : 370
+      }, {
+        "id" : "16",
+        "x" : 979,
+        "y" : 1399
+      }, {
+        "id" : "17",
+        "x" : 1550,
+        "y" : 1015
+      }, {
+        "id" : "6",
+        "x" : 2235,
+        "y" : 295
+      }, {
+        "id" : "18",
+        "x" : 2300,
+        "y" : 1015
+      }, {
+        "id" : "19",
+        "x" : 1724,
+        "y" : 1459
+      }, {
+        "id" : "20",
+        "x" : 929,
+        "y" : 1025
+      } ],
+      "relationships" : [ {
+        "id" : "27",
+        "vertices" : [ {
+          "x" : 774,
+          "y" : 1299
+        } ]
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39",
+        "vertices" : [ {
+          "x" : 895,
+          "y" : 1448
+        } ]
+      } ]
+    }, {
       "key" : "SystemLandscapeDetailed",
       "order" : 2,
       "title" : "[System Landscape] DataHub (Detailed)",
@@ -536,95 +595,42 @@
         "height" : 2640
       },
       "enterpriseBoundaryVisible" : true,
-      "relationships" : [ {
-        "id" : "40"
-      }, {
-        "id" : "41",
-        "vertices" : [ {
-          "x" : 2825,
-          "y" : 1445
-        } ]
-      }, {
-        "id" : "42"
-      }, {
-        "id" : "43"
-      }, {
-        "id" : "32"
-      }, {
-        "id" : "31"
-      }, {
-        "id" : "37",
-        "vertices" : [ {
-          "x" : 1470,
-          "y" : 849
-        } ]
-      }, {
-        "id" : "25",
-        "vertices" : [ {
-          "x" : 1575,
-          "y" : 814
-        } ]
-      }, {
-        "id" : "36"
-      }, {
-        "id" : "35"
-      }, {
-        "id" : "34"
-      }, {
-        "id" : "33"
-      }, {
-        "id" : "44"
-      }, {
-        "id" : "45"
-      }, {
-        "id" : "46"
-      }, {
-        "id" : "47"
-      }, {
-        "id" : "48"
-      }, {
-        "id" : "49"
-      }, {
-        "id" : "38"
-      }, {
-        "id" : "39"
-      } ],
       "elements" : [ {
         "id" : "11",
-        "x" : 224,
-        "y" : 994
+        "x" : 960,
+        "y" : 2090
       }, {
         "id" : "12",
-        "x" : 3225,
-        "y" : 1595
+        "x" : 145,
+        "y" : 975
       }, {
         "id" : "13",
         "x" : 3225,
-        "y" : 735
+        "y" : 1595
       }, {
         "id" : "14",
         "x" : 3225,
-        "y" : 1165
+        "y" : 735
       }, {
         "id" : "15",
+        "x" : 3225,
+        "y" : 1165
+      }, {
+        "id" : "16",
         "x" : 867,
         "y" : 958
       }, {
-        "id" : "16",
+        "id" : "17",
         "x" : 1994,
         "y" : 1019
       }, {
-        "id" : "17",
+        "id" : "18",
         "x" : 2499,
         "y" : 1010
       }, {
-        "id" : "18",
+        "id" : "19",
         "x" : 834,
         "y" : 1524
-      }, {
-        "id" : "19",
-        "x" : 1464,
-        "y" : 1019
       }, {
         "id" : "1",
         "x" : 1089,
@@ -662,91 +668,72 @@
         "x" : 3225,
         "y" : 2029
       }, {
+        "id" : "20",
+        "x" : 1464,
+        "y" : 1019
+      }, {
         "id" : "10",
         "x" : 2530,
         "y" : 2055
-      } ]
-    }, {
-      "key" : "SystemLandscape",
-      "order" : 1,
-      "title" : "[System Landscape] DataHub (Simplified)",
-      "description" : "'As-is' view of the DataHub company",
-      "dimensions" : {
-        "width" : 2991,
-        "height" : 2148
-      },
-      "enterpriseBoundaryVisible" : true,
+      } ],
       "relationships" : [ {
-        "id" : "37",
-        "vertices" : [ {
-          "x" : 895,
-          "y" : 1448
-        } ]
+        "id" : "50"
       }, {
-        "id" : "25",
-        "vertices" : [ {
-          "x" : 774,
-          "y" : 1299
-        } ]
+        "id" : "51"
       }, {
         "id" : "40"
       }, {
-        "id" : "36"
+        "id" : "41"
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "53"
       }, {
         "id" : "42"
       }, {
+        "id" : "54"
+      }, {
+        "id" : "43"
+      }, {
+        "id" : "27",
+        "vertices" : [ {
+          "x" : 1575,
+          "y" : 814
+        } ]
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "36"
+      }, {
+        "id" : "35"
+      }, {
+        "id" : "34"
+      }, {
         "id" : "33"
+      }, {
+        "id" : "44"
+      }, {
+        "id" : "45",
+        "vertices" : [ {
+          "x" : 2825,
+          "y" : 1445
+        } ]
+      }, {
+        "id" : "46"
       }, {
         "id" : "47"
       }, {
         "id" : "48"
       }, {
+        "id" : "49"
+      }, {
         "id" : "38"
-      } ],
-      "elements" : [ {
-        "id" : "1",
-        "x" : 219,
-        "y" : 1389
       }, {
-        "id" : "2",
-        "x" : 224,
-        "y" : 779
-      }, {
-        "id" : "3",
-        "x" : 1600,
-        "y" : 320
-      }, {
-        "id" : "4",
-        "x" : 850,
-        "y" : 370
-      }, {
-        "id" : "15",
-        "x" : 979,
-        "y" : 1399
-      }, {
-        "id" : "5",
-        "x" : 850,
-        "y" : 370
-      }, {
-        "id" : "16",
-        "x" : 1550,
-        "y" : 1015
-      }, {
-        "id" : "17",
-        "x" : 2300,
-        "y" : 1015
-      }, {
-        "id" : "6",
-        "x" : 2235,
-        "y" : 295
-      }, {
-        "id" : "18",
-        "x" : 1724,
-        "y" : 1459
-      }, {
-        "id" : "19",
-        "x" : 929,
-        "y" : 1025
+        "id" : "39",
+        "vertices" : [ {
+          "x" : 1470,
+          "y" : 849
+        } ]
       } ]
     } ],
     "systemContextViews" : [ {
@@ -754,35 +741,18 @@
       "order" : 3,
       "title" : "[System Context] DataHub 3.0",
       "description" : "'As-is' view of the DH 3.0 software system and dependencies",
-      "softwareSystemId" : "19",
+      "softwareSystemId" : "20",
       "paperSize" : "A4_Landscape",
       "dimensions" : {
         "width" : 3400,
         "height" : 1866
       },
       "enterpriseBoundaryVisible" : true,
-      "relationships" : [ {
-        "id" : "37",
-        "vertices" : [ {
-          "x" : 2370,
-          "y" : 937
-        } ]
-      }, {
-        "id" : "25",
-        "vertices" : [ {
-          "x" : 2525,
-          "y" : 1015
-        } ]
-      }, {
-        "id" : "36"
-      }, {
-        "id" : "35"
-      }, {
-        "id" : "38"
-      }, {
-        "id" : "39"
-      } ],
       "elements" : [ {
+        "id" : "11",
+        "x" : 0,
+        "y" : 0
+      }, {
         "id" : "1",
         "x" : 2670,
         "y" : 433
@@ -791,11 +761,11 @@
         "x" : 1920,
         "y" : 483
       }, {
-        "id" : "15",
+        "id" : "16",
         "x" : 1150,
         "y" : 433
       }, {
-        "id" : "16",
+        "id" : "17",
         "x" : 0,
         "y" : 0
       }, {
@@ -803,9 +773,32 @@
         "x" : 329,
         "y" : 483
       }, {
-        "id" : "19",
+        "id" : "20",
         "x" : 1125,
         "y" : 1133
+      } ],
+      "relationships" : [ {
+        "id" : "27",
+        "vertices" : [ {
+          "x" : 2525,
+          "y" : 1015
+        } ]
+      }, {
+        "id" : "37"
+      }, {
+        "id" : "40"
+      }, {
+        "id" : "41"
+      }, {
+        "id" : "42"
+      }, {
+        "id" : "38"
+      }, {
+        "id" : "39",
+        "vertices" : [ {
+          "x" : 2370,
+          "y" : 937
+        } ]
       } ]
     } ],
     "configuration" : {
