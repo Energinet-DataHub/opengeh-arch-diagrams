@@ -67,6 +67,12 @@ workspace "DataHub" {
                 tags "Out of focus"
             }
         }
+        group "GitHub Organization" {
+            github = softwareSystem "GitHub" {
+                description "GitHub is a code hosting platform for version control, collaboration and running deployment pipelines."
+                tags "Out of focus"
+            }
+        }
 
         group "Energinet Organization" {
             btESett = softwareSystem "BizTalk eSett" {
@@ -169,6 +175,7 @@ workspace "DataHub" {
         dh3User -> dh3 "Uses" "browser"
         actorB2BSystem -> dh3 "Requests calculations" "peek+dequeue/https"
         dh2 -> dh3 "Transfers <data>" "AzCopy/https"
+        github -> dh3 "Pushes artifacts and data" "https"
         # ElOverblik
         elOverblikUser -> elOverblik "Requests <data>" "browser"
         elOverblikThirdPartyUser -> elOverblik "Requests <data>" "https"
