@@ -15,7 +15,7 @@ workspace "DataHub" {
 
         group "Electricity Supplier or Grid Company" {
             dh3User = person "DH3 User" {
-                description "Person who interacts with DataHub"
+                description "Person who interacts with DataHub."
                 tags ""
             }
 
@@ -91,10 +91,14 @@ workspace "DataHub" {
                 description "System with wallets to hold granular certificates in the registries."
                 tags "Out of focus"
             }
+            azureAD = softwareSystem "Azure AD" {
+                description "Manages identities and RBAC across the organization."
+                tags "Out of focus"
+            }
 
             group "DataHub Organization" {
                 dhSystemAdmin = person "DataHub System Admin" {
-                    description "Person who works within Energinet DataHub"
+                    description "Person who works within Energinet DataHub."
                     tags ""
                 }
                 elOverblik = softwareSystem "Eloverblik" {
@@ -102,7 +106,7 @@ workspace "DataHub" {
                     # Extend with groups and containers in separate repos
                 }
                 energyOrigin = softwareSystem "Energy Origin" {
-                    description "Provides a way to issue and claim granular certificates"
+                    description "Provides a way to issue and claim granular certificates."
                     # Extend with groups and containers in separate repos
                 }
                 dhESett = softwareSystem "DataHub eSett" {
