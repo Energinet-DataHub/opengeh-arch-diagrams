@@ -24,6 +24,7 @@ workspace extends dh-base-model.dsl {
             description "'As-is' view of the DataHub company and nearby software systems"
             include *
             exclude "relationship.tag==OAuth"
+            exclude azureAD
         }
 
         systemcontext dh3 "SystemContext" {
