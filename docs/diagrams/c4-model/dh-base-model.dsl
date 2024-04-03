@@ -187,7 +187,6 @@ workspace "DataHub" {
         elOverblik -> mitId "Authenticate users" "https"
         elOverblik -> cvr "Reads CVR data" "https"
         github -> elOverblik "Pushes artifacts and data" "https"
-        elOverblik -> dh2 "Requests <data>" "https"
         # Energy Origin
         energyOrigin -> dh2 "Requests measurements" "https"
         energyOrigin -> poRegistry "Links to guarantees of origin" "https"
