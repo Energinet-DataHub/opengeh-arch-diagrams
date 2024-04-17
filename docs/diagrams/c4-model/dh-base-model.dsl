@@ -97,6 +97,9 @@ workspace "DataHub" {
             }
 
             group "DataHub Organization" {
+                dhDeveloper = person "DataHub Developer" {
+                    description "Person who works within Energinet DataHub."
+                }
                 dhSystemAdmin = person "DataHub System Admin" {
                     description "Person who works within Energinet DataHub."
                     tags ""
@@ -206,9 +209,12 @@ workspace "DataHub" {
         energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
         energyOrigin -> cvr "Reads CVR data" "https"
         # Platforms
-        acorn -> energyOrigin "Supports"
-        acorn -> elOverblik "Supports"
-        dh3Platform -> dh3 "Supports"
+        dhDeveloper -> acorn "manages"
+        acorn -> energyOrigin "Supports/hosts"
+        acorn -> elOverblik "Supports/hosts"
+        acorn -> poRegistry "hosts"
+        acorn -> poWallet "hosts"
+        dh3Platform -> dh3 "Supports/hosts"
     }
 
     views {
