@@ -168,11 +168,11 @@ workspace "DataHub" {
                 }
                 acorn = softwareSystem "Acorn" {
                     description "PaaS running on Kubernetes orchestrated by infrastructure as code principles for hosting product applications."
-                    tags "platform"
+                    tags ""
                 }
                 dh3Platform = softwareSystem "DH3 Platform" {
                     description "Azure-based platform, yet to be given a name"
-                    tags "platform"
+                    tags ""
                 }
             }
         }
