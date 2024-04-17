@@ -163,6 +163,14 @@ workspace "DataHub" {
 
                     # Extend with groups and containers in separate repos
                 }
+                acorn = softwareSystem "Acorn" {
+                    description "PaaS running on Kubernetes orchestrated by infrastructure as code principles for hosting product applications."
+                    tags "platform"
+                }
+                dh3Platform = softwareSystem "DH3 Platform" {
+                    description "Azure-based platform, yet to be given a name"
+                    tags "platform"
+                }
             }
         }
 
@@ -197,6 +205,10 @@ workspace "DataHub" {
         energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
         energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
         energyOrigin -> cvr "Reads CVR data" "https"
+        # Platforms
+        acorn -> energyOrigin "Supports"
+        acorn -> elOverblik "Supports"
+        dh3Platform -> dh3 "Supports"
     }
 
     views {
