@@ -210,11 +210,11 @@ workspace "DataHub" {
         energyOrigin -> cvr "Reads CVR data" "https"
         # Platforms
         dhDeveloper -> acorn "manages"
-        acorn -> energyOrigin "Supports/hosts"
-        acorn -> elOverblik "Supports/hosts"
-        acorn -> poRegistry "hosts"
-        acorn -> poWallet "hosts"
-        dh3Platform -> dh3 "Supports/hosts"
+        acorn -> energyOrigin "Supports/hosts" ""
+        acorn -> elOverblik "Supports/hosts" ""
+        acorn -> poRegistry "hosts" ""
+        acorn -> poWallet "hosts" ""
+        dh3Platform -> dh3 "Supports/hosts" ""
     }
 
     views {
