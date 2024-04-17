@@ -97,6 +97,9 @@ workspace "DataHub" {
             }
 
             group "DataHub Organization" {
+                dhDeveloper = person "DataHub Developer" {
+                    description "Person who works within Energinet DataHub."
+                }
                 dhSystemAdmin = person "DataHub System Admin" {
                     description "Person who works within Energinet DataHub."
                     tags ""
@@ -163,6 +166,14 @@ workspace "DataHub" {
 
                     # Extend with groups and containers in separate repos
                 }
+                acorn = softwareSystem "Acorn" {
+                    description "PaaS running on Kubernetes orchestrated by infrastructure as code principles for hosting product applications."
+                    tags ""
+                }
+                dh3Platform = softwareSystem "DH3 Platform" {
+                    description "Azure-based platform, yet to be given a name"
+                    tags ""
+                }
             }
         }
 
@@ -197,6 +208,13 @@ workspace "DataHub" {
         energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
         energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
         energyOrigin -> cvr "Reads CVR data" "https"
+        # Platforms
+        dhDeveloper -> acorn "manages"
+        acorn -> energyOrigin "Supports/hosts" ""
+        acorn -> elOverblik "Supports/hosts" ""
+        acorn -> poRegistry "hosts" ""
+        acorn -> poWallet "hosts" ""
+        dh3Platform -> dh3 "Supports/hosts" ""
     }
 
     views {
