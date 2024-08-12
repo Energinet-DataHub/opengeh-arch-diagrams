@@ -121,6 +121,11 @@ workspace "DataHub" {
                     tags ""
 
                     # Shared containers must be added in the base model
+                    sharedUnityCatalog = container "Unity Catalog" {
+                        description "Subsystem data and data products"
+                        technology "Azure Databricks"
+                        tags "Intermediate Technology" "Microsoft Azure - Azure Databricks"
+                    }
                     sharedKeyVault = container "Key Vault" {
                         description "Store for secrets and signing keys"
                         technology "Azure Key Vault"
