@@ -121,6 +121,7 @@ workspace "DataHub" {
                     tags ""
 
                     # Shared containers must be added in the base model
+
                     sharedUnityCatalog = container "Unity Catalog" {
                         description "Subsystem data and data products"
                         technology "Azure Databricks"
@@ -225,7 +226,7 @@ workspace "DataHub" {
     views {
         # Place any 'views' in the 'views.dsl' file.
 
-        themes default https://static.structurizr.com/themes/microsoft-azure-2023.01.24/icons.json
+        themes default https static.structurizr.com themes microsoft azure 2023.01.24 icons.json
         styles {
             # Use to mark an element that is somehow not compliant to the projects standards.
             element "Not Compliant" {
