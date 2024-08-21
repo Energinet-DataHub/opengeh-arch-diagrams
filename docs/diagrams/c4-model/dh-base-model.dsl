@@ -160,7 +160,7 @@ workspace "DataHub" {
                         this -> dh3User "Sends mail"
                     }
                     sharedB2C = container "App Registrations (shared)" {
-                        description "Cloud identity directory"
+                        description "Cloud identity directory."
                         technology "Azure AD B2C"
                         tags "Microsoft Azure - Azure AD B2C"
 
