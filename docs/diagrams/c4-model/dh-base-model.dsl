@@ -91,6 +91,10 @@ workspace "DataHub" {
                 description "System with wallets to hold granular certificates in the registries."
                 tags "Out of focus"
             }
+            poStamp = softwareSystem "Project Origin Stamp" {
+                description "Certificate issuance system."
+                tags "Out of focus"
+            }
             azureAD = softwareSystem "Azure AD" {
                 description "Manages identities and RBAC across the organization."
                 tags "Out of focus"
@@ -209,6 +213,7 @@ workspace "DataHub" {
         energyOrigin -> dh2 "Requests measurements" "https"
         energyOrigin -> poRegistry "Links to guarantees of origin" "https"
         energyOrigin -> poWallet "Places certificates in" "https"
+        energyOrigin -> poStamp "Issues certificates" "https"
         energyOrigin -> eds "Requests emission and residual mix data" "https"
         energyOrigin -> mitId "Authenticate users" "https"
         energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
