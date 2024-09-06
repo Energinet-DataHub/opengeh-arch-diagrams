@@ -78,6 +78,10 @@ workspace "DataHub" {
             btESett = softwareSystem "BizTalk eSett" {
                 description "Handles communication and network between Energinet and eSett."
                 tags "Out of focus"
+
+                onpremiseServers = container "On-premise servers" {
+                    description "Hybrid connection servers"
+                }
             }
             eds = softwareSystem "Energi Data Service" {
                 description "Data and services about the Danish energy system such as CO2 emissions and consumption and production data."
