@@ -223,6 +223,7 @@ workspace "DataHub" {
         ettDk -> poWallet "Places certificates in" "https"
         ettDk -> poStamp "Issues certificates" "https"
         ettDk -> mitId "Authenticate users" "https"
+        ettDk -> azureAdB2c "Authenticates using" "OIDC"
         ettDkUser -> ett "Reads/manages granular certificates" "browser"
         ettDkThirdPartySystem -> ett "Integrates with platform on behalf of users" "https"
         ettDk -> cvr "Reads CVR data" "https"
