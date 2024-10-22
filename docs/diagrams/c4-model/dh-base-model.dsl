@@ -74,7 +74,7 @@ workspace "DataHub" {
             }
         }
         group "Microsoft" {
-            github = softwareSystem "Azure AD B2C" {
+            azureAdB2c = softwareSystem "Azure AD B2C" {
                 description "Identity provider."
                 tags "Out of focus"
             }
