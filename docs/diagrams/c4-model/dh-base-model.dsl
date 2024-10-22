@@ -33,12 +33,12 @@ workspace "DataHub" {
                 description "System that interacts with ElOverblik on behalf of a user."
                 tags "Actor"
             }
-            energyOriginThirdPartySystem = softwareSystem "Energy Origin Third Party" {
+            ettDkThirdPartySystem = softwareSystem "Energy Track and Trace DK Third Party" {
                 description "Third party system that interacts with Energy Origin APIs."
                 tags "Actor"
             }
-            energyOriginUser = person "Energy Origin user" {
-                description "Person who on behalf of a power producer/consumer interacts with Energy Origin."
+            ettDkUser = person "Energy Track and Trace DK user" {
+                description "Person who on behalf of a power producer/consumer interacts with Energy Track and Trace DK."
             }
         }
 
@@ -73,6 +73,13 @@ workspace "DataHub" {
                 tags "Out of focus"
             }
         }
+        group "Microsoft" {
+            github = softwareSystem "Azure AD B2C" {
+                description "Identity provider."
+                tags "Out of focus"
+            }
+        }
+
 
         group "Energinet Organization" {
             btESett = softwareSystem "BizTalk eSett" {
@@ -87,7 +94,7 @@ workspace "DataHub" {
                 description "Public permissioned distributed ledger where everyone can validate the granular certificates for their electricity."
                 tags "Out of focus"
             }
-            poWallet = softwareSystem "Project Origin Wallet System" {
+            poWallet = softwareSystem "Project Origin Vault" {
                 description "System with wallets to hold granular certificates in the registries."
                 tags "Out of focus"
             }
@@ -112,7 +119,7 @@ workspace "DataHub" {
                     description "The platform provides data on electricity consumption and production, allowing customers to have a comprehensive overview across grid areas and energy suppliers."
                     # Extend with groups and containers in separate repos
                 }
-                energyOrigin = softwareSystem "Energy Origin" {
+                ettDk = softwareSystem "Energy Track and Trace DK" {
                     description "Provides a way to issue and claim granular certificates."
                     # Extend with groups and containers in separate repos
                 }
@@ -209,19 +216,18 @@ workspace "DataHub" {
         elOverblik -> cvr "Reads CVR data" "https"
         github -> elOverblik "Pushes artifacts and data" "https"
         elOverblik -> dh3 "Data" "https"
-        # Energy Origin
-        energyOrigin -> dh2 "Requests measurements" "https"
-        energyOrigin -> poRegistry "Links to guarantees of origin" "https"
-        energyOrigin -> poWallet "Places certificates in" "https"
-        energyOrigin -> poStamp "Issues certificates" "https"
-        energyOrigin -> eds "Requests emission and residual mix data" "https"
-        energyOrigin -> mitId "Authenticate users" "https"
-        energyOriginUser -> energyOrigin "Reads/manages granular certificates" "browser"
-        energyOriginThirdPartySystem -> energyOrigin "Integrates with platform on behalf of users" "https"
-        energyOrigin -> cvr "Reads CVR data" "https"
+        # Energy Track and Trace DK
+        ettDk -> dh2 "Requests measurements" "https"
+        ettDk -> poRegistry "Links to guarantees of origin" "https"
+        ettDk -> poWallet "Places certificates in" "https"
+        ettDk -> poStamp "Issues certificates" "https"
+        ettDk -> mitId "Authenticate users" "https"
+        ettDkUser -> ett "Reads/manages granular certificates" "browser"
+        ettDkThirdPartySystem -> ett "Integrates with platform on behalf of users" "https"
+        ettDk -> cvr "Reads CVR data" "https"
         # Platforms
         dhDeveloper -> acorn "manages"
-        acorn -> energyOrigin "Supports/hosts" ""
+        acorn -> ettDk "Supports/hosts" ""
         acorn -> elOverblik "Supports/hosts" ""
         acorn -> poRegistry "hosts" ""
         acorn -> poWallet "hosts" ""
