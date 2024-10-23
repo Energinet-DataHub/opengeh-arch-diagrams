@@ -224,8 +224,8 @@ workspace "DataHub" {
         ettDk -> poStamp "Issues certificates" "https"
         ettDk -> mitId "Authenticate users" "https"
         ettDk -> azureAdB2c "Authenticates using" "OIDC"
-        ettDkUser -> ett "Reads/manages granular certificates" "browser"
-        ettDkThirdPartySystem -> ett "Integrates with platform on behalf of users" "https"
+        ettDkUser -> ettDk "Reads/manages granular certificates" "browser"
+        ettDkThirdPartySystem -> ettDk "Integrates with platform on behalf of users" "https"
         ettDk -> cvr "Reads CVR data" "https"
         # Platforms
         dhDeveloper -> acorn "manages"
