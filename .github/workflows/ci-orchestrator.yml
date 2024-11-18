@@ -23,7 +23,7 @@ jobs:
   render_c4model_views:
     needs: changes
     if: ${{ needs.changes.outputs.render_c4model_views == 'true' }}
-    uses: Energinet-DataHub/.github/.github/workflows/structurizr-render-diagrams.yml@v13
+    uses: Energinet-DataHub/.github/.github/workflows/structurizr-render-diagrams.yml@1004c06b5465642c86068598fd286ba4a5ecaac7
     with:
       structurizr_workspace_filename: views
       included_model_filename: dh-base-model
