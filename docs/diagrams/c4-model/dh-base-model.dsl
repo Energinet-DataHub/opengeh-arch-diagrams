@@ -14,7 +14,7 @@ workspace "DataHub" {
         }
 
         group "Electricity Supplier or Grid Company" {
-            dh3User = person "DH3 User" {
+            dh3User = person "DH3 Users" {
                 description "Person who interacts with DataHub."
                 tags ""
             }
